@@ -33,3 +33,4 @@ This README would normally document whatever steps are necessary to get your app
 1.navigate to dir
 2.git add *
 3.git commit -m "message"
+4.Push(git remote add origin https://prohaukka@bitbucket.org/tetrium/tetrium.git)
