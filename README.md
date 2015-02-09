@@ -27,3 +27,9 @@ This README would normally document whatever steps are necessary to get your app
 
 * Repo owner or admin
 * Other community or team contact
+
+
+##Note to self##
+1.navigate to dir
+2.git add *
+3.git commit -m "message"
