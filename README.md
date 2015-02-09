@@ -27,3 +27,12 @@ This README would normally document whatever steps are necessary to get your app
 
 * Repo owner or admin
 * Other community or team contact
+
+
+##Note to self##
+1.navigate to dir
+2.git add *
+3.git commit -m "message"
+4.Push(git remote add origin https://prohaukka@bitbucket.org/tetrium/tetrium.git)
+4.5(git push -u origin master)
+5.(GET new changes)(git pull origin master)
