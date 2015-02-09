@@ -2,7 +2,7 @@
 <?php
 
 include "/var/www/tetrium/includes/databasedetails.php";
-include "/var/www/tetrium/executables/game_engine.php";
+//include "/var/www/tetrium/executables/game_engine.php";
 
 if(isset($_GET["troop_type"]) and isset($_GET["train_amount"])){
 

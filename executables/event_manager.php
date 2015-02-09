@@ -132,7 +132,6 @@ ATTACKS (NOT RETURNING)
 */
 if ($type=="attack" and $returning!=1){
 
-include("game_engine.php");
 res_calc($target_village);
 
 		//GET DEFENDER TROOPS	

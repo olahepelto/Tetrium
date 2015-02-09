@@ -1,4 +1,4 @@
-<?
+<?php
 include"../includes/databasedetails.php";
 //Check if admin
 if($_SESSION['varadmin']==0){

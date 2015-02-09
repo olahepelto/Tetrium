@@ -6,12 +6,13 @@
 	</head>
 	<body>
 	<!--onfocus="onfocus()" onblur="onblur()"-->
-<?
+<?php
 //include database login and update resources
 include "includes/databasedetails.php";
+exit;
 include "executables/updateresources.php";
 ?>
-	
+	 
 <!-- CSS GUI BEGINS -->
 <center>
 	<div id="wrapper">

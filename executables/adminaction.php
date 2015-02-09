@@ -6,7 +6,6 @@ header("location:../tetrium.php?message=you are not an admin :(");
 exit;
 }
 
-include ("../includes/databasedetails.php");
 if (isset($_GET["login"])){
 $login=$_GET["login"];
 $result = mysql_query("SELECT * FROM members WHERE id = '$login';");
