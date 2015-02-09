@@ -1,4 +1,4 @@
-<?
+<?php
 //Check if admin
 include "../includes/databasedetails.php";
 if($_SESSION['varadmin']==0){
@@ -42,7 +42,4 @@ mysql_query("UPDATE map SET wheat=$wheat WHERE id='$id'");
 	exit;
 }else{ echo "Only numbers";
 	 
-?><br><a href=../admin.php>Back</a>><?
-	 
-	 }
-?>
+?><br><a href=../admin.php>Back</a>><?php }

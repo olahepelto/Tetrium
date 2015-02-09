@@ -1,4 +1,4 @@
-<?
+<?php
 include "includes/databasedetails.php";
 if(!$_SESSION['varadmin']==1){
 	header("location:tetrium.php");
@@ -18,7 +18,7 @@ header("location: changeinfo.php?ready=true");
 }elseif($_GET["ready"]==true){
 $newbox=file_get_contents('includes/infocolumn.html');
 echo $newbox;
-?> <a href="changeinfo.php">BACK</a> <?
+?> <a href="changeinfo.php">BACK</a> <?php
 }else{
 $newbox=file_get_contents('includes/infocolumn.html');?>
 <form id="changeinfo" action="changeinfo.php" method="POST">
