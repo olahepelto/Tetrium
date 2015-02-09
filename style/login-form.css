@@ -1,0 +1,90 @@
+ body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color:#333;
+	margin-left: auto; 
+	margin-right: auto;
+}
+p {
+	padding: 10px;
+}
+#wrapper {
+	margin: 0 auto;
+	width: 500px;
+}
+#headerwrap {
+	float: left;
+	margin: 0 auto;
+}
+#header {
+	height: 105px;
+	/*  width: 526px;*/
+	width: 489px;
+	background: #28bd00;
+	border-radius: 10px;
+	border: 1px solid #000000;
+	margin: 5px;
+}
+#contentwrap {
+	width: 300px;
+	float: left;
+	margin: 0 auto;
+}
+#content {
+	background-image: url('http://www.webtexture.net/wp-content/uploads/2012/10/10-Subtle-Textures-Thumb02.jpg');
+	border-radius: 10px;
+	border: 1px solid #ebebeb;
+	margin: 5px;
+}
+#content2 {
+	background-image: url('http://www.webtexture.net/wp-content/uploads/2012/10/10-Subtle-Textures-Thumb02.jpg');
+	border-radius: 10px;
+	border: 1px solid #ebebeb;
+	margin: 5px;
+}
+#rightcolumnwrap {
+	width: 200px;
+	float: left;
+	margin: 0 auto;
+}
+#rightcolumn {
+	height: 500px;
+	background: #DDFDEF;
+	border-radius: 10px;
+	border: 1px solid #000000;
+	margin: 5px;
+}
+#footerwrap {
+	width: 500px;
+	float: left;
+	margin: 0 auto;
+	clear: both;
+}
+#footer {
+	height: 40px;
+	background: #33FF66;
+	border-radius: 10px;
+	border: 1px solid #1feb52;
+	margin: 5px;
+}
+#button {
+	width: 110px;
+	height: 40px;
+	background: url("../images/button.png");
+	font-family: Calibri;
+	color: #ffffff;
+	font-size: 20px;
+}
+#button:hover {
+	background: url("../images/buttonhover.png");
+}
+html {
+	background: url('../images/background.png') no-repeat center;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+margin-left: auto;
+margin-right: auto; 
+min-width: 940px;
+height: 100%;
+}
