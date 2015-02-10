@@ -9,7 +9,7 @@
 <?php
 //include database login and update resources
 include "includes/databasedetails.php";
-exit;
+
 include "executables/updateresources.php";
 ?>
 	 
