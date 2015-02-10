@@ -1,6 +1,6 @@
 <?php
 include_once("game_engine.php"); //game engine functions
-
+echo "hi";
 $mysql_data=get_val($current_village_id); //Final values for viewing to player
 
 res_calc($current_village_id); //Calc village id resources
