@@ -16,7 +16,7 @@ include "executables/updateresources.php";
 <!-- CSS GUI BEGINS -->
 <center>
 	<div id="wrapper">
-	
+	 
 	<!-- HEADER -->
 	<?php include("includes/tetriumheader.php") ?>
 	<!-- HEADER -->
@@ -32,7 +32,7 @@ include "executables/updateresources.php";
 		<div id=resourcefields>
 			<img src="images/bettervillage.png" alt="Error">
 				<div id="uppgrades"><!-- #uppgrades -->
-<?
+<?php
 					include "includes/buildingtimer.php";
 if($admin=1){ 
 			?> <br><a href="reset.php?speed=1">Speed Up</a><br>

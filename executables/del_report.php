@@ -1,4 +1,4 @@
-<?
+<?php
 include("../includes/databasedetails.php");
 
 $report_id = $_GET["rep_id"];
