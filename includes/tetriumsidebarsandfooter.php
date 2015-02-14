@@ -29,7 +29,7 @@
 			Change infsss<br>
 				</div></a>
 		<?php } ?>
-		<a href="executables/logout.php" style="text-decoration: none;">
+		<a href="executables/func_start.php?type=logout" style="text-decoration: none;">
 <div id="button">
 		Logout<br>
 		</div>

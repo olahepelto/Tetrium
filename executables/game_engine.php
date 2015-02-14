@@ -706,4 +706,9 @@ set_array_db($res,"map",$village_id);
 
 header("location: ../upgradegui.php?building=marketplace");
 }
+
+function logout(){
+    session_destroy();
+    header("location: http://tetrium.tk");
+}
 //CRONJOB / EVERYONES ACTIONS AT EVERY RELOAD
