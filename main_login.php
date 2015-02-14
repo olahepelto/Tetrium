@@ -11,11 +11,8 @@ else
 	<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 	<title>Tetrium Login</title>
 <link rel="stylesheet" type="text/css" href="style/login-form.css" />
-<<<<<<< HEAD
-<meta name=viewport content="width=device-width, initial-scale=1">
 
-=======
->>>>>>> f6a4788ec829ef43d1d601f1be8daa77629802f0
+<meta name=viewport content="width=device-width, initial-scale=1">
 </head>
 	<body>
 		
