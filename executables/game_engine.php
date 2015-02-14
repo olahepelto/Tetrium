@@ -688,24 +688,21 @@ $market_multiplier=1;
 
 $getresources = $getresources * $market_multiplier;
 	
-if ($wantresource==1) {
+if ($want==1) {
 	$newwood = $newwood + $getresources;
 }
-if ($wantresource==2) {
+if ($want==2) {
 	$newclay = $newclay + $getresources;
 }
-if ($wantresource==3) {
+if ($want==3) {
 	$newiron = $newiron + $getresources;
 }
-if ($wantresource==4) {
+if ($want==4) {
 	$newwheat = $newwheat + $getresources;
 }
 
-//Send the calculated new resource variables to mysql
-mysql_query("UPDATE map SET wood='$newwood' WHERE village_id='$village_id'");
-mysql_query("UPDATE map SET clay='$newclay' WHERE village_id='$village_id'");
-mysql_query("UPDATE map SET iron='$newiron' WHERE village_id='$village_id'");
-mysql_query("UPDATE map SET wheat='$newwheat' WHERE village_id='$village_id'");
+$res = array("wood"=>$newwood, "clay"=>$newclay, "iron"=>$newiron, "wheat"=>$newwheat);
+set_array_db($res,"map",$village_id);
 
 header("location: ../upgradegui.php?building=marketplace");
 }

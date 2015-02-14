@@ -1,18 +1,9 @@
-<?php
-$market_level_multiplier=($marketplace/50);
-$market_multiplier=0.80+$market_level_multiplier;
-//MAX MARKET MULTIPLIER
-if ($market_multiplier>1){
-$market_multiplier=1;
-}
-?>
-
 From:
-<form  action="executables/marketaction.php" method="post">
-  Wood<input onchange="newprice()" type="text" name="tradewood" id="tradewood"><br>
-  Clay<input onchange="newprice()" type="text" name="tradeclay" id="tradeclay"><br>
-  Iron<input onchange="newprice()" type="text" name="tradeiron" id="tradeiron"><br>
-  Wheat<input onchange="newprice()" type="text" name="tradewheat" id="tradewheat"><br>
+<form  action="executables/func_start.php" method="get">
+  Wood<input onchange="newprice()" type="text" name="give_wood"><br>
+  Clay<input onchange="newprice()" type="text" name="give_clay"><br>
+  Iron<input onchange="newprice()" type="text" name="give_iron"><br>
+  Wheat<input onchange="newprice()" type="text" name="give_wheat"><br>
 <br>
 To:<select name=wantresource>
   <option value="1" id=wood_selector>Wood:0</option>
@@ -29,10 +20,10 @@ include "includes/sendres_timer.php";
 <script>
 function newprice(){
 
-var wood = document.getElementById("tradewood").value;
-var clay = document.getElementById("tradeclay").value;	
-var iron = document.getElementById("tradeiron").value;
-var wheat = document.getElementById("tradewheat").value;
+var wood = document.getElementById("give_wood").value;
+var clay = document.getElementById("give_clay").value;	
+var iron = document.getElementById("give_iron").value;
+var wheat = document.getElementById("give_wheat").value;
 
 if (wood.length==0){wood=0;}
 if (clay.length==0){clay=0;}

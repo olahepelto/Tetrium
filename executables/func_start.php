@@ -59,3 +59,10 @@ if($_GET["type"]="speedup" AND isset($_GET["event_id"])){
 if($_GET["type"]="cpass" AND isset($_GET["user"]) AND isset($_GET["pass"])){
     change_pass($_GET["user"],$_GET["pass"]);
 }
+if(isset($_GET["give_wood"]) AND isset($_GET["give_wood"]) AND isset($_GET["give_wood"]) AND isset($_GET["give_wood"]) AND isset($_GET["wantresource"])){
+    
+        $village_id = $current_village_id;
+	$player_id = $id;
+
+	market_action($village_id, $_GET["give_wood"],$_GET["give_clay"],$_GET["give_iron"],$_GET["give_wheat"],$_GET["wantresource"]);
+}
