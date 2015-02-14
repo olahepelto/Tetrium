@@ -1,0 +1,271 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color:#333
+}
+
+html {
+	background: url('../images/background.png') no-repeat center;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+margin-left: auto;
+margin-right: auto; 
+min-width: 940px;
+min-height: inherit;
+}
+
+p {
+	padding: 10px;
+}
+
+body {
+	font-size: 12px; line-height: 18px; font-family: Arial, Tahoma,  Verdana,  sans-serif;
+	margin-left: auto; 
+	margin-right: auto;
+}
+a {
+    color: blue;
+    outline: none;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
+p {
+    margin: 0 0 18px
+}
+img {
+	border: none; left: 892px; top: 573px;}
+input {
+    vertical-align: middle;
+}
+#wrapper {
+    width: 100%;
+	/*min-width: 940px;*/
+	width: 940px;
+}
+/* Header
+-----------------------------------------------------------------------------*/
+ #header {
+    height: 100px;
+    background: #FFE680;
+	border-radius: 10px;
+}
+/* Middle
+-----------------------------------------------------------------------------*/
+ #middle {
+    height: 1%;
+    position: relative;
+}
+#middle:after {
+    content:'';
+    clear: both;
+    display: table;
+}
+#container {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    margin-right: -100%;
+}
+#content {
+    padding: 0 20px;
+}
+/* Sidebar Left
+-----------------------------------------------------------------------------*/
+ #sideLeft {
+    float: left;
+    width: 200px;
+    /* height: 700px; */
+    max-height:1000px;
+    position: relative;
+    background: #B5E3FF;
+	border-radius: 10px;
+    
+}
+/* Sidebar Right
+-----------------------------------------------------------------------------*/
+ #sideRight {
+    float: right;
+    
+    width: 200px;
+    /* height: 700px; */
+    max-height:1000px;
+    position: relative;
+    background: #FFACAA;
+	border-radius: 10px;
+}
+ #sideUnderRight {
+    float: right;
+    
+    width: 200px;
+    /* height: 700px; */
+    max-height:1000px;
+    position: relative;
+    background: #3EA055;
+	border-radius: 10px;
+}
+#sideUnderUnderRight {
+    float: right;
+    
+    width: 200px;
+    /* height: 700px; */
+    max-height:1000px;
+    position: relative;
+    background: #96D3FF;
+	border-radius: 10px;
+}
+/* Footer
+-----------------------------------------------------------------------------*/
+
+/*
+#footer {
+	height: 25px;
+	position:absolute; 
+    bottom: 0px;
+	width: 100%;
+}
+*/
+
+/* Levels
+-----------------------------------------------------------------------------*/
+
+/* WOODCUTTER POSITIONS */
+ #woodcutter1level {
+	z-index: 2750; padding-top: 0px; width: 16px; height: 21px; position: absolute; left: 306px; top: 53px;}
+#woodcutter2level {
+	position: absolute; left: 158px; top: 401px;}
+#woodcutter3level {
+	position: absolute; left: 243px; top: 415px;}
+#woodcutter4level {
+	position: absolute; left: 315px; top: 414px;}
+/* CLAYPIT POSITIONS */
+ #claypit1level {
+	position: absolute; left: 138px; top: 67px;}
+#claypit2level {
+	position: absolute; left: 379px; top: 88px;}
+#claypit3level {
+	position: absolute; left: 81px; top: 117px;}
+#claypit4level {
+	position: absolute; left: 308px; top: 315px;}
+/* IRONMINE POSITIONS */
+ #ironmine1level {
+	position: absolute; left: 275px; top: 137px;}
+#ironmine2level {
+	position: absolute; left: 155px; top: 152px;}
+#ironmine3level {
+	position: absolute; left: 112px; top: 252px;}
+#ironmine4level {
+	position: absolute; left: 76px; top: 314px;}
+/* CROPLAND POSITIONS */
+ #cropland1level {
+	position: absolute; left: 233px; top: 53px;}
+#cropland2level {
+	position: absolute; left: 50px; top: 210px;}
+#cropland3level {
+	position: absolute; left: 439px; top: 154px;}
+#cropland4level {
+	position: absolute; left: 346px; top: 230px;}
+#cropland5level {
+	position: absolute; left: 452px; top: 250px;}
+#cropland6level {
+	position: absolute; left: 410px; top: 351px;}
+
+
+
+
+
+
+
+
+
+#resourcefields {
+    position: relative;
+    left: 1px;
+    top: 4px;
+    width: 522px;
+}
+#image {
+    position: absolute;
+    left: 1044px;
+    top: 250px;
+}
+#resources {
+    position: absolute;
+    left: 513px;
+    top: 238px;
+}
+#button {
+    width: 110px;
+    height: 40px;
+    background: url("../images/button.png");
+	background-repeat: no-repeat;
+    font-family: Calibri;
+    color: #ffffff;
+    font-size: 20px;
+	display: table-cell;
+	vertical-align: middle;
+}
+#button:hover {
+    background: url("../images/buttonhover.png");
+	background-repeat: no-repeat
+}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#woodcutter1level2 img {
+	position: absolute; left: 291px; top: 36px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#woodcutter2level2 img {
+	position: absolute; left: 141px; top: 384px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#woodcutter3level2 img {
+	position: absolute; left: 226px; top: 399px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#woodcutter4level2 img {
+	position: absolute; left: 299px; top: 397px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#claypit1level2 img {
+	position: absolute; left: 120px; top: 50px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#claypit2level2 img {
+	position: absolute; top: 71px; left: 361px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#claypit3level2 img {
+	position: absolute; left: 63px; top: 101px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#claypit4level2 img {
+	position: absolute; left: 290px; top: 298px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#ironmine1level2 img {
+	position: absolute; left: 255px; top: 120px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#ironmine2level2 img {
+	position: absolute; left: 134px; top: 136px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#ironmine3level2 img {
+	position: absolute; left: 91px; top: 236px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#ironmine4level2 img {
+	position: absolute; left: 56px; top: 297px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#cropland1level2 img {
+	position: absolute; left: 213px; top: 37px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#cropland2level2 img {
+	position: absolute; left: 29px; top: 193px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#cropland3level2 img {
+	position: absolute; left: 418px; top: 136px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#cropland4level2 img {
+	position: absolute; left: 325px; top: 214px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#cropland5level2 img {
+	position: absolute; left: 431px; top: 233px;}
+
+body center div#wrapper div#middle div#container div#content div#resourcefields a div#cropland6level2 img {
+	position: absolute; left: 389px; top: 333px;}
+
+body center div#wrapper div#middle div#container div#content div#messages table {
+	bottom: 0px; bp-top: px; bp-left: 0px; position: absolute; left: 267px; top: 66px;}
+
