@@ -1,8 +1,8 @@
 	<div class="sidebar" id="sideLeft">	
 		<b><strong>MENU:</strong></b><br>
-		<a href="todogui.php" style="text-decoration: none;">
+		<a href="https://bitbucket.org/tetrium/tetrium/" style="text-decoration: none;">
 		<div id="button">
-		Todo List
+		Bitbucket
 		</div>
 		</a>
 		<a href="cpassgui.php" style="text-decoration: none;">
