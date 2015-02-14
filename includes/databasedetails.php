@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>	
+=======
+>>>>>>> f6a4788ec829ef43d1d601f1be8daa77629802f0
 <?php
 session_start();
 if ($_GET["errors"]==1 and $_SESSION["varadmin"]==1){
