@@ -646,4 +646,67 @@ mysql_query("UPDATE members SET password = '$newpass' WHERE username = '$user'")
 header("location:../tetrium.php");
 exit;
 }
+
+function market_action($village_id,$give_wood,$give_clay,$give_iron,$give_wheat,$want){
+    $mysql_data = get_val($village_id);
+
+if ($give_wood>$mysql_data["wood"]) {
+     return "Not enough wood";
+} else {
+	$newwood = $mysql_data["wood"]-$give_wood;
+	$getresources = $getresources +$give_wood;
+}
+if ($give_clay>$mysql_data["clay"]) {
+    return "not enough clay";
+} else {
+	$newclay = $mysql_data["clay"]-$give_clay;
+	$getresources = $getresources + $give_clay;
+}
+if ($give_iron>$mysql_data["iron"]) {
+	return "not enough iron";
+} else {
+	$newiron = $mysql_data["iron"]-$give_iron;
+	$getresources = $getresources + $give_iron;
+}
+if ($give_wheat>$mysql_data["wheat"]) {
+	return "not enough wheat";
+} else {
+        $newwheat = $mysql_data["wheat"]-$give_wheat;
+	$getresources = $getresources + $give_wheat;
+}
+
+
+
+
+$market_level_multiplier=($mysql_data["marketplace"]/50);
+$market_multiplier=0.80+$market_level_multiplier;
+
+//MAX MARKET MULTIPLIER
+if ($market_multiplier>1){
+$market_multiplier=1;
+}
+
+$getresources = $getresources * $market_multiplier;
+	
+if ($wantresource==1) {
+	$newwood = $newwood + $getresources;
+}
+if ($wantresource==2) {
+	$newclay = $newclay + $getresources;
+}
+if ($wantresource==3) {
+	$newiron = $newiron + $getresources;
+}
+if ($wantresource==4) {
+	$newwheat = $newwheat + $getresources;
+}
+
+//Send the calculated new resource variables to mysql
+mysql_query("UPDATE map SET wood='$newwood' WHERE village_id='$village_id'");
+mysql_query("UPDATE map SET clay='$newclay' WHERE village_id='$village_id'");
+mysql_query("UPDATE map SET iron='$newiron' WHERE village_id='$village_id'");
+mysql_query("UPDATE map SET wheat='$newwheat' WHERE village_id='$village_id'");
+
+header("location: ../upgradegui.php?building=marketplace");
+}
 //CRONJOB / EVERYONES ACTIONS AT EVERY RELOAD
