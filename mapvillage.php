@@ -32,7 +32,7 @@ exit;
 	<body onfocus="onfocus()" onblur="onblur()">
 <?
 //include database login and update resources
-include "executables/updateresources.php";
+include "executables/start_logic.php";
 ?>
 	
 <!-- CSS GUI BEGINS -->

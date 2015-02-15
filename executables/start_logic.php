@@ -14,5 +14,6 @@ res_calc($current_village_id); //Calc village id resources
 include_once("event_manager.php"); //will be migrated to game_engine.php
 
 
+
 //GET NEW VALUES AFTER EVENT MANAGER //DEPRECATED SOON
 $mysql_data=get_val($current_village_id); //Final values for viewing to player

@@ -7,7 +7,7 @@ exit;
 $upgrade=$_GET["building"];
 
 include("includes/databasedetails.php");
-include("executables/updateresources.php");//ERROR
+include("executables/start_logic.php");//ERROR
 
 /*
 ARRAY CONTAINING ALL THE MESSAGES

@@ -14,7 +14,7 @@ include "includes/databasedetails.php";
 	<body onfocus="onfocus()" onblur="onblur()">
 <?php
 //include database login and update resources
-include "executables/updateresources.php";
+include "executables/start_logic.php";
 ?>
 	
 <!-- CSS GUI BEGINS -->

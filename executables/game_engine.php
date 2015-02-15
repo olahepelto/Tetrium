@@ -709,6 +709,6 @@ header("location: ../upgradegui.php?building=marketplace");
 
 function logout(){
     session_destroy();
-    header("location: http://tetrium.tk");
+    header("location: ../tetrium.php");
 }
 //CRONJOB / EVERYONES ACTIONS AT EVERY RELOAD

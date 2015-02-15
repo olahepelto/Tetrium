@@ -1,6 +1,6 @@
 <?php
 include "../includes/databasedetails.php";
-include "updateresources.php";
+include "start_logic.php";
 
 
 $mailreceiver=$_POST["receiver"];

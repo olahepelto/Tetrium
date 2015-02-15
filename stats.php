@@ -7,7 +7,7 @@
 
 <?php
 include("includes/databasedetails.php");
-include("executables/updateresources.php");
+include("executables/start_logic.php");
 ?>
 	
 <!-- CSS GUI BEGINS -->
