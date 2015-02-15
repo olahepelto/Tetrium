@@ -111,7 +111,7 @@ include "sidebar_javascript.php";
 			<?php echo "Wood: ", $woodcuttersh, " per hour";?><br>
 			<?php echo "Clay: ", $claypitsh, " per hour";?><br>
 			<?php echo "Iron: ", $ironminesh, " per hour";?><br>
-			<?php echo "Pizzas: ", $croplandsh, " per hour";?><br>
+			<?php echo "Potatoes: ", $croplandsh, " per hour";?><br>
 			
 			
 		</div><!-- .sidebar#sideRight -->
