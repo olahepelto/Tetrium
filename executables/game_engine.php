@@ -239,7 +239,7 @@ $arr = array("type"=>"troops","completed"=>$completed,"troop_type"=>$type,"amoun
 
 new_event($arr,$village_id);
 	
-header("location: ../upgradegui.php?building=barracks&message=Success !");	
+header("location: ../upgradegui.php?building=barracks&message=Success!");	
 }
 function upgrade($building, $village_id, $player_id){
 

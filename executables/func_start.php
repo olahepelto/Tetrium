@@ -4,7 +4,7 @@
 include_once "../includes/databasedetails.php";
 include_once "game_engine.php";
 
-if(isset($_GET["troop_type"]) and isset($_GET["train_amount"])){
+if($_GET["type"]=="train"){
 
 	$village_id = $current_village_id;
 	$player_id = $id;

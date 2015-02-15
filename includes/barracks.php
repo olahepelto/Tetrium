@@ -12,6 +12,7 @@ Type:<select onchange="newprice()" name=troop_type id=troop_type>
   Amount:<input onchange="newprice()" id="train_amount" type="text" name="train_amount"><br>
 	Wood:<class id=pricewood>0</class> Clay:<class id=priceclay>0</class> Iron:<class id=priceiron>0</class> Wheat:<class id=pricewheat>0</class> Time:<class id=pricetime>0</class><br>
   <input type="submit" value="Submit">
+  <input type=hidden name="type" value="train">
 </form>
 
 <?php
