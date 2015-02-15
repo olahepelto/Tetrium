@@ -80,3 +80,21 @@ if($_GET["type"]=="del_rep"){
         echo "ERROR: rep id not found or multiple exist";
     }
 }
+if($_GET["type"]=="send_mail"){
+    if(isset($_POST["receiver"]) AND $_POST["topic"])
+        $sender = $id;
+        $receiver = $_POST["receiver"];
+        $topic = $_POST["subject"];
+        $mail = $_POST["message"];
+        
+        $result = mysql_query("SELECT * FROM members WHERE username='$receiver'");
+        while ($row = mysql_fetch_assoc($result)){
+            $receiver = $row["id"];
+        }
+        
+        if(strlen($mail)>10000000000000000 or strlen($topic)>10000000000000000){
+            echo "ERROR: message or topic too long";
+        }
+        
+    send_mail($sender, $receiver, $topic, $mail);
+}

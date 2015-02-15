@@ -39,10 +39,11 @@ include "executables/start_logic.php";
 	<!-----------------------------------------
 	This is the MESSAGE function
 	----------------------------------------->
-		<form name=mail action=executables/sendmail.php id=mail method=POST>
+        <form name=mail action=executables/func_start.php id=mail method=POST>
 			Receiver: <textarea rows=1 cols=40 id=receiver name=receiver></textarea><br>
 			Subject: <textarea rows=1 cols=40 id=subject name=subject></textarea><br>
 			Message: <textarea rows=20 cols=50 id=message name=message></textarea><br>
+                        <input type="hidden" value="send_mail">
 			<input type=submit value=Send>
 	</form>
 
@@ -50,18 +51,11 @@ include "executables/start_logic.php";
 	<!-----------------------------------------
 	This is the end of the MESSAGE function
 	----------------------------------------->
-<br><?
-
-
-
-?>
+<br>
 		<br><div id="uppgrades"><!-- #uppgrades -->
-			<?
+			<?php
 			include "includes/buildingtimer.php";
-			if($admin=1){ 
-			?> <br><a href="reset.php?speed=1">Speed Up</a><br>
-			<a href="reset.php?resources=1">More resources</a>	
-			<?}?>
+?>
 		</div><!-- #uppgrades -->
 		
 		

@@ -1,5 +1,4 @@
 <?php
-
 function get_val($village_id){
 	
 	$result = mysql_query("SELECT * FROM map WHERE village_id='$village_id'");
@@ -126,7 +125,6 @@ set_array_db($res,"map",$village_id);
 
 send_timestamp($village_id);
 }
-
 function set_array_db($array,$table,$village_id){
 	foreach($array as $field => $value){
 	mysql_query("UPDATE $table SET $field='$value' WHERE village_id='$village_id'") or die(mysql_error());
@@ -161,7 +159,6 @@ function new_event($array,$village_id){
 $query = "INSERT INTO `events` (".$par1.") VALUES (".$par2.")";
 mysql_query($query) or die(mysql_error());
 }
-
 function train($type, $amount, $village_id, $player_id){
 
 if (empty($type) or empty($amount)){
@@ -481,7 +478,6 @@ exit;
 
 }
 }
-
 function switch_village($village_id, $player_id){
 	
 	$villages = list_villages($player_id);
@@ -494,7 +490,6 @@ function switch_village($village_id, $player_id){
 	}
 	header("location:../tetrium.php");
 }
-
 function list_villages($player_id){
 	$all_user_villages_ids=array();
 	$x=0;
@@ -509,7 +504,6 @@ function list_villages($player_id){
 	$x=NULL;
 	return $all_user_villages_ids;
 }
-
 function attack($from_village_id, $target_village_id, $troops, $player_id){
 
     
@@ -606,7 +600,6 @@ set_array_db(array("clubswinger"=>$new_clubswinger, "spearman"=>$new_spearman,"a
 header("location: ../attack.php");
 
 }
-
 function speedup($event_id){
     if($_SESSION['varadmin']==0){
 	return "ERROR: Not admin";
@@ -634,7 +627,6 @@ header("location: ../tetrium.php?message=time hacked");
 
 
 }
-
 function change_pass($user,$newpass){
 
 include_once("../includes/databasedetails.php");
@@ -645,7 +637,6 @@ mysql_query("UPDATE members SET password = '$newpass' WHERE username = '$user'")
 header("location:../tetrium.php");
 exit;
 }
-
 function market_action($village_id,$give_wood,$give_clay,$give_iron,$give_wheat,$want){
     $mysql_data = get_val($village_id);
 
@@ -705,20 +696,21 @@ set_array_db($res,"map",$village_id);
 
 header("location: ../upgradegui.php?building=marketplace");
 }
-
 function logout(){
     session_destroy();
     header("location: ../tetrium.php");
 }
-
 function del_report($report_id){
-$result=mysql_query("SELECT * FROM reports WHERE report_id='$report_id'");
-
 if (isset($report_id)){
 	mysql_query("DELETE FROM reports WHERE report_id='$report_id'");
 }else{
 	return "error report id:".$report_id."does not exist";
 }
 header("location: ../reports.php");
+}
+function send_mail($sender,$receiver,$topic,$mail){
+    $now=date('Y-m-d H:i:s');
+    mysql_query("INSERT INTO messages (sender, receiver, topic, message, time) VALUES ('$sender', '$receiver', '$topic', '$message', '$now')") or die(mysql_error());
+    header("location: ../messages.php");
 }
 //CRONJOB / EVERYONES ACTIONS AT EVERY RELOAD
