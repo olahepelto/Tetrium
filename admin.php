@@ -14,7 +14,6 @@ exit;
 <head>
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
 	<title>Admin panel</title>
-	<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 </head>
 	<body onfocus="onfocus()" onblur="onblur()">
 <?php

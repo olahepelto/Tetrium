@@ -7,7 +7,6 @@ exit;
 ?>
 <head>
 	<title>Change infobox</title>
-	<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 <link rel="stylesheet" href="style/login-form.css" type="text/css" media="screen, projection" />
 </head>
 <center>

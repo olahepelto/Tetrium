@@ -8,7 +8,7 @@ else
 </script>
 <html>
 <head>
-	<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
+	<link rel="shortcut icon" type="image/ico" href="/images/favicon.ico"/>
 	<title>Tetrium Login</title>
 <link rel="stylesheet" type="text/css" href="style/login-form.css" />
 

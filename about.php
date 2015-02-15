@@ -1,5 +1,4 @@
-<head>
-<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>	
+<head>	
 </head>
 <center>
 <p>This website is a game in beta.

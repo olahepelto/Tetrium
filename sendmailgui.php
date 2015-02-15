@@ -1,4 +1,4 @@
-<?
+<?php
 include "includes/databasedetails.php";
 
 ?>
@@ -10,10 +10,9 @@ include "includes/databasedetails.php";
 <head>
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
 	<title>Send Mail</title>
-	<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 </head>
 	<body onfocus="onfocus()" onblur="onblur()">
-<?
+<?php
 //include database login and update resources
 include "executables/updateresources.php";
 ?>

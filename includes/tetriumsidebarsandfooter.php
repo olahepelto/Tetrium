@@ -11,7 +11,7 @@
 		</div>
 			</a>
 
-		<div id="button" onclick="var newname=window.prompt('Please enter new village name');if(newname==null){}else{window.location.href = 'http://www.tetrium.tk/tetrium/tetrium.php?newvillagename=' + newname;}">
+		<div id="button" onclick="var newname=window.prompt('Please enter new village name');if(newname==null){}else{window.location.href = '../tetrium.php?newvillagename=' + newname;}">
 		Change village name
 		</div>
 			<?php if($_SESSION['varadmin'] == 1){ ?>

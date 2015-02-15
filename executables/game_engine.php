@@ -630,7 +630,7 @@ mysql_query("UPDATE events SET completed=0 WHERE id='$event_id'") or die(mysql_e
 if($returning==1){
 mysql_query("UPDATE events SET return_completed=0 WHERE id='$event_id'") or die(mysql_error());	
 }
-header("location: http://www.tetrium.tk/tetrium/tetrium.php?message=time hacked");	
+header("location: ../tetrium.php?message=time hacked");	
 }
 
 

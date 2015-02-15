@@ -38,7 +38,7 @@ OUTGOING IDS
 foreach ($sendres_event_ids_out as $timer_event_id){
 if ($sendres_timer_ready_status[$timer_event_id]==false){
 if ($_SESSION["varadmin"]==1){
-echo "Wood:",$sendres_timer_send_wood[$timer_event_id]," Clay:",$sendres_timer_send_clay[$timer_event_id]," Iron:",$sendres_timer_send_iron[$timer_event_id]," Wheat:",$sendres_timer_send_wheat[$timer_event_id]," (To: ", $sendres_timer_village_name[$timer_event_id],")&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$sendres_timer_completed[$timer_event_id] ," <a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a>","<br>";
+echo "Wood:",$sendres_timer_send_wood[$timer_event_id]," Clay:",$sendres_timer_send_clay[$timer_event_id]," Iron:",$sendres_timer_send_iron[$timer_event_id]," Wheat:",$sendres_timer_send_wheat[$timer_event_id]," (To: ", $sendres_timer_village_name[$timer_event_id],")&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$sendres_timer_completed[$timer_event_id] ," <a href=../executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a>","<br>";
 }else{
 echo "(Amount ", $sendres_timer_amount[$timer_event_id],") ","&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$sendres_timer_completed[$timer_event_id] ,"<br>";
 }
@@ -53,7 +53,7 @@ INCOMING IDS
 foreach ($sendres_event_ids_in as $timer_event_id){
 if ($sendres_timer_ready_status[$timer_event_id]==false){
 if ($_SESSION["varadmin"]==1){
-echo "Wood:",$sendres_timer_send_wood[$timer_event_id]," Clay:",$sendres_timer_send_clay[$timer_event_id]," Iron:",$sendres_timer_send_iron[$timer_event_id]," Wheat:",$sendres_timer_send_wheat[$timer_event_id]," (From: ",$sendres_timer_village_name[$timer_event_id],")&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$sendres_timer_completed[$timer_event_id] ," <a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a>","<br>";
+echo "Wood:",$sendres_timer_send_wood[$timer_event_id]," Clay:",$sendres_timer_send_clay[$timer_event_id]," Iron:",$sendres_timer_send_iron[$timer_event_id]," Wheat:",$sendres_timer_send_wheat[$timer_event_id]," (From: ",$sendres_timer_village_name[$timer_event_id],")&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$sendres_timer_completed[$timer_event_id] ," <a href=../executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a>","<br>";
 }else{
 echo "(Amount ", $sendres_timer_amount[$timer_event_id],") ","&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$sendres_timer_completed[$timer_event_id] ,"<br>";
 }
@@ -66,7 +66,7 @@ RETURNING IDS
 foreach ($sendres_event_ids_return as $timer_event_id){
 if ($sendres_timer_ready_status[$timer_event_id]==false){
 if ($_SESSION["varadmin"]==1){
-echo "(Returning from: ",$sendres_timer_village_name[$timer_event_id],")&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$sendres_timer_return_completed[$timer_event_id] ," <a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a>","<br>";}else{
+echo "(Returning from: ",$sendres_timer_village_name[$timer_event_id],")&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$sendres_timer_return_completed[$timer_event_id] ," <a href=../executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a>","<br>";}else{
 echo "(Amount ", $sendres_timer_amount[$timer_event_id],") ","&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$sendres_timer_completed[$timer_event_id] ,"<br>";
 }
 }

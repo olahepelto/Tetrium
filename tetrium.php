@@ -2,7 +2,6 @@
 <head>
 	<title>Tetrium</title>
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
-<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 	</head>
 	<body>
 	<!--onfocus="onfocus()" onblur="onblur()"-->
@@ -44,7 +43,7 @@ if($admin=1){
 		<?php if (isset($_GET["message"])){ ?>
 	<script type="text/javascript">
     alert("<?php echo $_GET["message"]; ?>");
-	window.location = "http://www.tetrium.tk/tetrium/tetrium.php";
+	window.location = "tetrium.php";
     </script>
 		<?php }
 

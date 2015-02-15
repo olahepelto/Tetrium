@@ -1,4 +1,4 @@
-<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>	
+<link rel="shortcut icon" type="image/ico" href="../images/favicon.ico"/>	
 <?php
 session_start();
 if ($_GET["errors"]==1 and $_SESSION["varadmin"]==1){
@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 
 if (!isset($notloggedin)){
 if(empty($_SESSION["myusername"])){
-	header("location:http://www.tetrium.tk/tetrium/main_login.php");
+	header("location:../main_login.php");
 exit;
 }
 }

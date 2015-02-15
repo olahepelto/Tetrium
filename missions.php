@@ -55,7 +55,6 @@ table, th, td {
 	
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
 	<title>Tetrium Missions</title>
-	<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 </head>
 	<body onfocus="onfocus()" onblur="onblur()">
 <?php
@@ -165,7 +164,7 @@ $x = mysql_num_rows($result);
 		
 	<?php
 if ($_SESSION["varadmin"]==1){
-	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_completed ," <a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
+	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_completed ," <a href=executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
 }else{
 	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_completed ,"<br>";
 }
@@ -197,7 +196,7 @@ if ($_SESSION["varadmin"]==1){
 		
 	<?php	
 if ($_SESSION["varadmin"]==1){
-	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_completed ," <a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
+	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_completed ," <a href=executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
 }else{
 	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_completed ,"<br>";
 }
@@ -228,7 +227,7 @@ if ($_SESSION["varadmin"]==1){
 		
 	<?php
 if ($_SESSION["varadmin"]==1){
-	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ," <a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
+	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ," <a href=executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
 }else{
 	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ,"<br>";
 }
@@ -263,7 +262,7 @@ if ($_SESSION["varadmin"]==1){
     <td class="tg-w6cu" colspan="4">
 		<?php	
 if ($_SESSION["varadmin"]==1){
-	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ," <a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
+	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ," <a href=executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
 }else{
 	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ,"<br>";
 }
@@ -297,7 +296,7 @@ if ($_SESSION["varadmin"]==1){
     <td class="tg-w6cu" colspan="4">
 		<?php	
 if ($_SESSION["varadmin"]==1){
-	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ," <a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
+	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ," <a href=executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
 }else{
 	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ,"<br>";
 }
@@ -331,7 +330,7 @@ if ($_SESSION["varadmin"]==1){
     <td class="tg-w6cu" colspan="4">
 		<?php	
 if ($_SESSION["varadmin"]==1){
-	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ," <a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
+	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ," <a href=executables/func_start.php?type=speedup&event_id=",$mission_id,">Speed up</a>","<br>";
 }else{
 	echo "<b id=timer_id_mission_".$mission_id." name=timer_id_mission_".$mission_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," at: ",$mission_return_completed ,"<br>";
 }

@@ -2,10 +2,9 @@
 <head>
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
 	<title>Tetrium Map</title>
-	<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 </head>
 	<body onfocus="onfocus()" onblur="onblur()">
-<?
+<?php
 //include database login and update resources
 include "includes/databasedetails.php";
 include "executables/updateresources.php";
@@ -26,7 +25,7 @@ include "executables/updateresources.php";
 <div id="mapbox">
 	<br><br><br>
 		
-<?
+<?php
 	/*-----------------------------------------
 	REPORTS FUNCTION
 	-----------------------------------------*/	

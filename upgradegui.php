@@ -1,4 +1,4 @@
-<?
+<?php
 if (empty($_GET["building"])){
 header("location:tetrium.php");
 exit;
@@ -235,7 +235,6 @@ $completed=date("Y-m-d H:i:s", strtotime("$timereq2 seconds"));
 <head>
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
 <title><?php echo $name, " Level ", $level; ?></title>
-<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 </head>
 <body onload="start()">
 	

@@ -2,11 +2,10 @@
 <head>
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
 	<title>Tetrium Stats</title>
-	<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 </head>
 <body>
 
-<?
+<?php
 include("includes/databasedetails.php");
 include("executables/updateresources.php");
 ?>

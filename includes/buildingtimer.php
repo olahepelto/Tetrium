@@ -36,7 +36,7 @@ if (lenght_h==1){numhours="0"+numhours;}
 <?php
 foreach ($event_ids as $timer_event_id){
 if ($_SESSION["varadmin"]==1){
-echo "<a href=upgradegui.php?building=",$timer_building[$timer_event_id],">",$timer_building[$timer_event_id],"</a> (Level ", $timer_level[$timer_event_id],") ","&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$timer_completed[$timer_event_id] ,"<a href=/tetrium/executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a><br>";
+echo "<a href=upgradegui.php?building=",$timer_building[$timer_event_id],">",$timer_building[$timer_event_id],"</a> (Level ", $timer_level[$timer_event_id],") ","&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$timer_completed[$timer_event_id] ,"<a href=../executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a><br>";
 }else{
 echo "<a href=upgradegui.php?building=",$timer_building[$timer_event_id],">",$timer_building[$timer_event_id],"</a> (Level ", $timer_level[$timer_event_id],") ","&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$timer_completed[$timer_event_id] ,"<br>";
 }

@@ -1,8 +1,8 @@
 
 <?php
 
-include_once "/var/www/tetrium/includes/databasedetails.php";
-include_once "/var/www/tetrium/executables/game_engine.php";
+include_once "../includes/databasedetails.php";
+include_once "game_engine.php";
 
 if(isset($_GET["troop_type"]) and isset($_GET["train_amount"])){
 

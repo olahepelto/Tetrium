@@ -1,4 +1,4 @@
-<?
+<?php
 include "includes/databasedetails.php";
 $map=true;
 $x=$_GET["x"];
@@ -26,7 +26,6 @@ exit;
 
 <html>
 <head>
-	<link rel="shortcut icon" type="image/ico" href="http://www.tetrium.tk/tetrium/images/favicon.ico"/>
 	<title><?php echo $villagename; ?></title>
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
 </head>
@@ -55,7 +54,7 @@ include "executables/updateresources.php";
 		<div id=resourcefields>
 			<img src="images/bettervillage.png" alt="Error">
 						<br><div id="uppgrades"><!-- #uppgrades -->
-			<?
+			<?php
 			include "includes/buildingtimer.php";
 			if($admin=1){ 
 			?> <br><a href="reset.php?speed=1">Speed Up</a><br>
@@ -65,7 +64,7 @@ include "executables/updateresources.php";
 		<?php if (isset($_GET["message"])){ ?>
 	<script type="text/javascript">
     alert("<?php echo $_GET["message"]; ?>");
-	window.location = "http://www.tetrium.tk/tetrium/tetrium.php";
+	window.location = "../tetrium.php";
     </script>
 		<?php } ?>
 		<!-- Print out building levels -->
