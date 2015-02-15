@@ -1,4 +1,4 @@
-<?
+<?php
 
 include "../includes/databasedetails.php";
 
