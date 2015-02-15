@@ -1,4 +1,4 @@
-<form action="../executables/func_start.php" method=GET>
+<form action="executables/func_start.php" method=GET>
 <select id=switch_id name=switch_id>
 <?php
 foreach($all_user_villages_ids as $user_village_id){
