@@ -40,7 +40,7 @@ include "executables/start_logic.php";
 <div id="mapbox">
 	<br><br><br>
 		
-<?
+<?php
 	/*-----------------------------------------
 	REPORTS FUNCTION
 	-----------------------------------------*/	
@@ -54,7 +54,7 @@ include "executables/start_logic.php";
 	</tr>
 
 	<tr>
-		<?
+		<?php
 while($info = mysql_fetch_array($data)){	
 	echo "<tr>";
 	if($info['is_read']==0){
@@ -62,11 +62,11 @@ while($info = mysql_fetch_array($data)){
 	}else{
 	$rep_status="";
 	}
-	$del_rep_url="executables/del_report.php?rep_id=".$info['report_id'];
+	$del_rep_url="executables/func_start.php?rep_id=".$info['report_id'];
 	echo "<td>","<a style='color: #333; text-decoration: none;' href=viewreport.php?rep_id=",$info['report_id'],">",$info['topic'],$rep_status,"</a></td><td>",$info['time'],"</td><td><a href=",$del_rep_url,">","X","</a></td></tr>"; 
 }
 ?></table>
-		<?
+		<?php
 	/*-----------------------------------------
 	REPORTS FUNCTION ==END==
 	-----------------------------------------*/	
@@ -74,12 +74,12 @@ while($info = mysql_fetch_array($data)){
 		</div><!-- #mapbox-->
 
 		<br><div id="uppgrades"><!-- #uppgrades -->
-			<?
+			<?php
 			include "includes/buildingtimer.php";
 			if($admin=1){ 
 			?> <br><a href="reset.php?speed=1">Speed Up</a><br>
 			<a href="reset.php?resources=1">More resources</a>	
-			<?}?>
+			<?php }?>
 		</div><!-- #uppgrades -->
 		
 		

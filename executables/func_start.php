@@ -69,3 +69,14 @@ if(isset($_GET["give_wood"]) AND isset($_GET["give_wood"]) AND isset($_GET["give
 if($_GET["type"]=="logout"){
     logout();
 }
+if($_GET["type"]=="del_rep"){
+    if(!isset($_GET["rep_id"])){
+        echo 'ERROR: rep id not set or invalid';
+    }
+    $result=mysql_query("SELECT * FROM reports WHERE report_id='$report_id' AND id='$id'");
+    if(mysql_num_rows($result)==1){
+        del_report($_GET["rep_id"]);
+    }else{
+        echo "ERROR: rep id not found or multiple exist";
+    }
+}

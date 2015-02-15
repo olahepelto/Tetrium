@@ -710,4 +710,15 @@ function logout(){
     session_destroy();
     header("location: ../tetrium.php");
 }
+
+function del_report($report_id){
+$result=mysql_query("SELECT * FROM reports WHERE report_id='$report_id'");
+
+if (isset($report_id)){
+	mysql_query("DELETE FROM reports WHERE report_id='$report_id'");
+}else{
+	return "error report id:".$report_id."does not exist";
+}
+header("location: ../reports.php");
+}
 //CRONJOB / EVERYONES ACTIONS AT EVERY RELOAD
