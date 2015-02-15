@@ -608,7 +608,6 @@ header("location: ../attack.php");
 }
 
 function speedup($event_id){
-    
     if($_SESSION['varadmin']==0){
 	return "ERROR: Not admin";
     }

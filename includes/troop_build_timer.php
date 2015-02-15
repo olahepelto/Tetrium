@@ -32,7 +32,7 @@ if (lenght_h==1){numhours="0"+numhours;}
 <?php
 foreach ($troop_event_ids as $timer_event_id){
 if ($_SESSION["varadmin"]==1){
-echo $troop_timer_unit[$timer_event_id]," (Amount ", $troop_timer_amount[$timer_event_id],") ","&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$troop_timer_completed[$timer_event_id] ," <a href=../executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a>","<br>";
+echo $troop_timer_unit[$timer_event_id]," (Amount ", $troop_timer_amount[$timer_event_id],") ","&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$troop_timer_completed[$timer_event_id] ," <a href=executables/func_start.php?type=speedup&event_id=",$timer_event_id,">Speed up</a>","<br>";
 }else{
 echo $troop_timer_unit[$timer_event_id]," (Amount ", $troop_timer_amount[$timer_event_id],") ","&nbsp;&nbsp;&nbsp;&nbsp;<b id=timer_id_".$timer_event_id." name=timer_id_".$timer_event_id.">Javascript Error</b>&nbsp;&nbsp;&nbsp;&nbsp;"," Done at: ",$troop_timer_completed[$timer_event_id] ,"<br>";
 }
