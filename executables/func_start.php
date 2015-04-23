@@ -98,3 +98,16 @@ if($_GET["type"]=="send_mail"){
         
     send_mail($sender, $receiver, $topic, $mail);
 }
+if($_GET["type"]=="nature_reproduce"){
+    if(!isset($_GET["village_id"])){
+        echo 'ERROR: village_id not set or invalid';
+    }
+    
+    $nature_village = mysql_query("SELECT * FROM map WHERE id='$village_id'");
+    
+    if(mysql_num_rows($nature_village)==1){
+        make_nature($_GET["village_id"]);
+    }else{
+        echo "ERROR: village_id not found or multiple exist";
+    }
+}

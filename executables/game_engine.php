@@ -713,4 +713,47 @@ function send_mail($sender,$receiver,$topic,$mail){
     mysql_query("INSERT INTO messages (sender, receiver, topic, message, time) VALUES ('$sender', '$receiver', '$topic', '$message', '$now')") or die(mysql_error());
     header("location: ../messages.php");
 }
+function make_nature($village_id){
+    
+    $result = mysql_query("SELECT * FROM map WHERE village_id='$village_id'");
+    while ($row = mysql_fetch_assoc($result)){
+	$last_attack = $row["last_attack"];
+    }
+    $now=date('Y-m-d H:i:s');
+    
+    //AUTO "BUY" ANIMALS WITH POINTS
+    $time_since_attack = $now - $last_attack;
+    //seven days is 604800 seconds/5000=120points --> max points = average player troops
+    
+    $troop_points = $time_since_attack/5000; 
+
+        while($troop_points>=1){
+            if($troop_points>5){
+                $random = rand(1,5);
+            }else{
+                $random = rand(1,round($troop_points, 0, PHP_ROUND_HALF_DOWN));   
+            }
+            
+           if($random==1){
+               $animals["rat"]++;
+               $random-=1;
+           }elseif($random==2){
+               $animals["pig"]++;
+               $random-=2;
+           }elseif($random==3){
+               $animals["wolf"]++;
+               $random-=3;
+           }elseif($random==4){
+               $animals["elephant"]++;
+               $random-=4;
+           }elseif($random==5){
+               $animals["tiger"]++;
+               $random-=5;
+           }
+        }
+    
+        //ANIMALS TO MYSQL & make other func set last attack to mysql
+        
+    }
+
 //CRONJOB / EVERYONES ACTIONS AT EVERY RELOAD
