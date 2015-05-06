@@ -131,7 +131,7 @@ function set_array_db($array,$table,$village_id){
 	}
 }
 function send_timestamp($village_id){
-$dbnewtime = date("Y-m-d H:i:s");
+$dbnewtime = strtotime(date("Y-d-m H:i:s"));
 mysql_query("UPDATE map SET timestamp='$dbnewtime' WHERE village_id='$village_id'")or die(mysql_error());
 }
 function new_event($array,$village_id){	
