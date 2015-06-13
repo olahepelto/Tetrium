@@ -1,0 +1,63 @@
+ body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 3vh;
+	color:#333;
+}
+p {
+	padding: 10px;
+}
+#wrapper {
+        height: 100vh;
+}
+#headerwrap {
+}
+#header {
+	background: #28bd00;
+	border-radius: 10px;
+	border: 1px solid #000000;
+	margin: 5px;
+        height: 20vh;
+}
+#contentwrap {
+
+}
+#content {
+	background-image: url('http://www.webtexture.net/wp-content/uploads/2012/10/10-Subtle-Textures-Thumb02.jpg');
+	border-radius: 10px;
+	border: 1px solid #ebebeb;
+	margin: 5px;
+        min-height: 20px;
+        height: 20vh;
+}
+#content2 {
+	background-image: url('http://www.webtexture.net/wp-content/uploads/2012/10/10-Subtle-Textures-Thumb02.jpg');
+	border-radius: 10px;
+	border: 1px solid #ebebeb;
+	margin: 5px;
+        min-height: 20px;
+        height: 20vh;
+}
+#content3 {
+	background-image: url('http://www.webtexture.net/wp-content/uploads/2012/10/10-Subtle-Textures-Thumb02.jpg');
+	border-radius: 10px;
+	border: 1px solid #ebebeb;
+	margin: 5px;
+        background: #DDFDEF;
+	border-radius: 10px;
+	border: 1px solid #000000;
+	margin: 5px;
+        min-height: 20px;
+        height: 20vh;
+}
+#footerwrap {
+	clear: both;
+}
+#footer {
+	height: 10vh;
+	background: #33FF66;
+	border-radius: 10px;
+	border: 1px solid #1feb52;
+	margin: 5px;
+}
+html {
+}

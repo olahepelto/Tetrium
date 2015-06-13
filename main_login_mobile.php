@@ -9,8 +9,8 @@ else
 <html>
 <head>
 	<link rel="shortcut icon" type="image/ico" href="/images/favicon.ico"/>
-	<title>Tetrium Login</title>
-<link rel="stylesheet" type="text/css" href="style/login-form.css" />
+	<title>Tetrium Mobile Login</title>
+<link rel="stylesheet" type="text/css" href="style/login-form-mobile.css" />
 </head>
 	<body>
 		
@@ -21,8 +21,8 @@ else
             
     <div id="wrapper">
         <div id="headerwrap">
-        <div id="header"    
-            <p><img src="images/ottoco.png" alt="ottoco"> </p>
+            <div id="header" >   
+            <img width="100%" height="100%" src="images/ottoco.png" alt="ottoco">
         </div>
         </div>
         <div id="contentwrap">
@@ -36,7 +36,7 @@ else
     </tr>
     <tr>
       <td><b>Password</b></td>
-      <td><input name="mypassword" type="password" id="mypassword"></td>
+      <td><input height="3vh" width="3vh" name="mypassword" type="password" id="mypassword"></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -51,9 +51,9 @@ else
 			<?php }else{
 	echo $_GET["msg"]; $_GET["msg"]=""; }?></font>
 	</div>
-        </div>
-        <div id="rightcolumnwrap">
+        <div id="content3">
 			<?php include("includes/infocolumn.html"); ?>
+        </div>   
         </div>
         <div id="footerwrap">
         <div id="footer">

@@ -10,8 +10,8 @@ p {
 	padding: 10px;
 }
 #wrapper {
-	margin: 0 auto;
 	width: 500px;
+        height: 700px;
 }
 #headerwrap {
 	float: left;
@@ -91,15 +91,4 @@ html {
 //margin-right: auto; 
 //min-width: 940px;
 //height: 100%;
-}
-@viewport {
-   width: device-width; 
-	background: url('../images/background.png') no-repeat center;
-	-webkit-background-size: 100%;
-	-moz-background-size: 100%;
-	-o-background-size: 100%;
-margin-left: auto;
-margin-right: auto; 
-//min-width: 940px;
-height: 100%;
 }
