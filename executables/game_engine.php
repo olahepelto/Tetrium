@@ -74,8 +74,8 @@ $ironminesh = ceil((pow($mysql_data["ironmine1"]+6,3+$mysql_data["ironmine1"]/32
 $croplandsh = $croplandsh-$mysql_data["clubswinger"]-$mysql_data["spearman"]-$mysql_data["axeman"];
 
 //change all timestamps to seconds
-$timedifference = strtotime(date("Y-m-d H:i:s"))-strtotime($mysql_data["tsold"]);
-
+$timedifference = strtotime(date("Y-m-d H:i:s"))-$mysql_data["tsold"];
+echo $timedifference;
 //Calculate how much the user has resources now
 $newwood = $timedifference*($woodcuttersh/3600)+$mysql_data["wood"];
 $newclay = $timedifference*($claypitsh/3600)+$mysql_data["clay"];
@@ -131,7 +131,7 @@ function set_array_db($array,$table,$village_id){
 	}
 }
 function send_timestamp($village_id){
-$dbnewtime = strtotime(date("Y-d-m H:i:s"));
+$dbnewtime = strtotime(date("Y-m-d H:i:s"));
 mysql_query("UPDATE map SET timestamp='$dbnewtime' WHERE village_id='$village_id'")or die(mysql_error());
 }
 function new_event($array,$village_id){	
