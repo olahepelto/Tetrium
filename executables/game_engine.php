@@ -47,16 +47,22 @@ while ($row = mysql_fetch_assoc($result)){
 	$clubswinger = $row["clubswinger"];
 	$spearman = $row["spearman"];
 	$axeman = $row["axeman"];
+        $vid = $row["village_id"];//For debug log only
+        $player = $row["player"];//For debug log only
+        $player_id = $row["id"];//For debug log only
+        
+        
+        
 }
 	
-return array("woodcutter1"=>$woodcutter1,"woodcutter2"=>$woodcutter2,"woodcutter3"=>$woodcutter3,"woodcutter4"=>$woodcutter4,
+return array("<font color=red>Troops</font>"=>"--------","clubswinger"=>$clubswinger,
+			 "spearman"=>$spearman,"axeman"=>$axeman,"<font color=red>Fields</font>"=>"--------","woodcutter1"=>$woodcutter1,"woodcutter2"=>$woodcutter2,"woodcutter3"=>$woodcutter3,"woodcutter4"=>$woodcutter4,
 			 "claypit1"=>$claypit1,"claypit2"=>$claypit2,"claypit3"=>$claypit3,"claypit4"=>$claypit4,"ironmine1"=>$ironmine1,
 			 "ironmine2"=>$ironmine2,"ironmine3"=>$ironmine3,"ironmine4"=>$ironmine4,"cropland1"=>$cropland1,"cropland2"=>$cropland2,
-			 "cropland3"=>$cropland3,"cropland4"=>$cropland4,"cropland5"=>$cropland5,"cropland6"=>$cropland6,
+			 "cropland3"=>$cropland3,"cropland4"=>$cropland4,"cropland5"=>$cropland5,"cropland6"=>$cropland6,"<font color=red>Buildings</font>"=>"--------",
 			 "mainbuilding"=>$mainbuilding,"storage"=>$storage,"barracks"=>$barracks,"marketplace"=>$marketplace,"stable"=>$stable,
-			 "wall"=>$wall,"wood"=>$wood,"clay"=>$clay,"iron"=>$iron,"wheat"=>$wheat,
-			 "tsold"=>$tsold,"villagenamei"=>$villagenamei,"villagexi"=>$villagexi,"villageyi"=>$villageyi,"clubswinger"=>$clubswinger,
-			 "spearman"=>$spearman,"axeman"=>$axeman);
+			 "wall"=>$wall,"<font color=red>Resources</font>"=>"------","wood"=>$wood,"clay"=>$clay,"iron"=>$iron,"wheat"=>$wheat,"<font color=red>General</font>"=>"-------",
+			 "tsold"=>$tsold,"player_id"=>$player_id,"player"=>$player,"village_id"=>$vid,"villagenamei"=>$villagenamei,"villagexi"=>$villagexi,"villageyi"=>$villageyi);
 }
 function res_calc($village_id){
 	$mysql_data=get_val($village_id);
@@ -75,7 +81,7 @@ $croplandsh = $croplandsh-$mysql_data["clubswinger"]-$mysql_data["spearman"]-$my
 
 //change all timestamps to seconds
 $timedifference = strtotime(date("Y-m-d H:i:s"))-$mysql_data["tsold"];
-echo $timedifference;
+
 //Calculate how much the user has resources now
 $newwood = $timedifference*($woodcuttersh/3600)+$mysql_data["wood"];
 $newclay = $timedifference*($claypitsh/3600)+$mysql_data["clay"];
@@ -133,6 +139,7 @@ function set_array_db($array,$table,$village_id){
 function send_timestamp($village_id){
 $dbnewtime = strtotime(date("Y-m-d H:i:s"));
 mysql_query("UPDATE map SET timestamp='$dbnewtime' WHERE village_id='$village_id'")or die(mysql_error());
+print_debug($village_id);
 }
 function new_event($array,$village_id){	
 	$fields = array_keys($array);
@@ -755,5 +762,27 @@ function make_nature($village_id){
         //ANIMALS TO MYSQL & make other func set last attack to mysql
         
     }
-
+function print_debug($village_id){
+    $mysql_data=get_val($village_id);
+    if($_SESSION["varadmin"]==1){
+        ?>
+            <a id="show_id" onclick="document.getElementById('spoiler_id').style.display=''; document.getElementById('show_id').style.display='none';" class="link">[Show Debug]</a><span id="spoiler_id" style="display: none"><a onclick="document.getElementById('spoiler_id').style.display='none'; document.getElementById('show_id').style.display='';" class="link">[Hide Debug]</a><br><?php table_print_r($mysql_data);?></span>
+        <?php
+    }
+}
+function table_print_r($my_array) {
+    if (is_array($my_array)) {
+        echo "<table border=1 cellspacing=0 cellpadding=3 width=50px>";
+        echo '<tr><td colspan=2 style="background-color:#333333;"><strong><font color=white>ARRAY</font></strong></td></tr>';
+        foreach ($my_array as $k => $v) {
+                echo '<tr><td valign="top" style="width:40px;background-color:#F0F0F0;">';
+                echo '<strong>' . $k . "</strong></td><td>";
+                table_print_r($v);
+                echo "</td></tr>";
+        }
+        echo "</table>";
+        return;
+    }
+    echo $my_array;
+}
 //CRONJOB / EVERYONES ACTIONS AT EVERY RELOAD
