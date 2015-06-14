@@ -76,13 +76,22 @@ input {
 -----------------------------------------------------------------------------*/
  #sideLeft {
     float: left;
+    width: 300px;
+    /* height: 700px; */
+    max-height:1500px;
+    position: relative;
+    background: #B5E3FF;
+	border-radius: 10px;
+        padding-bottom: 10px;
+}
+#sideLeft2 {
+    float: left;
     width: 200px;
     /* height: 700px; */
     max-height:1000px;
     position: relative;
     background: #B5E3FF;
-	border-radius: 10px;
-    
+    border-radius: 10px;
 }
 /* Sidebar Right
 -----------------------------------------------------------------------------*/

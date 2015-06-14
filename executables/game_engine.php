@@ -55,14 +55,14 @@ while ($row = mysql_fetch_assoc($result)){
         
 }
 	
-return array("<font color=red>Troops</font>"=>"--------","clubswinger"=>$clubswinger,
+return array("<font color=red>General</font>"=>"-------",
+			 "tsold"=>$tsold,"player_id"=>$player_id,"player"=>$player,"village_id"=>$vid,"villagenamei"=>$villagenamei,"villagexi"=>$villagexi,"villageyi"=>$villageyi,"<font color=red>Troops</font>"=>"--------","clubswinger"=>$clubswinger,
 			 "spearman"=>$spearman,"axeman"=>$axeman,"<font color=red>Fields</font>"=>"--------","woodcutter1"=>$woodcutter1,"woodcutter2"=>$woodcutter2,"woodcutter3"=>$woodcutter3,"woodcutter4"=>$woodcutter4,
 			 "claypit1"=>$claypit1,"claypit2"=>$claypit2,"claypit3"=>$claypit3,"claypit4"=>$claypit4,"ironmine1"=>$ironmine1,
 			 "ironmine2"=>$ironmine2,"ironmine3"=>$ironmine3,"ironmine4"=>$ironmine4,"cropland1"=>$cropland1,"cropland2"=>$cropland2,
 			 "cropland3"=>$cropland3,"cropland4"=>$cropland4,"cropland5"=>$cropland5,"cropland6"=>$cropland6,"<font color=red>Buildings</font>"=>"--------",
 			 "mainbuilding"=>$mainbuilding,"storage"=>$storage,"barracks"=>$barracks,"marketplace"=>$marketplace,"stable"=>$stable,
-			 "wall"=>$wall,"<font color=red>Resources</font>"=>"------","wood"=>$wood,"clay"=>$clay,"iron"=>$iron,"wheat"=>$wheat,"<font color=red>General</font>"=>"-------",
-			 "tsold"=>$tsold,"player_id"=>$player_id,"player"=>$player,"village_id"=>$vid,"villagenamei"=>$villagenamei,"villagexi"=>$villagexi,"villageyi"=>$villageyi);
+			 "wall"=>$wall,"<font color=red>Resources</font>"=>"------","wood"=>$wood,"clay"=>$clay,"iron"=>$iron,"wheat"=>$wheat);
 }
 function res_calc($village_id){
 	$mysql_data=get_val($village_id);
@@ -139,7 +139,6 @@ function set_array_db($array,$table,$village_id){
 function send_timestamp($village_id){
 $dbnewtime = strtotime(date("Y-m-d H:i:s"));
 mysql_query("UPDATE map SET timestamp='$dbnewtime' WHERE village_id='$village_id'")or die(mysql_error());
-print_debug($village_id);
 }
 function new_event($array,$village_id){	
 	$fields = array_keys($array);
@@ -772,7 +771,7 @@ function print_debug($village_id){
 }
 function table_print_r($my_array) {
     if (is_array($my_array)) {
-        echo "<table border=1 cellspacing=0 cellpadding=3 width=50px>";
+        echo "<table border=1 cellspacing=0 cellpadding=3 width=100px>";
         echo '<tr><td colspan=2 style="background-color:#333333;"><strong><font color=white>ARRAY</font></strong></td></tr>';
         foreach ($my_array as $k => $v) {
                 echo '<tr><td valign="top" style="width:40px;background-color:#F0F0F0;">';

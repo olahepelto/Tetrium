@@ -1,4 +1,12 @@
-	<div class="sidebar" id="sideLeft">	
+<?php      
+if($_SESSION["varadmin"]==1){ ?>
+<div  style='transform: translate(-300px,-100px)' class="sidebar" id="sideLeft">	
+		<b><strong>DEBUG:</strong></b><br>
+		<?php print_debug($_SESSION["current_village_id"]);?>
+		</div><!-- .sidebar#sideLeft -->
+<?php }?>
+                
+<div <?php if($_SESSION["varadmin"]==1){echo "style='transform: translate(-300px,0px)'";}?> class="sidebar2" id="sideLeft2">	
 		<b><strong>MENU:</strong></b><br>
 		<a href="https://bitbucket.org/tetrium/tetrium/" style="text-decoration: none;">
 		<div id="button">
@@ -41,7 +49,6 @@
 
 
 
-
 <?php if ($sendres_timer_event_ammount_in>0 or $sendres_timer_event_ammount_out>0 or $troop_timer_event_ammount>0 or $returning_sendres_timer_event_ammount>0 or $attack_timer_event_ammount_in>0 or $attack_timer_event_ammount_out>0  or $returning_attack_timer_event_ammount>0){?>
 <div style="width: 200px; float: right;">
 		<div class="sidebar" id="sideRight" style="background:cadetblue;">
@@ -75,17 +82,17 @@ if ($sendres_timer_event_ammount_in>0){echo "<b id=sidebar_timer_id_".$sendres_t
 			 if ($attack_timer_event_ammount_in>0){echo "<b id=sidebar_timer_id_".$attack_timer_event_min_time_id_in." name=sidebar_timer_id_".$attack_timer_event_min_time_id_in.">Javascript Error</b><br>";}
 			
 			
-			if ($sendres_timer_event_ammount_out>0 or $attack_timer_event_ammount_out){?><strong>Outgoing:</strong><br><?}?>
-			<?php if ($sendres_timer_event_ammount_out>0){echo $sendres_timer_event_ammount_out; ?> shipment(s) in<?}
+			if ($sendres_timer_event_ammount_out>0 or $attack_timer_event_ammount_out){?><strong>Outgoing:</strong><br><?php }?>
+			<?php if ($sendres_timer_event_ammount_out>0){echo $sendres_timer_event_ammount_out; ?> shipment(s) in<?php }
 			if ($sendres_timer_event_ammount_out>0){echo "<b id=sidebar_timer_id_".$sendres_timer_event_min_time_id_out." name=sidebar_timer_id_".$sendres_timer_event_min_time_id_out.">Javascript Error</b><br>";}?>
-			<?php if ($attack_timer_event_ammount_out>0){echo $attack_timer_event_ammount_out; ?> attack(s) in<?}
+			<?php if ($attack_timer_event_ammount_out>0){echo $attack_timer_event_ammount_out; ?> attack(s) in<?php }
 			if ($attack_timer_event_ammount_out>0){echo "<b id=sidebar_timer_id_".$attack_timer_event_min_time_id_out." name=sidebar_timer_id_".$attack_timer_event_min_time_id_out.">Javascript Error</b><br>";}
 			
 //OUTGOING IDS Javascript for this is in sidebar_javascript.php
 ?>
 		</div><!-- .sidebar#sideoverRight -->
 	<?php }?>
-<?
+<?php
 include "sidebar_javascript.php";
 ?>
 	
@@ -136,7 +143,7 @@ include "sidebar_javascript.php";
 		<div class="sidebar" id="sideUnderUnderRight">	
 			
 			<strong>Troops:</strong><br>
-			<?
+			<?php
 			if ($mysql_data["clubswinger"]==1){echo "1 Clubswinger<br>";}
 			if ($mysql_data["spearman"]==1){echo "1 Spearman<br>";}
 			if ($mysql_data["axeman"]==1){echo "1 Axeman<br>";}

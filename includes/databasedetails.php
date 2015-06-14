@@ -23,14 +23,10 @@ $current_village_id=$_SESSION["current_village_id"];
 
 
 
-$connection = mysql_connect($host,$username,$password) or die (mysql_error());
+$connection = mysql_connect($host,$username,$password) or die (mysql_error ());
 $sqlerror = mysql_error();
 
 mysql_select_db($db_name,$connection) or die (mysql_error());
-
-//SET TO TRUE IF YOU WANT TO SEE:
-//DEBUG STUFF
-$view_debug=false;
 
 /*
 LIST ALL USER VILLAGES TO VARIABLE $all_user_villages_ids in format [0],[1],[3] etc
