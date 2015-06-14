@@ -2,10 +2,6 @@
 include "includes/databasedetails.php";
 ?>
 
-
-
-
-
 <html>
 <head>
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
@@ -37,7 +33,7 @@ include "executables/start_logic.php";
 <div id="mapbox">
 	<br><br><br>
 		
-<?
+<?php
    $nocords=true;
 
 
@@ -77,8 +73,8 @@ include "executables/start_logic.php";
 			if ($row['type']==-1){ $location="images/mapgreen.png"; }elseif ($row['type']==1){ $location="images/mapvillagev2.png"; }
 			if ($row['type']==-1 and $underattack>0){ $location="images/mapred.png"; }elseif ($row['type']==1 and $underattack>0){ $location="images/mapvillage_under_attack.png"; }
 	
-	?><a id="village<?php echo $vid;?>" onMouseOut="hideTooltip(t<?php echo $vid;?>)" href="mapvillage.php?x=<?php echo $x; ?>&y=<?php echo $y; ?>" onmouseover="showvillage(<?php echo $vid;?>,t<?php echo $vid;?>,<?php echo $underattack;?>)"><img src="<?php echo $location;?>" alt="error"></a><?
-		?><div style="display:none" id="t<?php echo $vid;?>"></div><?
+	?><a id="village<?php echo $vid;?>" onMouseOut="hideTooltip(t<?php echo $vid;?>)" href="mapvillage.php?x=<?php echo $x; ?>&y=<?php echo $y; ?>" onmouseover="showvillage(<?php echo $vid;?>,t<?php echo $vid;?>,<?php echo $underattack;?>)"><img src="<?php echo $location;?>" alt="error"></a>
+        <div style="display:none" id="t<?php echo $vid;?>"></div><?php
 		}
 	}if ($x==10) { $x=0; }
 	}
@@ -95,12 +91,12 @@ include "executables/start_logic.php";
 		</div><!-- #mapbox-->
 
 		<br><div id="uppgrades"><!-- #uppgrades -->
-			<?
+			<?php
 			include "includes/buildingtimer.php";
 			if($admin=1){ 
 			?> <br><a href="reset.php?speed=1">Speed Up</a><br>
 			<a href="reset.php?resources=1">More resources</a>	
-			<?}?>
+			<?php}?>
 		</div><!-- #uppgrades -->
 		
 		

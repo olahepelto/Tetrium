@@ -767,6 +767,9 @@ function print_debug($village_id){
         ?>
             <a id="show_id" onclick="document.getElementById('spoiler_id').style.display=''; document.getElementById('show_id').style.display='none';" class="link">[Show Debug]</a><span id="spoiler_id" style="display: none"><a onclick="document.getElementById('spoiler_id').style.display='none'; document.getElementById('show_id').style.display='';" class="link">[Hide Debug]</a><br><?php table_print_r($mysql_data);?></span>
         <?php
+        if($_GET["show_debug"]==1){
+            ?><script>document.getElementById('spoiler_id').style.display=''; document.getElementById('show_id').style.display='none';</script><?php
+        }
     }
 }
 function table_print_r($my_array) {
@@ -783,5 +786,26 @@ function table_print_r($my_array) {
         return;
     }
     echo $my_array;
+}
+function get_village_id($x,$y,$vname){
+    if(isset($vname)){
+            $query = mysql_query("SELECT village_id FROM map WHERE village='$vname'");
+    }else{
+            $query = mysql_query("SELECT village_id FROM map WHERE x='$x' AND y='$y'");
+    }
+    
+    if(mysql_num_rows($query)>1){
+        echo "SORRY, multiple villages with that name exist";
+        exit;
+    }
+    if(mysql_num_rows($query)==0){
+        echo "ERROR: Village with that name doesn't exist (Remember that village names are case sensitive)";
+        exit;
+    }
+    
+    while ($row = mysql_fetch_assoc($query)){
+        $vid = $row["village_id"];    
+    }
+    return $vid;
 }
 //CRONJOB / EVERYONES ACTIONS AT EVERY RELOAD

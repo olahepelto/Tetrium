@@ -2,7 +2,19 @@
 if($_SESSION["varadmin"]==1){ ?>
 <div  style='transform: translate(-300px,-100px)' class="sidebar" id="sideLeft">	
 		<b><strong>DEBUG:</strong></b><br>
-		<?php print_debug($_SESSION["current_village_id"]);?>
+                <form action="executables/func_start.php?">
+                    <input type="hidden" value="debug_data" name="type" id="type">
+                    X:<input id="x" name="x" style="width:20px";>
+                    Y:<input id="y" name="y" style="width:20px";>
+                    <br>OR<br>
+                    Name:<input id="vname" name="vname" style="width:100px";>
+                    <br>
+                    <input type="submit" value="Get data">
+                </form>
+                <a onclick="window.open('Debug_popup.php', Math.random()*100*Math.random()*100*Math.random()*100, 'width=250, height=1000');">Popup</a><br>
+                    <?php
+                if(empty($_GET["debug_vid"])){$_GET["debug_vid"]=$current_village_id;}
+                print_debug($_GET["debug_vid"]);?>
 		</div><!-- .sidebar#sideLeft -->
 <?php }?>
                 

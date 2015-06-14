@@ -111,3 +111,27 @@ if($_GET["type"]=="nature_reproduce"){
         echo "ERROR: village_id not found or multiple exist";
     }
 }
+if($_GET["type"]=="debug_data"){
+    if((empty($_GET["x"]) or empty($_GET["y"])) and empty($_GET["vname"])){
+        echo 'ERROR: WHAT ARE YOU DOING MATE!!!!';
+        exit;
+    }
+    if(!empty($_GET["x"]) AND !empty($_GET["y"])){
+        $_GET["vname"]=NULL;
+    }
+    $vid = get_village_id($_GET["x"],$_GET["y"],$_GET["vname"]);
+    $str = "location: ../tetrium.php?show_debug=1&debug_vid=".$vid;
+    header($str);
+}
+if($_GET["type"]=="debug_popup"){
+    if((empty($_GET["x"]) or empty($_GET["y"])) and empty($_GET["vname"])){
+        echo 'ERROR: WHAT ARE YOU DOING MATE!!!!';
+        exit;
+    }
+    if(!empty($_GET["x"]) AND !empty($_GET["y"])){
+        $_GET["vname"]=NULL;
+    }
+    $vid = get_village_id($_GET["x"],$_GET["y"],$_GET["vname"]);
+    $str = "location: ../Debug_popup.php?debug_vid=".$vid;
+    header($str);
+}
