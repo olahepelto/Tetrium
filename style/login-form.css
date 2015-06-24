@@ -15,6 +15,7 @@ p {
         left: 50%;
         /* bring your own prefixes */
         transform: translate(-50%, -62%);
+        padding-top: 200px;
 }
 #headerwrap {
 	float: left;
