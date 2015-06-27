@@ -30,7 +30,7 @@ include "executables/start_logic.php";
 		
 		
 
-<div id="mapbox">
+<div style="width: 500px; height: 500px;" id="mapbox">
 	<br><br><br>
 		
 <?php
@@ -73,8 +73,8 @@ include "executables/start_logic.php";
 			if ($row['type']==-1){ $location="images/mapgreen.png"; }elseif ($row['type']==1){ $location="images/mapvillagev2.png"; }
 			if ($row['type']==-1 and $underattack>0){ $location="images/mapred.png"; }elseif ($row['type']==1 and $underattack>0){ $location="images/mapvillage_under_attack.png"; }
 	
-	?><a id="village<?php echo $vid;?>" onMouseOut="hideTooltip(t<?php echo $vid;?>)" href="mapvillage.php?x=<?php echo $x; ?>&y=<?php echo $y; ?>" onmouseover="showvillage(<?php echo $vid;?>,t<?php echo $vid;?>,<?php echo $underattack;?>)"><img src="<?php echo $location;?>" alt="error"></a>
-        <div style="display:none" id="t<?php echo $vid;?>"></div><?php
+	?><a style="float: left;" id="village<?php echo $vid;?>" onMouseOut="hideTooltip(t<?php echo $vid;?>)" href="mapvillage.php?x=<?php echo $x; ?>&y=<?php echo $y; ?>" onmouseover="showvillage(<?php echo $vid;?>,t<?php echo $vid;?>,<?php echo $underattack;?>)"><div style="display:none; transform: translate(50px,50px);" id="t<?php echo $vid;?>"></div><img src="<?php echo $location;?>" alt="error"></a>
+        <?php
 		}
 	}if ($x==10) { $x=0; }
 	}
@@ -148,7 +148,7 @@ include "executables/start_logic.php";
 	<script language="javascript" type="text/javascript" >
 function showTooltip(div, vname, owner, type, x, y, attackamount)
 {
- div.style.display = 'inline';
+ div.style.display = 'flex';
  div.style.position = 'absolute';
  div.style.width = 'auto';
  div.style.backgroundColor = '#EFFCF0';

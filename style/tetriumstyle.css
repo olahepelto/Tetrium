@@ -55,7 +55,6 @@ input {
 /* Middle
 -----------------------------------------------------------------------------*/
  #middle {
-    height: 1%;
     position: relative;
 }
 #middle:after {
