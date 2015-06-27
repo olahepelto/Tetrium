@@ -48,9 +48,8 @@ LIST ALL USER VILLAGES END
 
 
 
-
-if (empty($dontrun) && strpos($_SERVER['PHP_SELF'],'/includes/') == false && strpos($_SERVER['PHP_SELF'],'/executables/') == false && strpos($_SERVER['PHP_SELF'],'/tetrium/') !== false) {
-require_once("includes/servertime.php");
+if (empty($dontrun) && strpos($_SERVER['PHP_SELF'],'/includes/') == false && strpos($_SERVER['PHP_SELF'],'/executables/') == false) {
+//require_once("includes/servertime.php");
 $dontrun=true;
 }
 

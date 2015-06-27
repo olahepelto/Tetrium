@@ -1,10 +1,10 @@
-ErrorDocument 401 /tetrium/Error/401.php
-ErrorDocument 402 /tetrium/Error/402.php
-ErrorDocument 403 /tetrium/Error/403.php
-ErrorDocument 404 /tetrium/Error/404.php
-ErrorDocument 408 /tetrium/Error/408.php
-ErrorDocument 500 /tetrium/Error/500.php
-ErrorDocument 502 /tetrium/Error/502.php
+ErrorDocument 401 /Error/401.php
+ErrorDocument 402 /Error/402.php
+ErrorDocument 403 /Error/403.php
+ErrorDocument 404 /Error/404.php
+ErrorDocument 408 /Error/408.php
+ErrorDocument 500 /Error/500.php
+ErrorDocument 502 /Error/502.php
 
 
 ## EXPIRES CACHING ##

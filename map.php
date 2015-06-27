@@ -93,10 +93,7 @@ include "executables/start_logic.php";
 		<br><div id="uppgrades"><!-- #uppgrades -->
 			<?php
 			include "includes/buildingtimer.php";
-			if($admin=1){ 
-			?> <br><a href="reset.php?speed=1">Speed Up</a><br>
-			<a href="reset.php?resources=1">More resources</a>	
-			<?php}?>
+                        ?>
 		</div><!-- #uppgrades -->
 		
 		

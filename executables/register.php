@@ -58,7 +58,7 @@ $message = "
 </head>
 <body>
 <p>Click on the link to confirm registration</p>
-<a href='tetrium.tk/tetrium/activation.php?code=".$code."'>
+<a href='tetrium.tk/activation.php?code=".$code."'>
 ";
 
 // Always set content-type when sending HTML email
