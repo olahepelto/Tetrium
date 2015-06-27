@@ -1,10 +1,4 @@
-<html>
-<head>
-</head>
-<body>
-
 <?php
-
 $notloggedin=true;
 include "../includes/databasedetails.php";
 $notloggedin=NULL;
@@ -21,8 +15,6 @@ $mypassword = mysql_real_escape_string($mypassword);
 
 
 //ALL THE DATABASE STUFF DOWN
-
-
 
 $result = mysql_query("SELECT * FROM members WHERE username = '$myusername'");
 
@@ -56,6 +48,3 @@ echo "Wrong Username or Password";
 ?>
 
 	<a href="../main_login.php">Try Again</a>
-
-</body>
-</html>

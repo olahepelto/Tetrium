@@ -1,0 +1,32 @@
+ErrorDocument 401 /tetrium/Error/401.php
+ErrorDocument 402 /tetrium/Error/402.php
+ErrorDocument 403 /tetrium/Error/403.php
+ErrorDocument 404 /tetrium/Error/404.php
+ErrorDocument 408 /tetrium/Error/408.php
+ErrorDocument 500 /tetrium/Error/500.php
+ErrorDocument 502 /tetrium/Error/502.php
+
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive Off
+ExpiresByType image/jpg "access 1 hour"
+ExpiresByType image/jpeg "access 1 hour"
+ExpiresByType image/gif "access 1 hour"
+ExpiresByType image/png "access 1 hour"
+#ExpiresByType text/css "access 1 hour"
+#ExpiresByType text/html "access 1 hour"
+#ExpiresByType text/x-javascript "access 1 hour"
+ExpiresByType image/x-icon "access 1 hour"
+#ExpiresDefault "access 1 hour"
+</IfModule>
+## EXPIRES CACHING ##
+
+#php_flag display_errors on
+
+RewriteEngine On
+
+#mysql.tetrium.tk
+RewriteCond %{HTTP_HOST} ^(www\.)?mysql\.tetrium\.tk$
+RewriteCond %{REQUEST_URI} !^/phpmyadmin
+RewriteRule ^(.*)$ /phpmyadmin/$1 [L]
