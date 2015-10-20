@@ -62,14 +62,14 @@ input {
     clear: both;
     display: table;
 }
+#content {
+    padding: 0 20px;
+}
 #container {
     width: 100%;
     float: left;
     overflow: hidden;
     margin-right: -100%;
-}
-#content {
-    padding: 0 20px;
 }
 /* Sidebar Left
 -----------------------------------------------------------------------------*/
