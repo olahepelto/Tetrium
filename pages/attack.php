@@ -4,7 +4,7 @@
 	<title>Tetrium Attack</title>
 </head>
 	<body onfocus="onfocus()" onblur="onblur()">
-<?
+<?php
 //include database login and update resources
 include "includes/databasedetails.php";
 include "executables/start_logic.php";
@@ -29,7 +29,7 @@ include "executables/start_logic.php";
 <div id="mapbox">
 	<br><br><br>
 		
-	<?
+	<?php
 	/*-----------------------------------------
 	This is the Attack function
 	-----------------------------------------*/	

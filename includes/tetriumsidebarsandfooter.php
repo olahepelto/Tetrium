@@ -108,20 +108,7 @@ if ($sendres_timer_event_ammount_in>0){echo "<b id=sidebar_timer_id_".$sendres_t
 include "sidebar_javascript.php";
 ?>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 <div style="width: 200px; float: right;">
 
 	<div class="sidebar" id="sideRight">
@@ -139,12 +126,12 @@ include "sidebar_javascript.php";
 			
 			
 			<strong>Buildings:</strong><br>
-			<a href="upgradegui.php?building=mainbuilding">Main Building Level: <?php echo $mainbuilding;?></a><br>
-			<a href="upgradegui.php?building=storage">Storage Level: <?php echo $storage;?></a><br>
-			<a href="upgradegui.php?building=barracks">Barracks Level: <?php echo $barracks;?></a><br>
-			<a href="upgradegui.php?building=marketplace">Marketplace Level: <?php echo $marketplace;?></a><br>
-			<a href="upgradegui.php?building=stable">Stable Level: <?php echo $stable;?></a><br>
-			<a href="upgradegui.php?building=wall">Wall Level: <?php echo $wall;?></a><br>
+			<a href="tetrium.php?p=ugg&building=mainbuilding">Main Building Level: <?php echo $mainbuilding;?></a><br>
+			<a href="tetrium.php?p=ugg&building=storage">Storage Level: <?php echo $storage;?></a><br>
+			<a href="tetrium.php?p=ugg&building=barracks">Barracks Level: <?php echo $barracks;?></a><br>
+			<a href="tetrium.php?p=ugg&building=marketplace">Marketplace Level: <?php echo $marketplace;?></a><br>
+			<a href="tetrium.php?p=ugg&building=stable">Stable Level: <?php echo $stable;?></a><br>
+			<a href="tetrium.php?p=ugg&building=wall">Wall Level: <?php echo $wall;?></a><br>
 			More Coming soon<br>
 			
 			
@@ -176,9 +163,9 @@ include "sidebar_javascript.php";
 	<!--MAP-->
 	<div class="sidebar" id="sideUnderRight" style="background: #2E64FE;">
 	<strong>Actions:<br>
-		<a style="color:#FE2E2E;" href="attack.php?x=<?php echo $_GET["x"];?>&y=<?php echo $_GET["y"]; ?>">Attack</a><br>
+		<a style="color:#FE2E2E;" href="tetrium.php?p=att&x=<?php echo $_GET["x"];?>&y=<?php echo $_GET["y"]; ?>">Attack</a><br>
 		<a style="color:#40FF00;" href="reinforce.php?y=<?php echo $_GET["x"];?>&y=<?php echo $_GET["y"]; ?>">Reinforce</a><br>
-		<a style="color:#40FF00;" href="send_resources.php?x=<?php echo $_GET["x"];?>&y=<?php echo $_GET["y"]; ?>">Send resources</a>
+		<a style="color:#40FF00;" href="tetrium.php?p=srs&x=<?php echo $_GET["x"];?>&y=<?php echo $_GET["y"]; ?>">Send resources</a>
 		
 	</strong>
 	</div><!-- /MAP -->	
@@ -187,9 +174,9 @@ include "sidebar_javascript.php";
 	<!--MAP-->
 	<div class="sidebar" id="sideUnderRight" style="background: #2E64FE;">
 	<strong>Actions:<br>
-		<a style="color:#FE2E2E;" href="attack.php?nocords=true">Attack</a><br>
+		<a style="color:#FE2E2E;" href="tetrium.php?p=att&nocords=true">Attack</a><br>
 		<a style="color:#40FF00;" href="reinforce.php?nocords=true">Reinforce</a><br>
-		<a style="color:#40FF00;" href="send_resources.php?nocords=true">Send resources</a>
+		<a style="color:#40FF00;" href="tetrium.php?p=srs&nocords=true">Send resources</a>
 		
 	</strong>
 	</div><!-- /MAP -->	

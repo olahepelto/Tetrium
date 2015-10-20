@@ -1,28 +1,4 @@
-<html>
-<head>
-<link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
-	<title>Tetrium Map</title>
-</head>
-	<body onfocus="onfocus()" onblur="onblur()">
-<?php
-//include database login and update resources
-include "includes/databasedetails.php";
-include "executables/start_logic.php";
-?>
-	
-<!-- CSS GUI BEGINS -->
-<center>
-<div id="wrapper">
-	
-	<!-- HEADER -->
-	<?php include("includes/tetriumheader.php") ?>
-	<!-- HEADER -->
-	
-	<div id="middle">
-	<div id="container">
-	<div id="content">	
-
-<div id="mapbox">
+<div id="content">
 	<br><br><br>
 		
 <?php
@@ -125,7 +101,7 @@ mysql_query("UPDATE reports SET is_read=1 WHERE report_id='$report_id'") or die(
   </tr>
 </table>
 	
-<?
+<?php
 }elseif($info['type']=="sendres"){
 ?>
 <table class="tg">
@@ -156,42 +132,9 @@ mysql_query("UPDATE reports SET is_read=1 WHERE report_id='$report_id'") or die(
 </table>
 <br><br>
 </style>
-<?	
+<?php	
 }
 }
 }
 ?>
-		<?
-	/*-----------------------------------------
-	REPORTS FUNCTION ==END==
-	-----------------------------------------*/	
-?>
-		</div><!-- #mapbox-->
-
-		<br><div id="uppgrades"><!-- #uppgrades -->
-			<?
-			include "includes/buildingtimer.php";
-			if($admin=1){ 
-			?> <br><a href="reset.php?speed=1">Speed Up</a><br>
-			<a href="reset.php?resources=1">More resources</a>	
-			<?}?>
-		</div><!-- #uppgrades -->
-		
-		
-		</div><!-- #content-->
-		</div><!-- #container-->
-		
-	<!-- SIDEBARS AND FOOTER -->
-		
-		<?php $map2=true;
-			include("includes/tetriumsidebarsandfooter.php");
-		?>
-	<!-- SIDEBARS AND FOOTER -->
-		
-</div><!-- #wrapper -->
-</center>
-	
-	<?php include("includes/tetriumjavascript.php"); ?>
-
-	</body>
-	</html>
+</div><!-- #mapbox-->

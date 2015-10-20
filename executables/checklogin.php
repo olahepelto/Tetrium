@@ -39,7 +39,7 @@ $_SESSION["varadmin"]=$varadmin;
 $_SESSION["myusername"]=$myusername;
 $_SESSION["current_village_id"]=$village_id;
 	
-	header("location:../tetrium.php");
+	header("location:../tetrium.php?p=res");
 	exit;
 }
 else {

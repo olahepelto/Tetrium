@@ -30,7 +30,7 @@ exit;
 <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
 </head>
 	<body onfocus="onfocus()" onblur="onblur()">
-<?
+<?php
 //include database login and update resources
 include "executables/start_logic.php";
 ?>

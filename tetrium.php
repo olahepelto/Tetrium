@@ -15,7 +15,58 @@
                 <div id="middle">
                     <div id="container">
                         <div id="content" style="padding-top: 20px;">
-                            <?php include "resourcefields.php";?>
+                            
+                            <?php
+                            switch ($_GET["p"]) {
+                                case "adm":
+                                    $page = "admin";
+                                break;
+                                case "att":
+                                    $page = "attack";
+                                break;
+                                case "map":
+                                    $page = "map";
+                                break;
+                                case "mpv":
+                                    $page = "mapvillage";
+                                break;
+                                case "msg":
+                                    $page = "messages";
+                                break;
+                                case "mis":
+                                    $page = "missions";
+                                break;
+                                case "rep":
+                                    $page = "reports";
+                                break;
+                                case "res":
+                                    $page = "resourcefields";
+                                break;
+                                case "srs":
+                                    $page = "send_resources";
+                                break;
+                                case "smg":
+                                    $page = "sendmailgui";
+                                break;
+                                case "sts":
+                                    $page = "stats";
+                                break;
+                                case "ugg":
+                                    $page = "upgradegui";
+                                break;
+
+                                case "vre":
+                                    $page = "viewreport";
+                                break;
+
+                                default:
+                                    $page = "page_error";
+                                break;
+                            }
+                            
+                            include "pages/".$page.".php";?>
+                            <br><br><br><br><br>
+                            <?php include "includes/buildingtimer.php";?>
                 
                         </div><!-- #content-->
                     </div><!-- #container-->

@@ -1,43 +1,7 @@
-<?php
-include "includes/databasedetails.php";
-?>
-
-<html>
-<head>
-<link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
-	<title>Tetrium Map</title>
-</head>
-	<body onfocus="onfocus()" onblur="onblur()">
-<?php
-//include database login and update resources
-include "includes/databasedetails.php";
-include "executables/start_logic.php";
-?>
-	
-<!-- CSS GUI BEGINS -->
-<center>
-<div id="wrapper">
-	
-	<!-- HEADER -->
-	<?php include("includes/tetriumheader.php") ?>
-	<!-- HEADER -->
-	
-	<div id="middle">
-	<div id="container">
-	<div id="content">	
-	
-		
-		
-		
-
 <div style="width: 500px; height: 500px;" id="mapbox">
-	<br><br><br>
 		
 <?php
    $nocords=true;
-
-
-
 
 	/*-----------------------------------------
 	This is the mighty map square function
@@ -73,7 +37,7 @@ include "executables/start_logic.php";
 			if ($row['type']==-1){ $location="images/mapgreen.png"; }elseif ($row['type']==1){ $location="images/mapvillagev2.png"; }
 			if ($row['type']==-1 and $underattack>0){ $location="images/mapred.png"; }elseif ($row['type']==1 and $underattack>0){ $location="images/mapvillage_under_attack.png"; }
 	
-	?><a style="float: left;" id="village<?php echo $vid;?>" onMouseOut="hideTooltip(t<?php echo $vid;?>)" href="mapvillage.php?x=<?php echo $x; ?>&y=<?php echo $y; ?>" onmouseover="showvillage(<?php echo $vid;?>,t<?php echo $vid;?>,<?php echo $underattack;?>)"><div style="display:none; transform: translate(50px,50px);" id="t<?php echo $vid;?>"></div><img src="<?php echo $location;?>" alt="error"></a>
+	?><a style="float: left;" id="village<?php echo $vid;?>" onMouseOut="hideTooltip(t<?php echo $vid;?>)" href="tetrium.php?p=mpv&x=<?php echo $x; ?>&y=<?php echo $y; ?>" onmouseover="showvillage(<?php echo $vid;?>,t<?php echo $vid;?>,<?php echo $underattack;?>)"><div style="display:none; transform: translate(50px,50px);" id="t<?php echo $vid;?>"></div><img src="<?php echo $location;?>" alt="error"></a>
         <?php
 		}
 	}if ($x==10) { $x=0; }
@@ -90,44 +54,6 @@ include "executables/start_logic.php";
 	?>
 		</div><!-- #mapbox-->
 
-		<br><div id="uppgrades"><!-- #uppgrades -->
-			<?php
-			include "includes/buildingtimer.php";
-                        ?>
-		</div><!-- #uppgrades -->
-		
-		
-		</div><!-- #content-->
-		</div><!-- #container-->
-		
-	<!-- SIDEBARS AND FOOTER -->
-		
-		<?php $map2=true;
-			include("includes/tetriumsidebarsandfooter.php");
-		?>
-	<!-- SIDEBARS AND FOOTER -->
-		
-</div><!-- #wrapper -->
-</center>
-	
-	<?php include("includes/tetriumjavascript.php"); ?>
-
-	</body>
-	</html>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	<!-- JAVASCRPTS -->
 	<script>
 	function showvillage(villageid,tool,attackamount){
@@ -143,9 +69,7 @@ include "executables/start_logic.php";
 	document.getElementById('showy').innerHTML = vidy[villageid];*/
 		showTooltip(tool, villagename[villageid], owner[villageid], type[villageid], vidx[villageid], vidy[villageid], attackamount);
 	}
-	</script>
-	
-	<script language="javascript" type="text/javascript" >
+
 function showTooltip(div, vname, owner, type, x, y, attackamount)
 {
  div.style.display = 'flex';
