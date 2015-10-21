@@ -1,5 +1,4 @@
 <?php
-include "includes/databasedetails.php";
 $map=true;
 $x=$_GET["x"];
 $y=$_GET["y"];
@@ -23,85 +22,39 @@ header("location: tetrium.php");
 exit;	
 }
 ?>
-
-<html>
-<head>
-	<title><?php echo $villagename; ?></title>
-<link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection" />
-</head>
-	<body onfocus="onfocus()" onblur="onblur()">
-<?php
-//include database login and update resources
-include "executables/start_logic.php";
-?>
 	
 <!-- CSS GUI BEGINS -->
 <center>
-	<div id="wrapper">
+    <br>
+    <font size=6><?php echo $villagename, " (", $villagex, "|", $villagey, ")"; ?></font><br><br>
+    <div id=resourcefields>
+        <img src="images/bettervillage.png" alt="Error">
+        <?php if (isset($_GET["message"])){ ?>
+        <script type="text/javascript">
+            alert("<?php echo $_GET["message"]; ?>");
+            window.location = "../tetrium.php";
+        </script>
+        <?php }?>
+        <a><div id=woodcutter1level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=woodcutter2level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=woodcutter3level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=woodcutter4level2><img src="images/boll.png" alt="Error"></div></a>
 	
-	<!-- HEADER -->
-	<?php include("includes/tetriumheader.php") ?>
-	<!-- HEADER -->
+        <a><div id=claypit1level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=claypit2level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=claypit3level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=claypit4level2><img src="images/boll.png" alt="Error"></div></a>
 	
-	<div id="middle">
-	<div id="container">
-	<div id="content">	
-	<br><br><br>
-		<font size=6><?php echo $villagename, " (", $villagex, "|", $villagey, ")"; ?></font><br><br>
-		
+        <a><div id=ironmine1level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=ironmine2level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=ironmine3level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=ironmine4level2><img src="images/boll.png" alt="Error"></div></a>
 	
-		
-		<div id=resourcefields>
-			<img src="images/bettervillage.png" alt="Error">
-						<br><div id="uppgrades"><!-- #uppgrades -->
-			<?php
-			include "includes/buildingtimer.php";
-			if($admin=1){ 
-			?> <br><a href="reset.php?speed=1">Speed Up</a><br>
-			<a href="reset.php?resources=1">More resources</a>	
-			<?}?>
-		</div><!-- #uppgrades -->
-		<?php if (isset($_GET["message"])){ ?>
-	<script type="text/javascript">
-    alert("<?php echo $_GET["message"]; ?>");
-	window.location = "../tetrium.php";
-    </script>
-		<?php } ?>
-		<!-- Print out building levels -->
-	<a><div id=woodcutter1level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=woodcutter2level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=woodcutter3level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=woodcutter4level2><img src="images/boll.png" alt="Error"></div></a>
-	
-	<a><div id=claypit1level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=claypit2level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=claypit3level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=claypit4level2><img src="images/boll.png" alt="Error"></div></a>
-	
-	<a><div id=ironmine1level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=ironmine2level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=ironmine3level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=ironmine4level2><img src="images/boll.png" alt="Error"></div></a>
-	
-	<a><div id=cropland1level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=cropland2level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=cropland3level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=cropland4level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=cropland5level2><img src="images/boll.png" alt="Error"></div></a>
-	<a><div id=cropland6level2><img src="images/boll.png" alt="Error"></div></a>
-			
-		</div><!-- #resourcefields -->
-		</div><!-- #content-->
-		</div><!-- #container-->
-		
-	<!-- SIDEBARS AND FOOTER -->	
-		<?php include("includes/tetriumsidebarsandfooter.php"); ?>
-	<!-- SIDEBARS AND FOOTER -->
-		
-</div><!-- #wrapper -->
-		</center>
-	
-	<?php include("includes/tetriumjavascript.php"); ?>
-
-	</body>
-	</html>
+        <a><div id=cropland1level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=cropland2level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=cropland3level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=cropland4level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=cropland5level2><img src="images/boll.png" alt="Error"></div></a>
+        <a><div id=cropland6level2><img src="images/boll.png" alt="Error"></div></a>
+    </div><!-- #resourcefields -->
+</center>
