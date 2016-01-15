@@ -1,6 +1,10 @@
 <link rel="shortcut icon" type="image/ico" href="../images/favicon.ico"/>	
 <?php
 session_start();
+
+ini_set('display_errors', 'Off');
+error_reporting(0);
+
 if ($_GET["errors"]==1 and $_SESSION["varadmin"]==1){
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
@@ -13,7 +17,7 @@ exit;
 }
 }
 
-$host="localhost"; // Host name
+$host="ftp.tetrium.tk"; // Host name
 $username= "root"; // Mysql username
 $password="***REMOVED***"; // Mysql password
 $db_name="tetrium"; // Database name
