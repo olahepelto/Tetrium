@@ -1,11 +1,11 @@
 <?php
-$notloggedin=true;
+$notloggedin = true;
 include "../includes/databasedetails.php";
-$notloggedin=NULL;
+$notloggedin = NULL;
 
 
-$myusername=$_POST['myusername']; 
-$mypassword=$_POST['mypassword']; 
+$myusername = $_POST['myusername'];
+$mypassword = $_POST['mypassword'];
 
 //anti mysql injection
 $myusername = stripslashes($myusername);
@@ -20,31 +20,30 @@ $result = mysql_query("SELECT * FROM members WHERE username = '$myusername'");
 
 //fetch stuff from database
 while ($row = mysql_fetch_assoc($result)) {
-$varid = $row["id"];
-$varusername = $row["username"];
-$varpassword = $row["password"];
-$varadmin = $row["admin"];
+    $varid = $row["id"];
+    $varusername = $row["username"];
+    $varpassword = $row["password"];
+    $varadmin = $row["admin"];
 }
 
-if($myusername == $varusername and md5($mypassword) == $varpassword){
+if ($myusername == $varusername and md5($mypassword) == $varpassword) {
 
-$result = mysql_query("SELECT * FROM map WHERE id='$varid';");
-while ($row = mysql_fetch_assoc($result)) {
-$village_id=$row["village_id"];
-}	
+    $result = mysql_query("SELECT * FROM map WHERE id='$varid';");
+    while ($row = mysql_fetch_assoc($result)) {
+        $village_id = $row["village_id"];
+    }
 
-$_SESSION["varid"]=$varid;
-$_SESSION["mypassword"]=$mypassword;
-$_SESSION["varadmin"]=$varadmin;
-$_SESSION["myusername"]=$myusername;
-$_SESSION["current_village_id"]=$village_id;
-	
-	header("location:../tetrium.php?p=res");
-	exit;
-}
-else {
-echo "Wrong Username or Password";
+    $_SESSION["varid"] = $varid;
+    $_SESSION["mypassword"] = $mypassword;
+    $_SESSION["varadmin"] = $varadmin;
+    $_SESSION["myusername"] = $myusername;
+    $_SESSION["current_village_id"] = $village_id;
+
+    header("location:../tetrium.php?p=res");
+    exit;
+} else {
+    echo "Wrong Username or Password";
 }
 ?>
 
-	<a href="../main_login.php">Try Again</a>
+<a href="../main_login.php">Try Again</a>

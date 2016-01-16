@@ -1,36 +1,80 @@
 <div id="content">
-	<br><br><br>
-		
-<?php
-	/*-----------------------------------------
-	REPORTS FUNCTION
-	-----------------------------------------*/	
-	$report_id=$_GET["rep_id"];
-	$data = mysql_query("SELECT * FROM reports WHERE report_id='$report_id'");
+    <br><br><br>
 
-while($info = mysql_fetch_array($data)){
-if ($info['player_id']!=$id){
-	echo "you don't have permission to view this report :P";
-	$perm=0;
-}elseif($info['player_id']==$id){
-	$perm=1;
-}
+    <?php
+    /*-----------------------------------------
+    REPORTS FUNCTION
+    -----------------------------------------*/
+    $report_id = $_GET["rep_id"];
+    $data = mysql_query("SELECT * FROM reports WHERE report_id='$report_id'");
+
+    while ($info = mysql_fetch_array($data)) {
+        if ($info['player_id'] != $id) {
+            echo "you don't have permission to view this report :P";
+            $perm = 0;
+        } elseif ($info['player_id'] == $id) {
+            $perm = 1;
+        }
 //THE REPORT PART
-if($perm=1){
-mysql_query("UPDATE reports SET is_read=1 WHERE report_id='$report_id'") or die(mysql_error());
-?>
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:2px 8px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:2px 8px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg .tg-6eq8{color:#333333}
-.tg .tg-rujl{font-weight:bold;font-size:14px;background-color:#9b9b9b;color:#333333}
-.tg .tg-gn9g{font-size:14px;color:#333333}
-.tg .tg-9sz5{font-weight:bold;background-color:#9b9b9b;color:#333333}
-.tg .tg-ygl1{font-weight:bold;background-color:#9b9b9b}
-</style>
-	
-	<?php if ($info['type']=="attack"){?>
+        if ($perm = 1) {
+            mysql_query("UPDATE reports SET is_read=1 WHERE report_id='$report_id'") or die(mysql_error());
+            ?>
+            <style type="text/css">
+                .tg {
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                }
+
+                .tg td {
+                    font-family: Arial, sans-serif;
+                    font-size: 14px;
+                    padding: 2px 8px;
+                    border-style: solid;
+                    border-width: 1px;
+                    overflow: hidden;
+                    word-break: normal;
+                }
+
+                .tg th {
+                    font-family: Arial, sans-serif;
+                    font-size: 14px;
+                    font-weight: normal;
+                    padding: 2px 8px;
+                    border-style: solid;
+                    border-width: 1px;
+                    overflow: hidden;
+                    word-break: normal;
+                }
+
+                .tg .tg-6eq8 {
+                    color: #333333
+                }
+
+                .tg .tg-rujl {
+                    font-weight: bold;
+                    font-size: 14px;
+                    background-color: #9b9b9b;
+                    color: #333333
+                }
+
+                .tg .tg-gn9g {
+                    font-size: 14px;
+                    color: #333333
+                }
+
+                .tg .tg-9sz5 {
+                    font-weight: bold;
+                    background-color: #9b9b9b;
+                    color: #333333
+                }
+
+                .tg .tg-ygl1 {
+                    font-weight: bold;
+                    background-color: #9b9b9b
+                }
+            </style>
+
+            <?php if ($info['type'] == "attack") {?>
 <table class="tg">
   <tr>
     <th class="tg-rujl">Topic</th>
@@ -102,7 +146,7 @@ mysql_query("UPDATE reports SET is_read=1 WHERE report_id='$report_id'") or die(
 </table>
 	
 <?php
-}elseif($info['type']=="sendres"){
+} elseif($info['type']=="sendres"){
 ?>
 <table class="tg">
   <tr>
@@ -134,7 +178,7 @@ mysql_query("UPDATE reports SET is_read=1 WHERE report_id='$report_id'") or die(
 </style>
 <?php	
 }
-}
-}
-?>
+        }
+    }
+    ?>
 </div><!-- #mapbox-->

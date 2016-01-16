@@ -1,8 +1,8 @@
 <?php
 include "includes/databasedetails.php";
-if($_SESSION['varadmin']==0){
-	header("location:tetrium.php");
-exit;
+if ($_SESSION['varadmin'] == 0) {
+    header("location:tetrium.php");
+    exit;
 }
 
 echo "<br> Will make better, for now use db.";
