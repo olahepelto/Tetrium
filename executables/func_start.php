@@ -119,7 +119,7 @@ if ($_GET["type"] == "debug_data") {
         $_GET["vname"] = NULL;
     }
     $vid = get_village_id($_GET["x"], $_GET["y"], $_GET["vname"]);
-    $str = "location: ../tetrium.php?show_debug=1&debug_vid=" . $vid;
+    $str = "location: ../tetrium.php?p=res&show_debug=1&debug_vid=" . $vid;
     header($str);
 }
 if ($_GET["type"] == "debug_popup") {

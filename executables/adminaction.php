@@ -2,7 +2,7 @@
 //Check if admin
 include "../includes/databasedetails.php";
 if ($_SESSION['varadmin'] == 0) {
-    header("location:../tetrium.php?message=you are not an admin :(");
+    header("location:../tetrium.php?p=res&message=you are not an admin :(");
     exit;
 }
 

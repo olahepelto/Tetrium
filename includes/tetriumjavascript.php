@@ -60,10 +60,9 @@
         }
         document.getElementById('wheat').innerHTML = Math.floor(epoch_wheat);
 
-        //WHEN WHEAT IS LOWER THAN 0
-        //RELOADS AND STOPS FUNCTION
+        //Notify player if wheat is depleted
         if (epoch_wheat <= 0) {
-            location.reload();
+            alert("No wheat left, soldiers will start dying");
             return;
         }
 

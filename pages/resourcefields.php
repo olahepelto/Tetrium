@@ -9,7 +9,7 @@
     <?php if (isset($_GET["message"])) { ?>
         <script type="text/javascript">
             alert("<?php echo $_GET["message"]; ?>");
-            window.location = "tetrium.php";
+            window.location = "tetrium.php?p=res";
         </script>
     <?php }
 

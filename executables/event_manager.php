@@ -57,13 +57,20 @@ while ($x > 0) {
     while ($row = mysql_fetch_assoc($result)) {
         $sender_name = $row["username"];
     }
+
+
+
+
+
     /*
     CONSTRUCTING A BUILDING
     */
+
     if ($type == "building") {
         mysql_query("UPDATE map SET $building='$nextlevel' WHERE village_id='$from_village_id'") or die(mysql_error());
         mysql_query("DELETE FROM events WHERE id='$event_id'") or die(mysql_error());
     }
+
     /*
     BUILDING TROOPS
     */
@@ -327,8 +334,10 @@ while ($x > 0) {
     }
     $x = $x - 1;
 }
-
 ?>
+
+
+
 
 
 <!--
@@ -514,30 +523,24 @@ while ($x > 0) {
     }
     $x = $x - 1;
 }//ONE EVENT LOOP END
-
-
-/*
-VARIABLES FOR SIDEBARSANDFOOTER.php & TIMERS IN BUILDINGS (TIMERS)
-BUG: AMOUNT SKRIVFEL MÅST BYTAS I MÅNGA FILER OM MAN VILL BYTA DE
-*/
 {
-    $sendres_timer_event_ammount_in = count($sendres_event_ids_in);
-    $sendres_timer_event_ammount_out = count($sendres_event_ids_out);
+    $sendres_timer_event_amount_in = count($sendres_event_ids_in);
+    $sendres_timer_event_amount_out = count($sendres_event_ids_out);
     $sendres_timer_event_min_time_id_in = array_search(min($sendres_timer_stro_completed_in), $sendres_timer_stro_completed_in);
     $sendres_timer_event_min_time_id_out = array_search(min($sendres_timer_stro_completed_out), $sendres_timer_stro_completed_out);
 
-    $attack_timer_event_ammount_in = count($attack_event_ids_in);
-    $attack_timer_event_ammount_out = count($attack_event_ids_out);
+    $attack_timer_event_amount_in = count($attack_event_ids_in);
+    $attack_timer_event_amount_out = count($attack_event_ids_out);
     $attack_timer_event_min_time_id_in = array_search(min($attack_timer_stro_completed_in), $attack_timer_stro_completed_in);
     $attack_timer_event_min_time_id_out = array_search(min($attack_timer_stro_completed_out), $attack_timer_stro_completed_out);
 
-    $troop_timer_event_ammount = count($troop_event_ids);
+    $troop_timer_event_amount = count($troop_event_ids);
     $troop_timer_event_min_time_id = array_search(min($troop_timer_stro_completed), $troop_timer_stro_completed);
 
-    $returning_sendres_timer_event_ammount = count($sendres_event_ids_return);
+    $returning_sendres_timer_event_amount = count($sendres_event_ids_return);
     $returning_sendres_timer_event_min_time_id = array_search(min($sendres_timer_stro_completed_return), $sendres_timer_stro_completed_return);
 
-    $returning_attack_timer_event_ammount = count($attack_event_ids_return);
+    $returning_attack_timer_event_amount = count($attack_event_ids_return);
     $returning_attack_timer_event_min_time_id = array_search(min($attack_timer_stro_completed_return), $attack_timer_stro_completed_return);
 }
 
@@ -587,5 +590,4 @@ SEND EVERYTHING TO MYSQL
         $wheat = $row["wheat"];
     }
 }
-
 ?>

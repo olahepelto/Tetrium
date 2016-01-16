@@ -1,7 +1,7 @@
 <?php
 include "includes/databasedetails.php";
 if (!$_SESSION['varadmin'] == 1) {
-    header("location:tetrium.php");
+    header("location:tetrium.php?p=res");
     exit;
 }
 ?>

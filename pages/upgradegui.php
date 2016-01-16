@@ -1,6 +1,6 @@
 <?php
 if (empty($_GET["building"])) {
-    header("location:tetrium.php");
+    header("location:tetrium.php?p=res");
     exit;
 }
 

@@ -18,7 +18,7 @@ while ($row = mysql_fetch_assoc($result)) {
 //check if own village then redirect to tetrium.php
 if ($id2 == $id) {
     $_SESSION["current_village_id"] = $village_id;
-    header("location: tetrium.php");
+    header("location: tetrium.php?p=res");
     exit;
 }
 ?>
@@ -32,7 +32,7 @@ if ($id2 == $id) {
         <?php if (isset($_GET["message"])) { ?>
             <script type="text/javascript">
                 alert("<?php echo $_GET["message"]; ?>");
-                window.location = "../tetrium.php";
+                window.location = "../tetrium.php?p=res";
             </script>
         <?php } ?>
         <a>

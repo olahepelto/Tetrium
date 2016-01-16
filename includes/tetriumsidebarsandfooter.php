@@ -38,7 +38,7 @@ if ($_SESSION["varadmin"] == 1) {
     <div id="button" onclick="var newname = window.prompt('Please enter new village name');
             if (newname === null) {
             } else {
-                window.location.href = '../tetrium.php?newvillagename=' + newname;
+                window.location.href = '../tetrium.php?p=res&newvillagename=' + newname;
             }">Change village name</div>
          <?php if ($_SESSION['varadmin'] == 1) { ?>
         <a href="admin.php" style="text-decoration: none;">
@@ -46,90 +46,89 @@ if ($_SESSION["varadmin"] == 1) {
         <a href="../phpmyadmin" style="text-decoration: none;"><div id="button">Database</div></a>
         <a href="changeinfo.php" style="text-decoration: none;"><div id="button">Change infsss<br></div></a>
     <?php } ?>
-    dadasd
     <a href="executables/func_start.php?type=logout" style="text-decoration: none;"><div id="button">Logout<br></div></a>
 </div><!-- .sidebar#sideLeft -->
 <?php
 //</editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="Troop Training Timers">
-if ($sendres_timer_event_ammount_in > 0 or $sendres_timer_event_ammount_out > 0 or $troop_timer_event_ammount > 0 or $returning_sendres_timer_event_ammount > 0 or $attack_timer_event_ammount_in > 0 or $attack_timer_event_ammount_out > 0 or $returning_attack_timer_event_ammount > 0) {
+if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or $troop_timer_event_amount > 0 or $returning_sendres_timer_event_amount > 0 or $attack_timer_event_amount_in > 0 or $attack_timer_event_amount_out > 0 or $returning_attack_timer_event_amount > 0) {
     ?>
     <div style="width: 200px; float: right;">
         <div class="sidebar" id="sideRight" style="background:cadetblue;">
-            <?php if ($troop_timer_event_ammount > 0) { ?><strong>Troop Training:</strong><br><?php } ?>
+            <?php if ($troop_timer_event_amount > 0) { ?><strong>Troop Training:</strong><br><?php } ?>
             <?php
-            if ($troop_timer_event_ammount > 0) {
-                echo $troop_timer_event_ammount;
+            if ($troop_timer_event_amount > 0) {
+                echo $troop_timer_event_amount;
                 ?> troop(s) in<?php } ?>
             <?php
-            if ($troop_timer_event_ammount > 0) {
+            if ($troop_timer_event_amount > 0) {
                 echo "<b id=sidebar_timer_id_" . $troop_timer_event_min_time_id . " name=sidebar_timer_id_" . $troop_timer_event_min_time_id . ">Javascript Error</b><br>";
             }
             ?>
 
-            <?php if ($returning_sendres_timer_event_ammount > 0 or $returning_attack_timer_event_ammount > 0) { ?><strong>Returning:</strong><br><?php } ?>
+            <?php if ($returning_sendres_timer_event_amount > 0 or $returning_attack_timer_event_amount > 0) { ?><strong>Returning:</strong><br><?php } ?>
             <?php
-            if ($returning_sendres_timer_event_ammount > 0) {
-                echo $returning_sendres_timer_event_ammount;
+            if ($returning_sendres_timer_event_amount > 0) {
+                echo $returning_sendres_timer_event_amount;
                 ?> shipments(s) in<?php } ?>
             <?php
-            if ($returning_sendres_timer_event_ammount > 0) {
+            if ($returning_sendres_timer_event_amount > 0) {
                 echo "<b id=sidebar_timer_id_" . $returning_sendres_timer_event_min_time_id . " name=sidebar_timer_id_" . $returning_sendres_timer_event_min_time_id . ">Javascript Error</b><br>";
             }
             ?>
 
             <?php
-            if ($returning_attack_timer_event_ammount > 0) {
-                echo $returning_attack_timer_event_ammount;
+            if ($returning_attack_timer_event_amount > 0) {
+                echo $returning_attack_timer_event_amount;
                 ?> attack(s) in<?php } ?>
             <?php
-            if ($returning_attack_timer_event_ammount > 0) {
+            if ($returning_attack_timer_event_amount > 0) {
                 echo "<b id=sidebar_timer_id_" . $returning_attack_timer_event_min_time_id . " name=sidebar_timer_id_" . $returning_attack_timer_event_min_time_id . ">Javascript Error</b><br>";
             }
             ?>
 
-            <?php if ($sendres_timer_event_ammount_in > 0 or $attack_timer_event_ammount_in) { ?><strong>Incoming:</strong><br><?php } ?>
+            <?php if ($sendres_timer_event_amount_in > 0 or $attack_timer_event_amount_in) { ?><strong>Incoming:</strong><br><?php } ?>
             <?php
-            if ($sendres_timer_event_ammount_in > 0) {
-                echo $sendres_timer_event_ammount_in;
+            if ($sendres_timer_event_amount_in > 0) {
+                echo $sendres_timer_event_amount_in;
                 ?> shipment(s) in<?php
             }
 
             //INCOMING IDS Javascript for this is in sidebar_javascript.php
-            if ($sendres_timer_event_ammount_in > 0) {
+            if ($sendres_timer_event_amount_in > 0) {
                 echo "<b id=sidebar_timer_id_" . $sendres_timer_event_min_time_id_in . " name=sidebar_timer_id_" . $sendres_timer_event_min_time_id_in . ">Javascript Error</b><br>";
             }
             ?>
 
             <?php
-            if ($attack_timer_event_ammount_in > 0) {
-                if ($attack_timer_event_ammount_in == 1) {
+            if ($attack_timer_event_amount_in > 0) {
+                if ($attack_timer_event_amount_in == 1) {
                     echo " attack in";
                 } else {
                     echo " attacks in";
                 }
             }
-            if ($attack_timer_event_ammount_in > 0) {
+            if ($attack_timer_event_amount_in > 0) {
                 echo "<b id=sidebar_timer_id_" . $attack_timer_event_min_time_id_in . " name=sidebar_timer_id_" . $attack_timer_event_min_time_id_in . ">Javascript Error</b><br>";
             }
-            if ($sendres_timer_event_ammount_out > 0 or $attack_timer_event_ammount_out) {
+            if ($sendres_timer_event_amount_out > 0 or $attack_timer_event_amount_out) {
                 ?><strong>Outgoing:</strong><br><?php } ?>
             <?php
-            if ($sendres_timer_event_ammount_out > 0) {
-                echo $sendres_timer_event_ammount_out;
+            if ($sendres_timer_event_amount_out > 0) {
+                echo $sendres_timer_event_amount_out;
                 ?> shipment(s) in<?php
             }
-            if ($sendres_timer_event_ammount_out > 0) {
+            if ($sendres_timer_event_amount_out > 0) {
                 echo "<b id=sidebar_timer_id_" . $sendres_timer_event_min_time_id_out . " name=sidebar_timer_id_" . $sendres_timer_event_min_time_id_out . ">Javascript Error</b><br>";
             }
             ?>
             <?php
-            if ($attack_timer_event_ammount_out > 0) {
-                echo $attack_timer_event_ammount_out;
+            if ($attack_timer_event_amount_out > 0) {
+                echo $attack_timer_event_amount_out;
                 ?> attack(s) in<?php
             }
-            if ($attack_timer_event_ammount_out > 0) {
+            if ($attack_timer_event_amount_out > 0) {
                 echo "<b id=sidebar_timer_id_" . $attack_timer_event_min_time_id_out . " name=sidebar_timer_id_" . $attack_timer_event_min_time_id_out . ">Javascript Error</b><br>";
             }
             ?>

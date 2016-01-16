@@ -1,4 +1,5 @@
 <?php
+// <editor-fold defaultstate="collapsed" desc="get_val Function: Get values from mysql">
 function get_val($village_id)
 {
 
@@ -64,7 +65,9 @@ function get_val($village_id)
         "mainbuilding" => $mainbuilding, "storage" => $storage, "barracks" => $barracks, "marketplace" => $marketplace, "stable" => $stable,
         "wall" => $wall, "<font color=red>Resources</font>" => "------", "wood" => $wood, "clay" => $clay, "iron" => $iron, "wheat" => $wheat);
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="res_calc Function: Calculate resources">
 function res_calc($village_id)
 {
     $mysql_data = get_val($village_id);
@@ -80,7 +83,6 @@ function res_calc($village_id)
 
 //TROOP WHEAT USAGE
     $croplandsh = $croplandsh - $mysql_data["clubswinger"] - $mysql_data["spearman"] - $mysql_data["axeman"];
-
 //change all timestamps to seconds
     $timedifference = strtotime(date("Y-m-d H:i:s")) - $mysql_data["tsold"];
 
@@ -106,7 +108,7 @@ function res_calc($village_id)
 
 //Kill troops if $newwheat<0
     while ($newwheat <= 0 and ($mysql_data["clubswinger"] > 0 or $mysql_data["spearman"] > 0 or $mysql_data["axeman"] > 0)) {
-        echo "nowheat";
+        echo "Soldier Died";
         if ($mysql_data["clubswinger"] > 0) {
             $clubswinger_no_wheat = $mysql_data["clubswinger"] - 1;
             $mysql_data["clubswinger"] = $mysql_data["clubswinger"] - 1;
@@ -133,20 +135,26 @@ function res_calc($village_id)
 
     send_timestamp($village_id);
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="set_array_db Function: Send array of data to mysql">
 function set_array_db($array, $table, $village_id)
 {
     foreach ($array as $field => $value) {
         mysql_query("UPDATE $table SET $field='$value' WHERE village_id='$village_id'") or die(mysql_error());
     }
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="send_timestamp Function: Send timestamp to mysql">
 function send_timestamp($village_id)
 {
     $dbnewtime = strtotime(date("Y-m-d H:i:s"));
     mysql_query("UPDATE map SET timestamp='$dbnewtime' WHERE village_id='$village_id'") or die(mysql_error());
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="new_event Function: Send array data to event mysql">
 function new_event($array, $village_id)
 {
     $fields = array_keys($array);
@@ -173,7 +181,9 @@ function new_event($array, $village_id)
     $query = "INSERT INTO `events` (" . $par1 . ") VALUES (" . $par2 . ")";
     mysql_query($query) or die(mysql_error());
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="train Function: Train troops">
 function train($type, $amount, $village_id, $player_id)
 {
 
@@ -252,14 +262,16 @@ function train($type, $amount, $village_id, $player_id)
 
     new_event($arr, $village_id);
 
-    header("location: ../upgradegui.php?building=barracks&message=Success!");
+    header("location: ../tetrium.php?p=ugg&building=barracks&message=Success!");
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="upgrade Function: Upgrade building">
 function upgrade($building, $village_id, $player_id)
 {
 
     if (empty($building)) {
-        header("location:tetrium.php");
+        header("location:tetrium.php?p=res");
         exit;
     }
 
@@ -502,7 +514,7 @@ function upgrade($building, $village_id, $player_id)
         new_event($arr, $village_id);
 
 
-        header("location:../tetrium.php");
+        header("location:../tetrium.php?p=res");
         exit;
 
     } elseif ($status == 0) {
@@ -513,7 +525,9 @@ function upgrade($building, $village_id, $player_id)
 
     }
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="switch_village Function: Switch village">
 function switch_village($village_id, $player_id)
 {
 
@@ -522,19 +536,21 @@ function switch_village($village_id, $player_id)
     if (in_array($village_id, $villages)) {
         $_SESSION["current_village_id"] = $village_id;
     } else {
-        header("location:../tetrium.php?message=you do not own a village with that id :(");
+        header("location:../tetrium.php?p=res&message=you do not own a village with that id :(");
         exit;
     }
-    header("location:../tetrium.php");
+    header("location:../tetrium.php?p=res");
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="list_villages Function: List All player villages">
 function list_villages($player_id)
 {
     $all_user_villages_ids = array();
     $x = 0;
     $result = mysql_query("SELECT village_id FROM map WHERE id='$player_id'");
 
-    $all_user_villages_ammount = mysql_num_rows($result);
+    $all_user_villages_amount = mysql_num_rows($result);
     while ($row = mysql_fetch_array($result)) {
         $all_user_villages_ids[$x] = $row["village_id"];
         $x = $x + 1;
@@ -542,7 +558,9 @@ function list_villages($player_id)
     $x = NULL;
     return $all_user_villages_ids;
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="attack Function: Attack a village">
 function attack($from_village_id, $target_village_id, $troops, $player_id)
 {
 
@@ -645,7 +663,9 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
     header("location: ../attack.php");
 
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="speedup Function: Cheat on event timers">
 function speedup($event_id)
 {
     if ($_SESSION['varadmin'] == 0) {
@@ -669,12 +689,14 @@ function speedup($event_id)
         if ($returning == 1) {
             mysql_query("UPDATE events SET return_completed=0 WHERE id='$event_id'") or die(mysql_error());
         }
-        header("location: ../tetrium.php?message=time hacked");
+        header("location: ../tetrium.php?p=res&message=time hacked");
     }
 
 
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="change_pass Function: Change player password">
 function change_pass($user, $newpass)
 {
 
@@ -683,10 +705,12 @@ function change_pass($user, $newpass)
     $newpass = md5($newpass);
     mysql_query("UPDATE members SET password = '$newpass' WHERE username = '$user'");
 
-    header("location:../tetrium.php");
+    header("location:../tetrium.php?p=res");
     exit;
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="market_action Function: Trade market resources">
 function market_action($village_id, $give_wood, $give_clay, $give_iron, $give_wheat, $want)
 {
     $mysql_data = get_val($village_id);
@@ -745,13 +769,17 @@ function market_action($village_id, $give_wood, $give_clay, $give_iron, $give_wh
 
     header("location: ../upgradegui.php?building=marketplace");
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="logout Function: Logout">
 function logout()
 {
     session_destroy();
-    header("location: ../tetrium.php");
+    header("location: ../tetrium.php?p=res");
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="del_report Function: Delete report">
 function del_report($report_id)
 {
     if (isset($report_id)) {
@@ -761,14 +789,18 @@ function del_report($report_id)
     }
     header("location: ../reports.php");
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="send_mail Function: Send mail">
 function send_mail($sender, $receiver, $topic, $mail)
 {
     $now = date('Y-m-d H:i:s');
     mysql_query("INSERT INTO messages (sender, receiver, topic, message, time) VALUES ('$sender', '$receiver', '$topic', '$message', '$now')") or die(mysql_error());
     header("location: ../messages.php");
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="make_nature Function: Make nature troops for Oasis NOT READY!!!">
 function make_nature($village_id)
 {
 
@@ -812,7 +844,9 @@ function make_nature($village_id)
     //ANIMALS TO MYSQL & make other func set last attack to mysql
 
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="print_debug Function: Print village debug">
 function print_debug($village_id)
 {
     $mysql_data = get_val($village_id);
@@ -831,7 +865,9 @@ function print_debug($village_id)
         }
     }
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="table_print_r Function: Array to table">
 function table_print_r($my_array)
 {
     if (is_array($my_array)) {
@@ -848,7 +884,9 @@ function table_print_r($my_array)
     }
     echo $my_array;
 }
+//</editor-fold>
 
+// <editor-fold defaultstate="collapsed" desc="get_village_id Function: Get village id on base of x y and name">
 function get_village_id($x, $y, $vname)
 {
     if (isset($vname)) {
@@ -871,4 +909,4 @@ function get_village_id($x, $y, $vname)
     }
     return $vid;
 }
-//CRONJOB / EVERYONES ACTIONS AT EVERY RELOAD
+//</editor-fold>

@@ -38,7 +38,7 @@ $all_user_villages_ids = array();
 $x = 0;
 $result = mysql_query("SELECT village_id FROM map WHERE id='$id'");
 
-$all_user_villages_ammount = mysql_num_rows($result);
+$all_user_villages_amount = mysql_num_rows($result);
 while ($row = mysql_fetch_array($result)) {
     $all_user_villages_ids[$x] = $row["village_id"];
     $x = $x + 1;
