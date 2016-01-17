@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- LOAD JQUERY LIBRARY -->
+
 <div style="width: 500px; height: 500px;" id="mapbox">
 
     <?php
@@ -6,15 +8,17 @@
     /*-----------------------------------------
     This is the mighty map square function
     -----------------------------------------*/
+
+
     $x = 0;
     $y = 0;
     $vid = 0;
 
-    while ($y < 10) {
+    while ($y < 20) {
         $y++;
         //next line of pictures
         ?><br><?php
-        while ($x < 10) {
+        while ($x < 20) {
             $x++;
             $vid++;
             $result = mysql_query("SELECT * FROM map WHERE x='$x' and y='$y'");
@@ -49,12 +53,12 @@
                 ?><a style="float: left;" id="village<?php echo $vid; ?>" onMouseOut="hideTooltip(t<?php echo $vid; ?>)"
                      href="tetrium.php?p=mpv&x=<?php echo $x; ?>&y=<?php echo $y; ?>"
                      onmouseover="showvillage(<?php echo $vid; ?>,t<?php echo $vid; ?>,<?php echo $underattack; ?>)">
-                <div style="display:none; transform: translate(50px,50px);" id="t<?php echo $vid; ?>"></div>
-                <img src="<?php echo $location; ?>" alt="error" height="50" width="50"></a>
+                <div style="display:none; transform: translate(25px,25px);" id="t<?php echo $vid; ?>"></div>
+                <img src="<?php echo $location; ?>" alt="error" height="25" width="25"></a>
                 <?php
             }
         }
-        if ($x == 10) {
+        if ($x == 20) {
             $x = 0;
         }
     }
