@@ -25,7 +25,8 @@
                 $vidx[$vid] = $x;
                 $vidy[$vid] = $y;
 
-                $result = mysql_query("SELECT * FROM events WHERE target_village='$vid' and type='attack' and returning='0' and completed>NOW()");
+                $time_now = date("Y-m-d H:i:s");
+                $result = mysql_query("SELECT * FROM events WHERE target_village='$vid' and type='attack' and returning='0' and completed > '$time_now'");
                 $underattack = mysql_num_rows($result);
 
                 /*
@@ -49,7 +50,7 @@
                      href="tetrium.php?p=mpv&x=<?php echo $x; ?>&y=<?php echo $y; ?>"
                      onmouseover="showvillage(<?php echo $vid; ?>,t<?php echo $vid; ?>,<?php echo $underattack; ?>)">
                 <div style="display:none; transform: translate(50px,50px);" id="t<?php echo $vid; ?>"></div>
-                <img src="<?php echo $location; ?>" alt="error"></a>
+                <img src="<?php echo $location; ?>" alt="error" height="50" width="50"></a>
                 <?php
             }
         }
@@ -67,7 +68,7 @@
     ?>
 </div><!-- #mapbox-->
 
-<!-- JAVASCRPTS -->
+
 <script>
     function showvillage(villageid, tool, attackamount) {
         var villagename = <?php echo json_encode($villagename); ?>;
@@ -80,6 +81,7 @@
          document.getElementById('showowner').innerHTML = owner[villageid];
          document.getElementById('showx').innerHTML = vidx[villageid];
          document.getElementById('showy').innerHTML = vidy[villageid];*/
+
         showTooltip(tool, villagename[villageid], owner[villageid], type[villageid], vidx[villageid], vidy[villageid], attackamount);
     }
 

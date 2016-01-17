@@ -143,10 +143,10 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
     <div style="width: 200px; float: right;">
         <div class="sidebar" id="sideRight">
             <strong><?php echo "Resource production"; ?></strong><br>
-            <?php echo "Wood: ", $woodcuttersh, " per hour"; ?><br>
-            <?php echo "Clay: ", $claypitsh, " per hour"; ?><br>
-            <?php echo "Iron: ", $ironminesh, " per hour"; ?><br>
-            <?php echo "Wheat: ", $croplandsh, " per hour"; ?><br>
+            <?php echo "Wood: ", $res_p_h["wood"], " per hour"; ?><br>
+            <?php echo "Clay: ", $res_p_h["clay"], " per hour"; ?><br>
+            <?php echo "Iron: ", $res_p_h["iron"], " per hour"; ?><br>
+            <?php echo "Wheat: ", $res_p_h["wheat"], " per hour"; ?><br>
         </div><!-- .sidebar#sideRight -->
         <?php
 //</editor-fold>
@@ -190,7 +190,7 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
                 if ($mysql_data["axeman"] > 1) {
                     echo $mysql_data["axeman"], " Axemen<br>";
                 }
-                echo "<br>Upkeep: ", $mysql_data["clubswinger"] + $mysql_data["spearman"] + $mysql_data["axeman"], " Pizzas per hour", "<br>";
+                echo "<br>Upkeep: ", $mysql_data["clubswinger"] + $mysql_data["spearman"] + $mysql_data["axeman"], " Wheat per hour", "<br>";
                 ?>
             </div><!-- .sidebar#UndersideRight -->
             <?php

@@ -81,8 +81,9 @@ function res_calc($village_id)
     $ironminesh = ceil((pow($mysql_data["ironmine1"] + 6, 3 + $mysql_data["ironmine1"] / 320) / 4) + (pow($mysql_data["ironmine2"] + 6, 3 + $mysql_data["ironmine2"] / 320) / 4) + (pow($mysql_data["ironmine3"] + 6, 3 + $mysql_data["ironmine3"] / 320) / 4) + (pow($mysql_data["ironmine4"] + 6, 3 + $mysql_data["ironmine4"] / 320) / 4));
 
 
-//TROOP WHEAT USAGE
+//TROOP WHEAT USAGE|| The file has other places where this is changed
     $croplandsh = $croplandsh - $mysql_data["clubswinger"] - $mysql_data["spearman"] - $mysql_data["axeman"];
+
 //change all timestamps to seconds
     $timedifference = strtotime(date("Y-m-d H:i:s")) - $mysql_data["tsold"];
 
@@ -107,33 +108,70 @@ function res_calc($village_id)
     }
 
 //Kill troops if $newwheat<0
-    while ($newwheat <= 0 and ($mysql_data["clubswinger"] > 0 or $mysql_data["spearman"] > 0 or $mysql_data["axeman"] > 0)) {
-        echo "Soldier Died";
-        if ($mysql_data["clubswinger"] > 0) {
-            $clubswinger_no_wheat = $mysql_data["clubswinger"] - 1;
-            $mysql_data["clubswinger"] = $mysql_data["clubswinger"] - 1;
-            $newwheat = $newwheat + 10;
+    if ($newwheat <= 0 and ($mysql_data["clubswinger"] > 0 or $mysql_data["spearman"] > 0 or $mysql_data["axeman"] > 0)) {
 
-            mysql_query("UPDATE map SET clubswinger='$clubswinger_no_wheat' WHERE village_id='$village_id'");
-        } elseif ($mysql_data["spearman"] > 0) {
-            $spearman_no_wheat = $mysql_data["spearman"] - 1;
-            $mysql_data["spearman"] = $mysql_data["spearman"] - 1;
-            $newwheat = $newwheat + 10;
+        $troop_kill_amount = ceil(($newwheat / 10) * -1);
+        $troop_amount = $mysql_data["clubswinger"] + $mysql_data["spearman"] + $mysql_data["axeman"];
 
-            mysql_query("UPDATE map SET spearman='$spearman_no_wheat' WHERE village_id='$village_id'");
-        } elseif ($mysql_data["axeman"] > 0) {
-            $axeman_no_wheat = $mysql_data["axeman"] - 1;
-            $mysql_data["axeman"] = $mysql_data["axeman"] - 1;
-            $newwheat = $newwheat + 10;
 
-            mysql_query("UPDATE map SET axeman='$axeman_no_wheat' WHERE village_id='$village_id'");
+        if($troop_amount > $troop_kill_amount){
+            $croplandsh = $croplandsh + $troop_kill_amount;
+                if ($mysql_data["clubswinger"] > 0) {
+                    if ($troop_kill_amount < $mysql_data["clubswinger"]) {
+                        $clubswinger_no_wheat = $mysql_data["clubswinger"] - $troop_kill_amount;
+                        $newwheat = $newwheat + $troop_kill_amount * 10;
+                        $troop_kill_amount = 0;
+                    } else {
+                        $temp = $troop_kill_amount;
+                        $troop_kill_amount = $troop_kill_amount - $mysql_data["clubswinger"];
+                        $clubswinger_no_wheat = $mysql_data["clubswinger"] - $temp;
+                    }
+                }
+                if($troop_kill_amount > 0) {
+                    if ($mysql_data["spearman"] > 0) {
+                        if ($troop_kill_amount < $mysql_data["spearman"]) {
+                            $spearman_no_wheat = $mysql_data["spearman"] - $troop_kill_amount;
+                            $newwheat = $newwheat + $troop_kill_amount * 10;
+                            $troop_kill_amount = 0;
+                        } else {
+                            $temp = $troop_kill_amount;
+                            $troop_kill_amount = $troop_kill_amount - $mysql_data["spearman"];
+                            $spearman_no_wheat = $mysql_data["spearman"] - $temp;
+                        }
+                    }
+                }else{
+                    $spearman_no_wheat = $mysql_data["spearman"];
+                }
+                if($troop_kill_amount > 0) {
+                    if ($mysql_data["axeman"] > 0) {
+                        if ($troop_kill_amount < $mysql_data["axeman"]) {
+                            $axeman_no_wheat = $mysql_data["axeman"] - $troop_kill_amount;
+                            $newwheat = $newwheat + $troop_kill_amount * 10;
+                            $troop_kill_amount = 0;
+                        } else {
+                            $temp = $troop_kill_amount;
+                            $troop_kill_amount = $troop_kill_amount - $mysql_data["axeman"];
+                            $axeman_no_wheat = $mysql_data["axeman"] - $temp;
+                        }
+                    }
+                }else{
+                    $axeman_no_wheat = $mysql_data["axeman"];
+                }
+            $troops = array("clubswinger" => $clubswinger_no_wheat, "spearman" => $spearman_no_wheat, "axeman" => $axeman_no_wheat);
+        }else{
+            $troops = array("clubswinger" => 0, "spearman" => 0, "axeman" => 0);
+            $croplandsh = $croplandsh + $troop_kill_amount;
+            $newwheat = 0;
         }
+
+        set_array_db($troops, "map", $village_id);
     }
 
     $res = array("wood" => $newwood, "clay" => $newclay, "iron" => $newiron, "wheat" => $newwheat);
     set_array_db($res, "map", $village_id);
 
     send_timestamp($village_id);
+    return array("wood" => $woodcuttersh,"clay" => $claypitsh,"iron" => $ironminesh,"wheat" => $croplandsh);
 }
 //</editor-fold>
 
@@ -188,11 +226,11 @@ function train($type, $amount, $village_id, $player_id)
 {
 
     if (empty($type) or empty($amount)) {
-        header("location:../upgradegui.php?building=barracks");
+        header("location:../tetrium.php?p=ugg&building=barracks");
         exit;
     }
     if ($amount <= 0) {
-        header("location:../upgradegui.php?building=barracks");
+        header("location:../tetrium.php?p=ugg&building=barracks");
         exit;
     }
 
@@ -363,7 +401,7 @@ function upgrade($building, $village_id, $player_id)
             $level = $mysql_data["barracks"];
             $name = "Barracks";
             if ($mysql_data["mainbuilding"] < 5 and $level == 0) {
-                header("location:../upgradegui.php?message=error cant build&building=", $building);
+                header("location:../tetrium.php?p=ugg&message=error cant build&building=", $building);
                 exit;
             }
             break;
@@ -371,7 +409,7 @@ function upgrade($building, $village_id, $player_id)
             $level = $mysql_data["marketplace"];
             $name = "Marketplace";
             if ($mysql_data["mainbuilding"] < 7 or $mysql_data["storage"] < 5 and $level == 0) {
-                header("location:../upgradegui.php?message=error cant build&building=", $building);
+                header("location:../tetrium.php?p=ugg&message=error cant build&building=", $building);
                 exit;
             }
             break;
@@ -379,7 +417,7 @@ function upgrade($building, $village_id, $player_id)
             $level = $mysql_data["stable"];
             $name = "Stable";
             if ($mysql_data["mainbuilding"] < 7 or $mysql_data["barracks"] < 5 and $level == 0) {
-                header("location:../upgradegui.php?message=error cant build&building=", $building);
+                header("location:../tetrium.php?p=ugg&message=error cant build&building=", $building);
                 exit;
             }
             break;
@@ -387,7 +425,7 @@ function upgrade($building, $village_id, $player_id)
             $level = $mysql_data["wall"];
             $name = "Wall";
             if ($mysql_data["mainbuilding"] < 5 and $level == 0) {
-                header("location:../upgradegui.php?message=error cant build&building=", $building);
+                header("location:../tetrium.php?p=ugg&message=error cant build&building=", $building);
                 exit;
             }
             break;
@@ -518,10 +556,10 @@ function upgrade($building, $village_id, $player_id)
         exit;
 
     } elseif ($status == 0) {
-        header("location:../upgradegui.php?building=$building&message=Not enough resources");
+        header("location:../tetrium.php?p=ugg&building=$building&message=Not enough resources");
         exit;
     } elseif ($status == 1) {
-        header("location:../upgradegui.php?building=$building&message=The builders are busy with another building");
+        header("location:../tetrium.php?p=ugg&building=$building&message=The builders are busy with another building");
 
     }
 }
@@ -579,18 +617,18 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
 
 
     if ($troops["clubswinger"] < 0 or $troops["spearman"] < 0 or $troops["axeman"] < 0) {
-        header("location: ../attack.php?message=attack: only numbers over -1");
+        header("location: ../tetrium.php?p=att&message=attack: only numbers over -1");
         exit;
     }
 
 
     if (empty($target_village_id)) {
-        header("location: ../attack.php?message=send resources: please fill out the destination");
+        header("location: ../tetrium.php?p=att&message=send resources: please fill out the destination");
         exit;
     }
 
     if ($mysql_data["clubswinger"] < $troops["clubswinger"] or $mysql_data["spearman"] < $troops["spearman"] or $mysql_data["axeman"] < $troops["axeman"]) {
-        header("location: ../attack.php?message=attack: not enough troops");
+        header("location: ../tetrium.php?p=att&message=attack: not enough troops");
         exit;
     }
 
@@ -601,11 +639,11 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
             $from_village_y = $row["y"];
         }
     } else {
-        header("location: ../attack.php?message=send resources: you can't attack from another players village XD");
+        header("location: ../tetrium.php?p=att&message=send resources: you can't attack from another players village XD");
         exit;
     }
     if ($target_village_id == $from_village_id) {
-        header("location: ../attack.php?message=you can't attack the village you are sending troops from");
+        header("location: ../tetrium.php?p=att&message=you can't attack the village you are sending troops from");
         exit;
     }
 
@@ -624,7 +662,7 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
                 $target_id = $info["id"];
             }
         } else {
-            header("location: ../attack.php?message=send resources: no such village exists");
+            header("location: ../tetrium.php?p=att&message=send resources: no such village exists");
             exit;
         }
     }
@@ -660,7 +698,7 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
 
     set_array_db(array("clubswinger" => $new_clubswinger, "spearman" => $new_spearman, "axeman" => $new_axeman), "map", $from_village_id);
 
-    header("location: ../attack.php");
+    header("location: ../tetrium.php?p=att");
 
 }
 //</editor-fold>
@@ -767,7 +805,7 @@ function market_action($village_id, $give_wood, $give_clay, $give_iron, $give_wh
     $res = array("wood" => $newwood, "clay" => $newclay, "iron" => $newiron, "wheat" => $newwheat);
     set_array_db($res, "map", $village_id);
 
-    header("location: ../upgradegui.php?building=marketplace");
+    header("location: ../tetrium.php?p=ugg&building=marketplace");
 }
 //</editor-fold>
 
@@ -787,7 +825,7 @@ function del_report($report_id)
     } else {
         return "error report id:" . $report_id . "does not exist";
     }
-    header("location: ../reports.php");
+    header("location: ../tetrium.php?p=rep");
 }
 //</editor-fold>
 
@@ -796,7 +834,7 @@ function send_mail($sender, $receiver, $topic, $mail)
 {
     $now = date('Y-m-d H:i:s');
     mysql_query("INSERT INTO messages (sender, receiver, topic, message, time) VALUES ('$sender', '$receiver', '$topic', '$message', '$now')") or die(mysql_error());
-    header("location: ../messages.php");
+    header("location: ../tetrium.php?p=msg");
 }
 //</editor-fold>
 

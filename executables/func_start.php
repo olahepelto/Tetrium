@@ -91,7 +91,7 @@ if ($_GET["type"] == "send_mail") {
         $receiver = $row["id"];
     }
 
-    if (strlen($mail) > 10000000000000000 or strlen($topic) > 10000000000000000) {
+    if (strlen($mail) > 255 or strlen($topic) > 255) {
         echo "ERROR: message or topic too long";
     }
 

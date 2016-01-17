@@ -5,14 +5,16 @@ THIS THING UPDATES EVERY EVENT THAT IS NOT UPDATED, NOT ONLY THE CURRENT PLAYERS
 /*
 EVERY READY EVENT IS CALCULATED HERE WHEN A PLAYER UPDATES THE PAGE
 */
-$result = mysql_query("SELECT * FROM events WHERE (completed<NOW() AND returning=0) or (return_completed<NOW() AND returning=1 AND (type='attack' OR type='sendres'))");
+$time_now = date("Y-m-d H:i:s");
+$result = mysql_query("SELECT * FROM events WHERE (completed < '$time_now' AND returning=0) or (return_completed < '$time_now' AND returning=1 AND (type='attack' OR type='sendres'))");
 $number_of_rows = mysql_num_rows($result);
 $x = $number_of_rows;
 
 
 while ($x > 0) {
     $xminus = $x - 1;
-    $result = mysql_query("SELECT * FROM events WHERE (completed<NOW() AND returning=0) or (return_completed<NOW() AND returning=1 AND (type='attack' OR type='sendres')) LIMIT $xminus,1") or die(mysql_error());
+    $time_now = date("Y-m-d H:i:s");
+    $result = mysql_query("SELECT * FROM events WHERE (completed < '$time_now' AND returning=0) or (return_completed < '$time_now' AND returning=1 AND (type='attack' OR type='sendres')) LIMIT $xminus,1") or die(mysql_error());
 
     /*
     GET EVENT DETAILS
@@ -57,20 +59,13 @@ while ($x > 0) {
     while ($row = mysql_fetch_assoc($result)) {
         $sender_name = $row["username"];
     }
-
-
-
-
-
     /*
     CONSTRUCTING A BUILDING
     */
-
     if ($type == "building") {
         mysql_query("UPDATE map SET $building='$nextlevel' WHERE village_id='$from_village_id'") or die(mysql_error());
         mysql_query("DELETE FROM events WHERE id='$event_id'") or die(mysql_error());
     }
-
     /*
     BUILDING TROOPS
     */
@@ -123,8 +118,9 @@ while ($x > 0) {
         $defender_and_city = $target_name . " from the village " . $target_village_name;
         $attacker_and_city = $sender_name . " from the village " . $from_village_name;
 
-        mysql_query("INSERT INTO reports (player_id,topic,Attacker,Defender,loot_wood,loot_clay,loot_iron,loot_wheat,time,is_read,type) VALUES ('$sender_id','$topic','$attacker_and_city','$defender_and_city','$send_wood','$send_clay','$send_iron','$send_wheat',NOW(),0,'$type')") or die(mysql_error());
-        mysql_query("INSERT INTO reports (player_id,topic,Attacker,Defender,loot_wood,loot_clay,loot_iron,loot_wheat,time,is_read,type) VALUES ('$target','$topic','$attacker_and_city','$defender_and_city','$send_wood','$send_clay','$send_iron','$send_wheat',NOW(),0,'$type')") or die(mysql_error());
+        $time_now = date("Y-m-d H:i:s");
+        mysql_query("INSERT INTO reports (player_id,topic,Attacker,Defender,loot_wood,loot_clay,loot_iron,loot_wheat,time,is_read,type) VALUES ('$sender_id','$topic','$attacker_and_city','$defender_and_city','$send_wood','$send_clay','$send_iron','$send_wheat','$time_now',0,'$type')") or die(mysql_error());
+        mysql_query("INSERT INTO reports (player_id,topic,Attacker,Defender,loot_wood,loot_clay,loot_iron,loot_wheat,time,is_read,type) VALUES ('$target','$topic','$attacker_and_city','$defender_and_city','$send_wood','$send_clay','$send_iron','$send_wheat','$time_now',0,'$type')") or die(mysql_error());
     }
 
     /*
@@ -277,8 +273,9 @@ while ($x > 0) {
         $defender_and_city = $target_name . " from the village " . $target_village_name;
         $attacker_and_city = $sender_name . " from the village " . $from_village_name;
 
-        mysql_query("INSERT INTO reports (player_id,topic,winner,Attacker,Defender,clubswinger_att,spearman_att,axeman_att,clubswinger_def,spearman_def,axeman_def,clubswinger_att_die,spearman_att_die,axeman_att_die,clubswinger_def_die,spearman_def_die,axeman_def_die,loot_wood,loot_clay,loot_iron,loot_wheat,time,is_read,type) VALUES ('$sender_id','$topic','$winner_player','$attacker_and_city','$defender_and_city','$send_clubswinger','$send_spearman','$send_axeman','$defender_old_clubswinger','$defender_old_spearman','$defender_old_axeman','$attacker_die_clubswinger','$attacker_die_spearman','$attacker_die_axeman','$defender_die_clubswinger','$defender_die_spearman','$defender_die_axeman','$attacker_loot_wood','$attacker_loot_clay','$attacker_loot_iron','$attacker_loot_wheat',NOW(),0,'$type')") or die(mysql_error());
-        mysql_query("INSERT INTO reports (player_id,topic,winner,Attacker,Defender,clubswinger_att,spearman_att,axeman_att,clubswinger_def,spearman_def,axeman_def,clubswinger_att_die,spearman_att_die,axeman_att_die,clubswinger_def_die,spearman_def_die,axeman_def_die,loot_wood,loot_clay,loot_iron,loot_wheat,time,is_read,type) VALUES ('$target','$topic','$winner_player','$attacker_and_city','$defender_and_city','$send_clubswinger','$send_spearman','$send_axeman','$defender_old_clubswinger','$defender_old_spearman','$defender_old_axeman','$attacker_die_clubswinger','$attacker_die_spearman','$attacker_die_axeman','$defender_die_clubswinger','$defender_die_spearman','$defender_die_axeman','$attacker_loot_wood','$attacker_loot_clay','$attacker_loot_iron','$attacker_loot_wheat',NOW(),0,'$type')") or die(mysql_error());
+        $time_now = date("Y-m-d H:i:s");
+        mysql_query("INSERT INTO reports (player_id,topic,winner,Attacker,Defender,clubswinger_att,spearman_att,axeman_att,clubswinger_def,spearman_def,axeman_def,clubswinger_att_die,spearman_att_die,axeman_att_die,clubswinger_def_die,spearman_def_die,axeman_def_die,loot_wood,loot_clay,loot_iron,loot_wheat,time,is_read,type) VALUES ('$sender_id','$topic','$winner_player','$attacker_and_city','$defender_and_city','$send_clubswinger','$send_spearman','$send_axeman','$defender_old_clubswinger','$defender_old_spearman','$defender_old_axeman','$attacker_die_clubswinger','$attacker_die_spearman','$attacker_die_axeman','$defender_die_clubswinger','$defender_die_spearman','$defender_die_axeman','$attacker_loot_wood','$attacker_loot_clay','$attacker_loot_iron','$attacker_loot_wheat','$time_now',0,'$type')") or die(mysql_error());
+        mysql_query("INSERT INTO reports (player_id,topic,winner,Attacker,Defender,clubswinger_att,spearman_att,axeman_att,clubswinger_def,spearman_def,axeman_def,clubswinger_att_die,spearman_att_die,axeman_att_die,clubswinger_def_die,spearman_def_die,axeman_def_die,loot_wood,loot_clay,loot_iron,loot_wheat,time,is_read,type) VALUES ('$target','$topic','$winner_player','$attacker_and_city','$defender_and_city','$send_clubswinger','$send_spearman','$send_axeman','$defender_old_clubswinger','$defender_old_spearman','$defender_old_axeman','$attacker_die_clubswinger','$attacker_die_spearman','$attacker_die_axeman','$defender_die_clubswinger','$defender_die_spearman','$defender_die_axeman','$attacker_loot_wood','$attacker_loot_clay','$attacker_loot_iron','$attacker_loot_wheat','$time_now',0,'$type')") or die(mysql_error());
     }
     /*
     RETURNING ATTACKS
@@ -334,10 +331,8 @@ while ($x > 0) {
     }
     $x = $x - 1;
 }
+
 ?>
-
-
-
 
 
 <!--
@@ -523,24 +518,30 @@ while ($x > 0) {
     }
     $x = $x - 1;
 }//ONE EVENT LOOP END
+
+
+/*
+VARIABLES FOR SIDEBARSANDFOOTER.php & TIMERS IN BUILDINGS (TIMERS)
+BUG: AMOUNT SKRIVFEL MÅST BYTAS I MÅNGA FILER OM MAN VILL BYTA DE
+*/
 {
-    $sendres_timer_event_amount_in = count($sendres_event_ids_in);
-    $sendres_timer_event_amount_out = count($sendres_event_ids_out);
+    $sendres_timer_event_ammount_in = count($sendres_event_ids_in);
+    $sendres_timer_event_ammount_out = count($sendres_event_ids_out);
     $sendres_timer_event_min_time_id_in = array_search(min($sendres_timer_stro_completed_in), $sendres_timer_stro_completed_in);
     $sendres_timer_event_min_time_id_out = array_search(min($sendres_timer_stro_completed_out), $sendres_timer_stro_completed_out);
 
-    $attack_timer_event_amount_in = count($attack_event_ids_in);
-    $attack_timer_event_amount_out = count($attack_event_ids_out);
+    $attack_timer_event_ammount_in = count($attack_event_ids_in);
+    $attack_timer_event_ammount_out = count($attack_event_ids_out);
     $attack_timer_event_min_time_id_in = array_search(min($attack_timer_stro_completed_in), $attack_timer_stro_completed_in);
     $attack_timer_event_min_time_id_out = array_search(min($attack_timer_stro_completed_out), $attack_timer_stro_completed_out);
 
-    $troop_timer_event_amount = count($troop_event_ids);
+    $troop_timer_event_ammount = count($troop_event_ids);
     $troop_timer_event_min_time_id = array_search(min($troop_timer_stro_completed), $troop_timer_stro_completed);
 
-    $returning_sendres_timer_event_amount = count($sendres_event_ids_return);
+    $returning_sendres_timer_event_ammount = count($sendres_event_ids_return);
     $returning_sendres_timer_event_min_time_id = array_search(min($sendres_timer_stro_completed_return), $sendres_timer_stro_completed_return);
 
-    $returning_attack_timer_event_amount = count($attack_event_ids_return);
+    $returning_attack_timer_event_ammount = count($attack_event_ids_return);
     $returning_attack_timer_event_min_time_id = array_search(min($attack_timer_stro_completed_return), $attack_timer_stro_completed_return);
 }
 
@@ -590,4 +591,5 @@ SEND EVERYTHING TO MYSQL
         $wheat = $row["wheat"];
     }
 }
+
 ?>

@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set("UTC");
+
 include "includes/databasedetails.php";
 include "executables/start_logic.php";
 ?>

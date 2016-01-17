@@ -25,9 +25,9 @@
     </div>
     <br>
     <!-- Print out the new resource values and increase them every 0,1 second but keep them rounded up -->
-    Wood: <b id=wood>error</b>
-    Clay: <b id=clay>error</b>
-    Iron: <b id=iron>error</b>
-    Pizzas: <b id=wheat>error</b><br>
+    Wood: <b id=wood>error</b><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
+    Clay: <b id=clay>error</b><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
+    Iron: <b id=iron>error</b><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
+    Wheat: <b id=wheat>error</b><br><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
 
 </div><!-- #header-->
