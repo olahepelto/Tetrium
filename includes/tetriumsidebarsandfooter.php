@@ -143,10 +143,10 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
     <div style="width: 200px; float: right;">
         <div class="sidebar" id="sideRight">
             <strong><?php echo "Resource production"; ?></strong><br>
-            <?php echo "Wood: ", $res_p_h["wood"], " per hour"; ?><br>
-            <?php echo "Clay: ", $res_p_h["clay"], " per hour"; ?><br>
-            <?php echo "Iron: ", $res_p_h["iron"], " per hour"; ?><br>
-            <?php echo "Wheat: ", $res_p_h["wheat"], " per hour"; ?><br>
+            <?php echo "<img src='/images/wood.png' height='15' width='15'>"," Wood: <b>", $res_p_h["wood"], "</b> per hour"; ?><br>
+            <?php echo "<img src='/images/clay.png' height='15' width='15'>"," Iron: <b>", $res_p_h["iron"], "</b> per hour"; ?><br>
+            <?php echo "<img src='/images/iron.png' height='15' width='15'>"," Clay: <b>", $res_p_h["clay"], "</b> per hour"; ?><br>
+            <?php echo "<img src='/images/wheat.png' height='15' width='15'>"," Wheat: <b>", $res_p_h["wheat"], "</b> per hour"; ?><br>
         </div><!-- .sidebar#sideRight -->
         <?php
 //</editor-fold>

@@ -1,5 +1,6 @@
 <link rel="shortcut icon" type="image/ico" href="../images/favicon.ico"/>
 <?php
+date_default_timezone_set("UTC");
 session_start();
 
 ini_set('display_errors', 'Off');

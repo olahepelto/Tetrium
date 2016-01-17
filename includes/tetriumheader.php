@@ -1,7 +1,9 @@
 <div id="header">
     <div id=menubar>
         <a href="tetrium.php?p=res"><img src="images/resourcefield.png" id="resourcefieldmenu" alt="Error"></a>
-        <img src="images/village.png" id="villagemenu" alt="Error">
+
+        <img src="/images/village.png" id="villagemenu" alt="Error">
+
         <a href="tetrium.php?p=map" style="text-decoration: none;"><img width="98" height="87" src="images/map2.png"
                                                                         alt="Error"></a>
         <a href="tetrium.php?p=mis" style="text-decoration: none;"><img width="98" height="87"
@@ -24,10 +26,8 @@
         <div style="float:right;"><?php include_once "includes/village_switcher.php"; ?></div>
     </div>
     <br>
-    <!-- Print out the new resource values and increase them every 0,1 second but keep them rounded up -->
-    Wood: <b id=wood>error</b><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
-    Clay: <b id=clay>error</b><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
-    Iron: <b id=iron>error</b><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
-    Wheat: <b id=wheat>error</b><br><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
-
+        <img src="/images/wood.png" height="15" width="15"><font style="font-weight: bold;" id=wood>error</font><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
+        <img src="/images/clay.png" height="15" width="15"><font style="font-weight: bold;" id=clay>error</font><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
+        <img src="/images/iron.png" height="15" width="15"><font style="font-weight: bold;" id=iron>error</font><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
+        <img src="/images/wheat.png" height="15" width="15"><font style="font-weight: bold;" id=wheat>error</font><b>/<?php echo $mysql_data["storage"] * 3200 + 800;?></b>
 </div><!-- #header-->

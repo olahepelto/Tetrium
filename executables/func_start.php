@@ -11,11 +11,7 @@ if ($_GET["type"] == "train") {
     train($_GET["troop_type"], $_GET["train_amount"], $village_id, $player_id);
 }
 if (isset($_GET["building"])) {
-
-    $village_id = $current_village_id;
-    $player_id = $id;
-
-    upgrade($_GET["building"], $village_id, $player_id);
+    upgrade($_GET["building"], $current_village_id, $id);
 }
 if (isset($_GET["switch_id"])) {
     $village_id = $current_village_id;

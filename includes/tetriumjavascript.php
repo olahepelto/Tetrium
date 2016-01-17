@@ -27,29 +27,53 @@
 
         if (parseFloat(res.wood) < storagespace) {
             res.wood = parseFloat(res_p_ms.wood) * parseFloat(ms_since_pageload) + parseFloat(pageload_res.wood);
+            $(document).ready(function(){
+                $("#wood").css("color", "green");
+            });
         } else {
             res.wood = storagespace;
+            $(document).ready(function(){
+                $("#wood").css("color", "red");
+            });
         }
         document.getElementById('wood').innerHTML = res.wood.toFixed(decimals);
 
         if (parseFloat(res.clay) < storagespace) {
             res.clay = parseFloat(res_p_ms.clay) * parseFloat(ms_since_pageload) + parseFloat(pageload_res.clay);
+            $(document).ready(function(){
+                $("#clay").css("color", "green");
+            });
         } else {
             res.clay = storagespace;
+            $(document).ready(function(){
+                $("#clay").css("color", "red");
+            });
         }
         document.getElementById('clay').innerHTML = res.clay.toFixed(decimals);
 
         if (parseFloat(res.iron) < storagespace) {
             res.iron = parseFloat(res_p_ms.iron) * parseFloat(ms_since_pageload) + parseFloat(pageload_res.iron);
+            $(document).ready(function(){
+                $("#iron").css("color", "green");
+            });
         } else {
             res.iron = storagespace;
+            $(document).ready(function(){
+                $("#iron").css("color", "red");
+            });
         }
         document.getElementById('iron').innerHTML = res.iron.toFixed(decimals);
 
         if (parseFloat(res.wheat) < storagespace) {
             res.wheat = parseFloat(res_p_ms.wheat) * parseFloat(ms_since_pageload) + parseFloat(pageload_res.wheat);
+            $(document).ready(function(){
+                $("#wheat").css("color", "green");
+            });
         } else {
             res.wheat = storagespace;
+            $(document).ready(function(){
+                $("#wheat").css("color", "red");
+            });
         }
         document.getElementById('wheat').innerHTML = res.wheat.toFixed(decimals);
 

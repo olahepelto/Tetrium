@@ -1,5 +1,4 @@
 <?php
-date_default_timezone_set("UTC");
 
 include "includes/databasedetails.php";
 include "executables/start_logic.php";
@@ -8,6 +7,7 @@ include "executables/start_logic.php";
 <head>
     <title>Tetrium</title>
     <link rel="stylesheet" href="style/tetriumstyle.css" type="text/css" media="screen, projection"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- LOAD JQUERY LIBRARY -->
 </head>
 <body>
 <center>
@@ -56,17 +56,15 @@ include "executables/start_logic.php";
                         case "ugg":
                             $page = "upgradegui";
                             break;
-
                         case "vre":
                             $page = "viewreport";
                             break;
-
                         default:
                             $page = "page_error";
                             break;
                     }
-
-                    include "pages/" . $page . ".php"; ?>
+                    include "pages/".$page.".php";
+                    ?>
                     <br><br><br><br><br>
                     <?php include "includes/buildingtimer.php"; ?>
 

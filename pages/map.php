@@ -1,5 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- LOAD JQUERY LIBRARY -->
-
 <div style="width: 500px; height: 500px;" id="mapbox">
 
     <?php
@@ -10,8 +8,8 @@
     -----------------------------------------*/
 
 
-    $x = 0;
-    $y = 0;
+    $x = 20;
+    $y = 20;
     $vid = 0;
 
     while ($y < 20) {

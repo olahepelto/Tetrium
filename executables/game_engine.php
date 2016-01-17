@@ -315,7 +315,6 @@ function upgrade($building, $village_id, $player_id)
 
     $mysql_data = get_val($village_id);
 
-
     switch ($building) {
         case "woodcutter1":
             $level = $mysql_data["woodcutter1"];
@@ -536,7 +535,6 @@ function upgrade($building, $village_id, $player_id)
 
 
     $timereq = $timereq + $upgrade_all_seconds_left[0];
-    $timereq = ceil($timereq);
     $completed = date("Y-m-d H:i:s", strtotime("$timereq seconds"));
 
     if ($mysql_data["wood"] > $woodreq and $mysql_data["clay"] > $clayreq and $mysql_data["iron"] > $ironreq and $mysql_data["wheat"] > $wheatreq) {
