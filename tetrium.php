@@ -23,6 +23,9 @@ include "executables/start_logic.php";
                         case "adm":
                             $page = "admin";
                             break;
+                        case "vlg":
+                            $page = "village";
+                            break;
                         case "att":
                             $page = "attack";
                             break;

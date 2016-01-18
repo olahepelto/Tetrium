@@ -53,7 +53,6 @@ input {
 
 #wrapper {
     width: 100%;
-    /*min-width: 940px;*/
     width: 940px;
 }
 
@@ -120,7 +119,7 @@ input {
     /* height: 700px; */
     max-height: 1000px;
     position: relative;
-    background: #FFACAA;
+    /*background: #FFACAA;*/
     border-radius: 10px;
 }
 
@@ -131,7 +130,7 @@ input {
     /* height: 700px; */
     max-height: 1000px;
     position: relative;
-    background: #3EA055;
+    /*background: #3EA055;*/
     border-radius: 10px;
 }
 
@@ -142,24 +141,9 @@ input {
     /* height: 700px; */
     max-height: 1000px;
     position: relative;
-    background: #96D3FF;
-    border-radius: 10px;
+/*background: #96D3FF;*/
+border-radius: 10px;
 }
-
-/* Footer
------------------------------------------------------------------------------*/
-
-/*
-#footer {
-	height: 25px;
-	position:absolute; 
-    bottom: 0px;
-	width: 100%;
-}
-*/
-
-/* Levels
------------------------------------------------------------------------------*/
 
 /* WOODCUTTER POSITIONS */
 #woodcutter1level {

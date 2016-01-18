@@ -151,20 +151,6 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
         <?php
 //</editor-fold>
 
-// <editor-fold defaultstate="collapsed" desc="Temporary building view">
-        ?>
-        <div class="sidebar" id="sideUnderRight">
-            <strong>Buildings:</strong><br>
-            <a href="tetrium.php?p=ugg&building=mainbuilding">Main Building Level: <?php echo $mainbuilding; ?></a><br>
-            <a href="tetrium.php?p=ugg&building=storage">Storage Level: <?php echo $storage; ?></a><br>
-            <a href="tetrium.php?p=ugg&building=barracks">Barracks Level: <?php echo $barracks; ?></a><br>
-            <a href="tetrium.php?p=ugg&building=marketplace">Marketplace Level: <?php echo $marketplace; ?></a><br>
-            <a href="tetrium.php?p=ugg&building=stable">Stable Level: <?php echo $stable; ?></a><br>
-            <a href="tetrium.php?p=ugg&building=wall">Wall Level: <?php echo $wall; ?></a><br>
-            More Coming soon<br>
-        </div><!-- .sidebar#UndersideRight -->
-        <?php
-// </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="Troop Amount view">
         if ($mysql_data["clubswinger"] > 0 or $mysql_data["spearman"] > 0 or $mysql_data["axeman"] > 0) {
@@ -212,7 +198,7 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
                     <strong>Actions:<br>
                         <a style="color:#FE2E2E;" href="tetrium.php?p=att&nocords=true">Attack</a><br>
                         <a style="color:#40FF00;" href="reinforce.php?nocords=true">Reinforce</a><br>
-                        <a style="color:#40FF00;" href="tetrium.php?p=srs&nocords=true">Send resources</a>	
+                        <a style="color:#40FF00;" href="tetrium.php?p=srs&nocords=true">Send resources</a>
                     </strong>
                 </div>
     <?php

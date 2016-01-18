@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aee9f1a-68d6-49fd-9ca7-f2268d03d7e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/pil_upp.png" afterPath="$PROJECT_DIR$/images/pil_upp.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/www.iml" afterPath="$PROJECT_DIR$/.idea/www.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/executables/func_start.php" afterPath="$PROJECT_DIR$/executables/func_start.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/executables/game_engine.php" afterPath="$PROJECT_DIR$/executables/game_engine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/databasedetails.php" afterPath="$PROJECT_DIR$/includes/databasedetails.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/tetriumheader.php" afterPath="$PROJECT_DIR$/includes/tetriumheader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/tetriumjavascript.php" afterPath="$PROJECT_DIR$/includes/tetriumjavascript.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/tetriumsidebarsandfooter.php" afterPath="$PROJECT_DIR$/includes/tetriumsidebarsandfooter.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/map.php" afterPath="$PROJECT_DIR$/pages/map.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/resourcefields.php" afterPath="$PROJECT_DIR$/pages/resourcefields.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/upgradegui.php" afterPath="$PROJECT_DIR$/pages/upgradegui.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/tetriumstyle.css" afterPath="$PROJECT_DIR$/style/tetriumstyle.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tetrium.php" afterPath="$PROJECT_DIR$/tetrium.php" />
     </list>
     <ignored path="www.iws" />
@@ -54,72 +47,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="upgradegui.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/upgradegui.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33834586">
-              <caret line="290" column="67" selection-start-line="290" selection-start-column="67" selection-end-line="290" selection-end-column="67" />
-              <folding>
-                <element signature="e#136#1611#0#PHP" expanded="false" />
-                <element signature="e#1614#5312#0#PHP" expanded="false" />
-                <element signature="e#5498#5913#0#PHP" expanded="false" />
-                <element signature="e#5850#5913#0#PHP" expanded="false" />
-                <element signature="e#6123#6644#0#PHP" expanded="false" />
-                <element signature="e#6152#6519#0#PHP" expanded="false" />
-                <element signature="e#6601#6644#0#PHP" expanded="false" />
-                <element signature="e#6681#7526#0#PHP" expanded="false" />
-                <element signature="e#7898#8262#0#PHP" expanded="false" />
-                <element signature="e#8263#8626#0#PHP" expanded="false" />
-                <element signature="e#8627#8996#0#PHP" expanded="false" />
-                <element signature="e#8997#9356#0#PHP" expanded="false" />
-                <element signature="e#9357#9714#0#PHP" expanded="false" />
-                <marker date="1453069444939" expanded="true" signature="5344:5445" placeholder="SELECT * FRO... events" />
-                <marker date="1453069444939" expanded="true" signature="5572:5700" placeholder="SELECT nextl... events" />
-                <marker date="1453069444939" expanded="true" signature="5974:6070" placeholder="SELECT * FRO... events" />
-                <marker date="1453069444939" expanded="true" signature="9905:10006" placeholder="SELECT * FRO... events" />
-                <marker date="1453069444939" expanded="true" signature="10338:10377" placeholder="..." />
-                <marker date="1453069444939" expanded="true" signature="10338:10402" placeholder="..." />
-                <marker date="1453069444939" expanded="true" signature="11393:11410" placeholder="..." />
-                <marker date="1453069444939" expanded="true" signature="11518:11535" placeholder="..." />
-                <marker date="1453069444939" expanded="true" signature="11729:11746" placeholder="..." />
-                <marker date="1453069444939" expanded="true" signature="11943:11960" placeholder="..." />
-                <marker date="1453069444939" expanded="true" signature="12031:12048" placeholder="..." />
-                <marker date="1453069444939" expanded="true" signature="12236:12315" placeholder="SELECT * FRO... events" />
-              </folding>
+      <file leaf-file-name="tetrium.map" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/ae54c10d/8837fa3e-09f8-4c32-a9fd-0cd80b82dc65/tetrium.map">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="id=4" />
+                <filter text="village=Gallifrey" />
+                <filter text="village_id&lt;200" />
+                <filter text="village_id&gt;9790" />
+                <filter text="9910&gt;village_id&gt;9790" />
+                <filter text="village_id&gt;9800" />
+                <filter text="village_id&gt;9900" />
+                <filter text="village_id&gt;9990" />
+                <filter text="village_id&gt;9000" />
+                <filter text="village_id&gt;5000" />
+              </filtering>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tetriumsidebarsandfooter.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/tetriumsidebarsandfooter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.433735">
-              <caret line="146" column="65" selection-start-line="146" selection-start-column="64" selection-end-line="146" selection-end-column="65" />
-              <folding>
-                <element signature="e#6#74#0#PHP" expanded="true" />
-                <element signature="e#7682#7754#0#PHP" expanded="true" />
-                <element signature="e#8616#8682#0#PHP" expanded="true" />
-                <element signature="e#10120#10148#0#HTML" expanded="true" />
-                <element signature="e#10218#10240#0#HTML" expanded="true" />
-                <element signature="e#10364#10386#0#HTML" expanded="true" />
-                <element signature="e#10509#10531#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tetriumheader.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/tetriumheader.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.307692">
-              <caret line="28" column="59" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="59" />
-              <folding>
-                <element signature="n#style#0;n#font#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#font#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#font#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#font#3;n#div#0;n#!!top" expanded="true" />
-                <marker date="1453067189014" expanded="true" signature="783:842" placeholder="SELECT * FRO... reports" />
-              </folding>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/includes/barracks.php" />
         <option value="$PROJECT_DIR$/includes/analytics.php" />
         <option value="$PROJECT_DIR$/executables/checklogin.php" />
         <option value="$PROJECT_DIR$/executables/register.php" />
@@ -146,7 +94,6 @@
         <option value="$PROJECT_DIR$/pages/stats.php" />
         <option value="$PROJECT_DIR$/pages/viewreport.php" />
         <option value="$PROJECT_DIR$/style/login-form.css" />
-        <option value="$PROJECT_DIR$/style/tetriumstyle.css" />
         <option value="$PROJECT_DIR$/style/upgradestyle.css" />
         <option value="$PROJECT_DIR$/about.php" />
         <option value="$PROJECT_DIR$/changelog.html" />
@@ -173,16 +120,18 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8837fa3e-09f8-4c32-a9fd-0cd80b82dc65/console.sql" />
         <option value="$PROJECT_DIR$/ADMIN_functions/gen_map.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/pages/map.php" />
         <option value="$PROJECT_DIR$/pages/resourcefields.php" />
         <option value="$PROJECT_DIR$/executables/func_start.php" />
         <option value="$PROJECT_DIR$/includes/databasedetails.php" />
         <option value="$PROJECT_DIR$/executables/game_engine.php" />
-        <option value="$PROJECT_DIR$/tetrium.php" />
         <option value="$PROJECT_DIR$/includes/tetriumjavascript.php" />
-        <option value="$PROJECT_DIR$/includes/tetriumheader.php" />
-        <option value="$PROJECT_DIR$/includes/tetriumsidebarsandfooter.php" />
         <option value="$PROJECT_DIR$/pages/upgradegui.php" />
+        <option value="$PROJECT_DIR$/pages/map.php" />
+        <option value="$PROJECT_DIR$/style/tetriumstyle.css" />
+        <option value="$PROJECT_DIR$/includes/tetriumheader.php" />
+        <option value="$PROJECT_DIR$/tetrium.php" />
+        <option value="$PROJECT_DIR$/pages/village.php" />
+        <option value="$PROJECT_DIR$/includes/tetriumsidebarsandfooter.php" />
       </list>
     </option>
   </component>
@@ -252,7 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -281,12 +229,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -378,26 +341,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11673774" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10714286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.50319827" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22101842" sideWeight="0.4968017" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24160346" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39285713" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0995671" sideWeight="0.4968017" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889125" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20043337" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20021646" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902136" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39285713" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24377032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24160346" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -422,29 +385,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/viewreport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-39.23077">
-          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
-          <folding>
-            <marker date="1452942330427" expanded="true" signature="223:273" placeholder="SELECT * FRO... reports" />
-            <marker date="1452942330427" expanded="true" signature="606:663" placeholder="UPDATE repor... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/login-form.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.961538">
           <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/tetriumstyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.576923">
-          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -473,7 +417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6482165">
           <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -481,7 +424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6063961">
           <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -489,7 +431,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4391144">
           <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -497,7 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9615384">
           <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -505,7 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769">
           <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -550,9 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2735632">
           <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding>
-            <marker date="1452945980868" expanded="true" signature="242:281" placeholder="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -568,7 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45224395">
           <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -576,19 +511,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15650173">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/ae54c10d/8837fa3e-09f8-4c32-a9fd-0cd80b82dc65/tetrium.members">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -596,7 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769">
           <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -604,7 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.384615">
           <caret line="265" column="0" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -612,7 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.653846">
           <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -620,17 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/village_switcher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <marker date="1452942146073" expanded="true" signature="208:267" placeholder="SELECT villa... map" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -646,9 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-          <folding>
-            <marker date="1452942308896" expanded="true" signature="908:951" placeholder="SELECT * FRO... reports" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,7 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846">
           <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.730769">
           <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="58" selection-start-line="0" selection-start-column="52" selection-end-line="0" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -759,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5082212">
           <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,22 +705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/map.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1453059785148" expanded="true" signature="457:498" placeholder="SELECT * FRO... map" />
-            <marker date="1453059785148" expanded="true" signature="857:969" placeholder="SELECT * FRO... events" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49718308">
           <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,9 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42251462">
           <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-          <folding>
-            <marker date="1453060406985" expanded="true" signature="903:1024" placeholder="SELECT * FRO... events" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -857,39 +755,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/ae54c10d/8837fa3e-09f8-4c32-a9fd-0cd80b82dc65/tetrium.events">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ae54c10d/8837fa3e-09f8-4c32-a9fd-0cd80b82dc65/tetrium.map">
       <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="id=4" />
-            <filter text="village=Gallifrey" />
-            <filter text="village_id&lt;200" />
-            <filter text="village_id&gt;9790" />
-            <filter text="9910&gt;village_id&gt;9790" />
-            <filter text="village_id&gt;9800" />
-            <filter text="village_id&gt;9900" />
-            <filter text="village_id&gt;9990" />
-            <filter text="village_id&gt;9000" />
-            <filter text="village_id&gt;5000" />
-          </filtering>
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -915,19 +788,19 @@
             <element signature="e#21497#21890#0#PHP" expanded="false" />
             <element signature="e#21895#22278#0#PHP" expanded="false" />
             <element signature="e#22283#22664#0#PHP" expanded="false" />
-            <element signature="e#23900#23988#0#PHP" expanded="true" />
-            <element signature="e#24380#24477#0#PHP" expanded="true" />
-            <element signature="e#24904#24986#0#PHP" expanded="true" />
-            <element signature="e#28728#28816#0#PHP" expanded="true" />
-            <element signature="e#29843#29936#0#PHP" expanded="true" />
-            <element signature="e#30224#30319#0#PHP" expanded="true" />
-            <element signature="e#32078#32150#0#PHP" expanded="true" />
-            <element signature="e#32260#32343#0#PHP" expanded="true" />
-            <element signature="e#32632#32710#0#PHP" expanded="true" />
-            <element signature="e#33031#33143#0#PHP" expanded="true" />
-            <element signature="e#34378#34468#0#PHP" expanded="true" />
-            <element signature="e#34814#34835#0#HTML" expanded="true" />
-            <element signature="e#35343#35430#0#PHP" expanded="true" />
+            <element signature="e#23900#23988#0#PHP" expanded="false" />
+            <element signature="e#24380#24477#0#PHP" expanded="false" />
+            <element signature="e#24904#24986#0#PHP" expanded="false" />
+            <element signature="e#28728#28816#0#PHP" expanded="false" />
+            <element signature="e#29843#29936#0#PHP" expanded="false" />
+            <element signature="e#30224#30319#0#PHP" expanded="false" />
+            <element signature="e#32078#32150#0#PHP" expanded="false" />
+            <element signature="e#32260#32343#0#PHP" expanded="false" />
+            <element signature="e#32632#32710#0#PHP" expanded="false" />
+            <element signature="e#33031#33143#0#PHP" expanded="false" />
+            <element signature="e#34378#34468#0#PHP" expanded="false" />
+            <element signature="e#34814#34835#0#HTML" expanded="false" />
+            <element signature="e#35343#35430#0#PHP" expanded="false" />
             <marker date="1453066730516" expanded="true" signature="155:203" placeholder="SELECT * FRO... map" />
             <marker date="1453066730516" expanded="true" signature="9524:9588" placeholder="UPDATE ${$ta... " />
             <marker date="1453066730516" expanded="true" signature="9843:9911" placeholder="UPDATE map S... " />
@@ -955,14 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tetrium.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12781955">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/tetriumjavascript.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61353385">
@@ -971,67 +836,156 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/upgradegui.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="176" column="1" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="1" />
+          <folding>
+            <element signature="e#134#1609#0#PHP" expanded="false" />
+            <element signature="e#1612#5310#0#PHP" expanded="false" />
+            <element signature="e#5496#5911#0#PHP" expanded="false" />
+            <element signature="e#5848#5911#0#PHP" expanded="false" />
+            <element signature="e#6121#6642#0#PHP" expanded="false" />
+            <element signature="e#6150#6517#0#PHP" expanded="false" />
+            <element signature="e#6599#6642#0#PHP" expanded="false" />
+            <element signature="e#6678#7523#0#PHP" expanded="false" />
+            <element signature="e#7895#8259#0#PHP" expanded="false" />
+            <element signature="e#8260#8623#0#PHP" expanded="false" />
+            <element signature="e#8624#8993#0#PHP" expanded="false" />
+            <element signature="e#8994#9353#0#PHP" expanded="false" />
+            <element signature="e#9354#9711#0#PHP" expanded="false" />
+            <marker date="1453129636639" expanded="true" signature="5342:5443" placeholder="SELECT * FRO... events" />
+            <marker date="1453129636639" expanded="true" signature="5570:5698" placeholder="SELECT nextl... events" />
+            <marker date="1453129636639" expanded="true" signature="5972:6068" placeholder="SELECT * FRO... events" />
+            <marker date="1453129636639" expanded="true" signature="9902:10003" placeholder="SELECT * FRO... events" />
+            <marker date="1453129636639" expanded="true" signature="10335:10374" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="10335:10399" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="11303:11320" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="11389:11406" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="11514:11531" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="11600:11617" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="11725:11742" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="11811:11828" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="11939:11956" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="12027:12044" placeholder="..." />
+            <marker date="1453129636639" expanded="true" signature="12232:12311" placeholder="SELECT * FRO... events" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/village_switcher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44671533">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1452942146073" expanded="true" signature="208:267" placeholder="SELECT villa... map" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tetrium.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4569343">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding>
+            <marker date="1453139291909" expanded="true" signature="2959:3038" placeholder="UPDATE map S... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4218978">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding>
+            <marker date="1453131830519" expanded="true" signature="255:272" placeholder="SELECT names... " />
+            <marker date="1453131830519" expanded="true" signature="812:924" placeholder="SELECT * FRO... events" />
+            <marker date="1453131830519" expanded="true" signature="1586:1598" placeholder="..." />
+            <marker date="1453131830519" expanded="true" signature="1678:2089" placeholder="..." />
+            <marker date="1453131830519" expanded="true" signature="1899:1968" placeholder="..." />
+            <marker date="1453131830519" expanded="true" signature="2364:2959" placeholder="..." />
+            <marker date="1453131830519" expanded="true" signature="2422:2858" placeholder="{...}" />
+            <marker date="1453131830519" expanded="true" signature="2930:2959" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/tetriumheader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.307692">
-          <caret line="28" column="59" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.22335766">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
+            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#font#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#font#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#font#2;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#font#3;n#div#0;n#!!top" expanded="true" />
-            <marker date="1453067189014" expanded="true" signature="783:842" placeholder="SELECT * FRO... reports" />
+            <marker date="1453139255805" expanded="true" signature="702:761" placeholder="SELECT * FRO... reports" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/tetriumstyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9255474">
+          <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/tetriumsidebarsandfooter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.433735">
-          <caret line="146" column="65" selection-start-line="146" selection-start-column="64" selection-end-line="146" selection-end-column="65" />
+        <state vertical-scroll-proportion="-7.981818">
+          <caret line="199" column="33" selection-start-line="199" selection-start-column="33" selection-end-line="199" selection-end-column="33" />
           <folding>
             <element signature="e#6#74#0#PHP" expanded="true" />
-            <element signature="e#7682#7754#0#PHP" expanded="true" />
-            <element signature="e#8616#8682#0#PHP" expanded="true" />
-            <element signature="e#10120#10148#0#HTML" expanded="true" />
-            <element signature="e#10218#10240#0#HTML" expanded="true" />
-            <element signature="e#10364#10386#0#HTML" expanded="true" />
-            <element signature="e#10509#10531#0#HTML" expanded="true" />
+            <element signature="e#2372#2442#0#PHP" expanded="true" />
+            <element signature="e#2443#6774#0#PHP" expanded="false" />
+            <element signature="e#6832#6904#0#PHP" expanded="true" />
+            <element signature="e#6921#6956#0#HTML" expanded="true" />
+            <element signature="e#7683#7749#0#PHP" expanded="true" />
+            <element signature="e#9187#9215#0#HTML" expanded="true" />
+            <element signature="e#9285#9307#0#HTML" expanded="true" />
+            <element signature="e#9431#9453#0#HTML" expanded="true" />
+            <element signature="e#9576#9598#0#HTML" expanded="true" />
+            <element signature="e#9848#9876#0#HTML" expanded="true" />
+            <element signature="e#10151#10173#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/upgradegui.php">
+    <entry file="file://$PROJECT_DIR$/pages/village.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33834586">
-          <caret line="290" column="67" selection-start-line="290" selection-start-column="67" selection-end-line="290" selection-end-column="67" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
           <folding>
-            <element signature="e#136#1611#0#PHP" expanded="false" />
-            <element signature="e#1614#5312#0#PHP" expanded="false" />
-            <element signature="e#5498#5913#0#PHP" expanded="false" />
-            <element signature="e#5850#5913#0#PHP" expanded="false" />
-            <element signature="e#6123#6644#0#PHP" expanded="false" />
-            <element signature="e#6152#6519#0#PHP" expanded="false" />
-            <element signature="e#6601#6644#0#PHP" expanded="false" />
-            <element signature="e#6681#7526#0#PHP" expanded="false" />
-            <element signature="e#7898#8262#0#PHP" expanded="false" />
-            <element signature="e#8263#8626#0#PHP" expanded="false" />
-            <element signature="e#8627#8996#0#PHP" expanded="false" />
-            <element signature="e#8997#9356#0#PHP" expanded="false" />
-            <element signature="e#9357#9714#0#PHP" expanded="false" />
-            <marker date="1453069444939" expanded="true" signature="5344:5445" placeholder="SELECT * FRO... events" />
-            <marker date="1453069444939" expanded="true" signature="5572:5700" placeholder="SELECT nextl... events" />
-            <marker date="1453069444939" expanded="true" signature="5974:6070" placeholder="SELECT * FRO... events" />
-            <marker date="1453069444939" expanded="true" signature="9905:10006" placeholder="SELECT * FRO... events" />
-            <marker date="1453069444939" expanded="true" signature="10338:10377" placeholder="..." />
-            <marker date="1453069444939" expanded="true" signature="10338:10402" placeholder="..." />
-            <marker date="1453069444939" expanded="true" signature="11393:11410" placeholder="..." />
-            <marker date="1453069444939" expanded="true" signature="11518:11535" placeholder="..." />
-            <marker date="1453069444939" expanded="true" signature="11729:11746" placeholder="..." />
-            <marker date="1453069444939" expanded="true" signature="11943:11960" placeholder="..." />
-            <marker date="1453069444939" expanded="true" signature="12031:12048" placeholder="..." />
-            <marker date="1453069444939" expanded="true" signature="12236:12315" placeholder="SELECT * FRO... events" />
+            <element signature="e#46#118#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ae54c10d/8837fa3e-09f8-4c32-a9fd-0cd80b82dc65/tetrium.map">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="id=4" />
+            <filter text="village=Gallifrey" />
+            <filter text="village_id&lt;200" />
+            <filter text="village_id&gt;9790" />
+            <filter text="9910&gt;village_id&gt;9790" />
+            <filter text="village_id&gt;9800" />
+            <filter text="village_id&gt;9900" />
+            <filter text="village_id&gt;9990" />
+            <filter text="village_id&gt;9000" />
+            <filter text="village_id&gt;5000" />
+          </filtering>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="32" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -6,8 +6,6 @@ if (empty($building)) {
     exit;
 }
 
-
-
 $message_array = array("Woodcutter" => "The woodcutter is an essential part of the village.<br>Upgrade your woodcutters to increase your wood production.",
     "Claypit" => "The claypit produces clay that is needed for many buildings.<br>Upgrade your clay pits to increase your clay production.",
     "Ironmine" => "The iron miners who work in dark caves produce iron.<br>Upgrade your iron mines to increase your iron production.",
@@ -177,7 +175,6 @@ if ($upgrade_many > 0) {
 } else {
     $upgrade_all_seconds_left = 0;
 }
-
 //Production building upgrade cost
 if ($name == "Woodcutter" or $name == "Claypit" or $name == "Ironmine" or $name == "Cropland") {
     $woodreq = ceil(pow($newlevel + 5, 3 + $newlevel / 40));
@@ -284,7 +281,6 @@ $completed = date("Y-m-d H:i:s", strtotime("$timereq_gui seconds"));
             echo "<br>Build your marketplace to level 1 to trade<br>";
         }
     }
-
 
     if ($level >= 1 or $buildingreq == 1 or empty($buildingreq)) {
         if($woodreq>$mysql_data["wood"]){echo "Wood: <font style='font-weight:bold;' color='red'>", $woodreq, "</font> ";}else{echo "Wood: <font style='font-weight:bold;' color='green'>", $woodreq, "</font> ";}

@@ -2,12 +2,10 @@
     <div id=menubar>
         <a href="tetrium.php?p=res"><img src="images/resourcefield.png" id="resourcefieldmenu" alt="Error"></a>
 
-        <img src="/images/village.png" id="villagemenu" alt="Error">
+        <a href="tetrium.php?p=vlg" style="text-decoration: none;"><img src="/images/village.png" id="villagemenu" alt="Error"></a>
 
-        <a href="tetrium.php?p=map" style="text-decoration: none;"><img width="98" height="87" src="images/map2.png"
-                                                                        alt="Error"></a>
-        <a href="tetrium.php?p=mis" style="text-decoration: none;"><img width="98" height="87"
-                                                                        src="images/Battle_Icon.png" alt="Error"></a>
+        <a href="tetrium.php?p=map" style="text-decoration: none;"><img width="98" height="87" src="images/map2.png" alt="Error"></a>
+        <a href="tetrium.php?p=mis" style="text-decoration: none;"><img width="98" height="87" src="images/Battle_Icon.png" alt="Error"></a>
         <a href="tetrium.php?p=sts"><img src="images/stats.png" id="statsmenu" alt="Error"></a>
         <?php
 

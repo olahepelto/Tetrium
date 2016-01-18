@@ -2,61 +2,62 @@
 
     <?php
     $nocords = true;
-
     /*-----------------------------------------
     This is the mighty map square function
     -----------------------------------------*/
 
 
-    $x = 20;
-    $y = 20;
-    $vid = 0;
+    $result = mysql_query("SELECT * FROM map");
+    $storeArray = Array();
 
-    while ($y < 20) {
+    while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+        $villagename[] = $row['village'];
+        $owner[] = $row['player'];
+        $type[] = $row['type'];
+        $vidx[] = $row['x'];
+        $vidy[] = $row['y'];
+    }
+
+
+    $x = 0;
+    $y = 0;
+    $vid = 0;
+    while ($y < 16) {
         $y++;
         //next line of pictures
         ?><br><?php
-        while ($x < 20) {
+        while ($x < 16) {
             $x++;
             $vid++;
-            $result = mysql_query("SELECT * FROM map WHERE x='$x' and y='$y'");
-            if ($row = mysql_fetch_array($result)) {
-                $villagename[$vid] = $row['village'];
-                $owner[$vid] = $row['player'];
-                $type[$vid] = $row['type'];
-                $vidx[$vid] = $x;
-                $vidy[$vid] = $y;
 
-                $time_now = date("Y-m-d H:i:s");
-                $result = mysql_query("SELECT * FROM events WHERE target_village='$vid' and type='attack' and returning='0' and completed > '$time_now'");
-                $underattack = mysql_num_rows($result);
 
-                /*
-                WORKS BY:
-                FIRST CHECKING IF VILLAGE UNDER ATTACK (if yes stored in $underattack).
-                SECOND it checks village type
-                THIRD overwrites if under attack
-                */
-                if ($row['type'] == -1) {
-                    $location = "images/mapgreen.png";
-                } elseif ($row['type'] == 1) {
-                    $location = "images/mapvillagev2.png";
-                }
-                if ($row['type'] == -1 and $underattack > 0) {
-                    $location = "images/mapred.png";
-                } elseif ($row['type'] == 1 and $underattack > 0) {
-                    $location = "images/mapvillage_under_attack.png";
-                }
+            $time_now = date("Y-m-d H:i:s");
+            $result = mysql_query("SELECT * FROM events WHERE target_village='$vid' and type='attack' and returning='0' and completed > '$time_now'");
+            $underattack = mysql_num_rows($result);
 
-                ?><a style="float: left;" id="village<?php echo $vid; ?>" onMouseOut="hideTooltip(t<?php echo $vid; ?>)"
-                     href="tetrium.php?p=mpv&x=<?php echo $x; ?>&y=<?php echo $y; ?>"
-                     onmouseover="showvillage(<?php echo $vid; ?>,t<?php echo $vid; ?>,<?php echo $underattack; ?>)">
-                <div style="display:none; transform: translate(25px,25px);" id="t<?php echo $vid; ?>"></div>
-                <img src="<?php echo $location; ?>" alt="error" height="25" width="25"></a>
-                <?php
+            if ($row['type'] == -1) {
+                $location = "images/mapgreen.png";
+            } elseif ($row['type'] == 1) {
+                $location = "images/mapvillagev2.png";
             }
+            if ($row['type'] == -1 and $underattack > 0) {
+                $location = "images/mapred.png";
+            } elseif ($row['type'] == 1 and $underattack > 0) {
+                $location = "images/mapvillage_under_attack.png";
+            }
+            if($x>=13){
+                $translateX = -100;
+            }else {
+                $translateX = 25;
+            }
+            ?><a style="float: left;" id="village<?php echo $vid; ?>" onMouseOut="hideTooltip(t<?php echo $vid; ?>)"
+                 href="tetrium.php?p=mpv&x=<?php echo $x; ?>&y=<?php echo $y; ?>"
+                 onmouseover="showvillage(<?php echo $vid; ?>,t<?php echo $vid; ?>,<?php echo $underattack; ?>)">
+            <div style="display:none; transform: translate(<?php echo $translateX;?>px,25px);" id="t<?php echo $vid; ?>"></div>
+            <img src="<?php echo $location; ?>" alt="error" height="31" width="31"></a>
+            <?php
         }
-        if ($x == 20) {
+        if ($x == 16) {
             $x = 0;
         }
     }
@@ -78,11 +79,6 @@
         var vidx = (<?php echo json_encode($vidx); ?>);
         var vidy = (<?php echo json_encode($vidy); ?>);
         var type = (<?php echo json_encode($type); ?>);
-
-        /*document.getElementById('showvillagename').innerHTML = villagename[villageid];
-         document.getElementById('showowner').innerHTML = owner[villageid];
-         document.getElementById('showx').innerHTML = vidx[villageid];
-         document.getElementById('showy').innerHTML = vidy[villageid];*/
 
         showTooltip(tool, villagename[villageid], owner[villageid], type[villageid], vidx[villageid], vidy[villageid], attackamount);
     }
