@@ -78,11 +78,8 @@ include "executables/start_logic.php";
         </div>
 </center>
 <?php if (isset($_GET["newvillagename"]) and !$_GET["newvillagename"] == "") {
-    $newvillagename = $_GET["newvillagename"];
-    mysql_query("UPDATE map SET village='$newvillagename' WHERE village_id='$current_village_id'");
-    $url = $_SERVER['REQUEST_URI'];
-    $url = strtok($url, '?');
-    header("Location: " . $url);
+    header("Location: executables/func_start.php?village_id=" . $_SESSION["current_village_id"] . "&new_name=" . $_GET["newvillagename"]);
+    exit;
 }
 include("includes/tetriumjavascript.php"); ?>
 </body>

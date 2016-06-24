@@ -117,6 +117,7 @@ if ($_GET["type"] == "debug_data") {
     $vid = get_village_id($_GET["x"], $_GET["y"], $_GET["vname"]);
     $str = "location: ../tetrium.php?p=res&show_debug=1&debug_vid=" . $vid;
     header($str);
+    exit;
 }
 if ($_GET["type"] == "debug_popup") {
     if ((empty($_GET["x"]) or empty($_GET["y"])) and empty($_GET["vname"])) {
@@ -129,4 +130,12 @@ if ($_GET["type"] == "debug_popup") {
     $vid = get_village_id($_GET["x"], $_GET["y"], $_GET["vname"]);
     $str = "location: ../Debug_popup.php?debug_vid=" . $vid;
     header($str);
+    exit;
+}
+if ($_GET["type"] == "rename_village") {
+    if ((empty($_GET["village_id"]) or empty($_GET["new_name"]))) {
+        echo 'ERROR: WHAT ARE YOU DOING MATE!!!!';
+        exit;
+    }
+    set_village_name($GET["village_id"], $GET["new_name"]);
 }

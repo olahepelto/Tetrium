@@ -13,4 +13,5 @@ if (isset($_GET["event_id"])) {
     echo "ERROR";
 }
 header("location:../tetrium.php?p=res");
+exit;
 ?>

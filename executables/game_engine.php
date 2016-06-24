@@ -301,6 +301,7 @@ function train($type, $amount, $village_id, $player_id)
     new_event($arr, $village_id);
 
     header("location: ../tetrium.php?p=ugg&building=barracks&message=Success!");
+    exit;
 }
 //</editor-fold>
 
@@ -558,7 +559,7 @@ function upgrade($building, $village_id, $player_id)
         exit;
     } elseif ($status == 1) {
         header("location:../tetrium.php?p=ugg&building=$building&message=The builders are busy with another building");
-
+        exit;
     }
 }
 //</editor-fold>
@@ -576,6 +577,7 @@ function switch_village($village_id, $player_id)
         exit;
     }
     header("location:../tetrium.php?p=res");
+    exit;
 }
 //</editor-fold>
 
@@ -697,6 +699,7 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
     set_array_db(array("clubswinger" => $new_clubswinger, "spearman" => $new_spearman, "axeman" => $new_axeman), "map", $from_village_id);
 
     header("location: ../tetrium.php?p=att");
+    exit;
 
 }
 //</editor-fold>
@@ -726,6 +729,7 @@ function speedup($event_id)
             mysql_query("UPDATE events SET return_completed=0 WHERE id='$event_id'") or die(mysql_error());
         }
         header("location: ../tetrium.php?p=res&message=time hacked");
+        exit;
     }
 
 
@@ -804,6 +808,7 @@ function market_action($village_id, $give_wood, $give_clay, $give_iron, $give_wh
     set_array_db($res, "map", $village_id);
 
     header("location: ../tetrium.php?p=ugg&building=marketplace");
+    exit;
 }
 //</editor-fold>
 
@@ -812,6 +817,7 @@ function logout()
 {
     session_destroy();
     header("location: ../tetrium.php?p=res");
+    exit;
 }
 //</editor-fold>
 
@@ -824,6 +830,7 @@ function del_report($report_id)
         return "error report id:" . $report_id . "does not exist";
     }
     header("location: ../tetrium.php?p=rep");
+    exit;
 }
 //</editor-fold>
 
@@ -833,6 +840,7 @@ function send_mail($sender, $receiver, $topic, $mail)
     $now = date('Y-m-d H:i:s');
     mysql_query("INSERT INTO messages (sender, receiver, topic, message, time) VALUES ('$sender', '$receiver', '$topic', '$message', '$now')") or die(mysql_error());
     header("location: ../tetrium.php?p=msg");
+    exit;
 }
 //</editor-fold>
 
@@ -944,5 +952,16 @@ function get_village_id($x, $y, $vname)
         $vid = $row["village_id"];
     }
     return $vid;
+}
+//</editor-fold>
+
+// <editor-fold defaultstate="collapsed" desc="set_village_name Function: Rename village">
+function set_village_name($village_id, $new_name)
+{
+    if (isset($village_id) && isset($new_name)) {
+        $query = mysql_query("UPDATE map SET village WHERE village_id='$village_id'");
+    } else {
+        echo "ERROR: No such village";
+    }
 }
 //</editor-fold>

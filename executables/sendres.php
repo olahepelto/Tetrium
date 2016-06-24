@@ -129,4 +129,5 @@ $newwheat = $wheat - $send_wheat;
 mysql_query("UPDATE map SET wood='$newwood', clay='$newclay', iron='$newiron', wheat='$newwheat' WHERE village_id='$from_village_id'") or die(mysql_error());
 
 header("location: ../send_resources.php");
+exit;
 ?>
