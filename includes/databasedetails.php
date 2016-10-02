@@ -55,4 +55,8 @@ if (empty($dontrun) && strpos($_SERVER['PHP_SELF'], '/includes/') == false && st
     $dontrun = true;
 }
 
+
+//GOOGLE ANALYTICS TRACKING CODE
+include_once("analyticstracking.php")
+
 ?>

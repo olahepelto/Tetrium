@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aee9f1a-68d6-49fd-9ca7-f2268d03d7e6" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main_login_mobile.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/login-form.css" afterPath="$PROJECT_DIR$/style/login-form.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/databasedetails.php" afterPath="$PROJECT_DIR$/includes/databasedetails.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_login.php" afterPath="$PROJECT_DIR$/main_login.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/" />
@@ -43,21 +45,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main_login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main_login.php">
+      <file leaf-file-name="databasedetails.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/databasedetails.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3076923">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-              <folding />
+            <state vertical-scroll-proportion="0.62873566">
+              <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+              <folding>
+                <marker date="1475424257524" expanded="true" signature="1027:1068" placeholder="SELECT villa... map" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-form.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/style/login-form.css">
+      <file leaf-file-name="main_login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4743976">
-              <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -80,6 +84,9 @@
         <option value="$PROJECT_DIR$/nbproject/project.xml" />
         <option value="$PROJECT_DIR$/sitemap.xml" />
         <option value="$PROJECT_DIR$/style/login-form.css" />
+        <option value="$PROJECT_DIR$/main_login.php" />
+        <option value="$PROJECT_DIR$/includes/databasedetails.php" />
+        <option value="$PROJECT_DIR$/analyticstracking.php" />
       </list>
     </option>
   </component>
@@ -96,10 +103,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="333" />
-    <option name="y" value="179" />
-    <option name="width" value="675" />
-    <option name="height" value="850" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -198,10 +205,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="333" y="179" width="675" height="850" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13113007" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.50319827" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15151516" sideWeight="0.4968017" order="8" side_tool="false" content_ui="tabs" />
@@ -250,13 +257,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Debug_popup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15650173">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/ae54c10d/8837fa3e-09f8-4c32-a9fd-0cd80b82dc65/tetrium.members">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -496,6 +496,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.653847">
           <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <marker date="1452945946059" expanded="true" signature="275:316" placeholder="SELECT * FRO... members" />
+            <marker date="1452945946059" expanded="true" signature="980:1020" placeholder="UPDATE map S... " />
+            <marker date="1452945946059" expanded="true" signature="1041:1081" placeholder="UPDATE map S... " />
+            <marker date="1452945946059" expanded="true" signature="1102:1142" placeholder="UPDATE map S... " />
+            <marker date="1452945946059" expanded="true" signature="1163:1205" placeholder="UPDATE map S... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -569,13 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/databasedetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34252873">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sitemap.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17586207">
@@ -620,19 +620,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_login.php">
+    <entry file="file://$PROJECT_DIR$/style/login-form.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3076923">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.36206895">
+          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/login-form.css">
+    <entry file="file://$PROJECT_DIR$/main_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4743976">
-          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyticstracking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17586207">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/databasedetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62873566">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <folding>
+            <marker date="1475424257524" expanded="true" signature="1027:1068" placeholder="SELECT villa... map" />
+          </folding>
         </state>
       </provider>
     </entry>

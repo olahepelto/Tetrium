@@ -14,9 +14,6 @@
 </head>
 <body>
 
-
-<?php include("includes/analytics.php"); ?>
-
 <div id="wrapper">
     <div id="headerwrap">
         <div id="header"
