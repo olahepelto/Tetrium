@@ -31,7 +31,7 @@ p {
 / / width: 489 px;
     background: #28bd00;
     width: 489px;
-    background: #28bd00;
+    background: forestgreen;
     border-radius: 10px;
     border: 1px solid #000000;
     margin: 5px;
@@ -44,14 +44,14 @@ p {
 }
 
 #content {
-    background-image: url('https://www.webtexture.net/wp-content/uploads/2012/10/10-Subtle-Textures-Thumb02.jpg');
+    background-color: honeydew;
     border-radius: 10px;
     border: 1px solid #ebebeb;
     margin: 5px;
 }
 
 #content2 {
-    background-image: url('https://www.webtexture.net/wp-content/uploads/2012/10/10-Subtle-Textures-Thumb02.jpg');
+    background-color: beige;
     border-radius: 10px;
     border: 1px solid #ebebeb;
     margin: 5px;
@@ -65,7 +65,7 @@ p {
 
 #rightcolumn {
     height: 500px;
-    background: #DDFDEF;
+    background: powderblue;
     border-radius: 10px;
     border: 1px solid #000000;
     margin: 5px;
@@ -80,7 +80,7 @@ p {
 
 #footer {
     height: 40px;
-    background: #33FF66;
+    background: forestgreen;
     border-radius: 10px;
     border: 1px solid #1feb52;
     margin: 5px;
