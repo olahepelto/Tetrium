@@ -1,6 +1,6 @@
 <?php
 session_start();
-$host = "ftp.tetrium.tk"; // Host name
+$host = "localhost"; // Host name
 $username = "root"; // Mysql username
 $password = "***REMOVED***"; // Mysql password
 $db_name = "tetrium"; // Database name
