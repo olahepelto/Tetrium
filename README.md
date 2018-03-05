@@ -6,6 +6,8 @@ Tetrium was created as a continuation to a game that i and a friend worked on in
 
 I worked on this project mainly between 2010 and 2014. Development started to slow down as the codebase became larger. I abadoned development of Tetrium in the end of 2015 and decided to add it to version control for backup. After 2015 i have made mostly small features and bugfixes. 
 
+Over the years as i have gained knowledge in programming, i realize that most of the code is complete trash. I have however decided that i'll publish it here as a backup.
+
 ## Images
 
 ![Nothing](https://bytebucket.org/tetrium/tetrium/raw/a5fe98d198e5fb439711cbe4642d11f252b1e140/git-images/Tetrium1.PNG)
