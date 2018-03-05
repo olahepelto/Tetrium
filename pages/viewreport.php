@@ -93,55 +93,74 @@
 <table class="tg">
   <tr>
     <th class="tg-rujl">Attacker</th>
-    <th class="tg-gn9g" colspan="3"><?php echo $info['Attacker']; ?></th>
+    <th class="tg-gn9g" colspan="6"><?php echo $info['Attacker']; ?></th>
   </tr>
   <tr>
     <td class="tg-9sz5">Troops</td>
-    <td class="tg-6eq8">Clubswinger</td>
-    <td class="tg-031e">Spearman</td>
-    <td class="tg-031e">Axeman</td>
+    <td class="tg-6eq8">Clubs</td>
+    <td class="tg-031e">Spears</td>
+    <td class="tg-031e">Axes</td>
+    <td class="tg-6eq8">Scouts</td>
+    <td class="tg-031e">Knights</td>
+    <td class="tg-031e">Warhorses</td>
   </tr>
   <tr>
     <td class="tg-9sz5">Amount</td>
     <td class="tg-6eq8"><?php echo $info['clubswinger_att']; ?></td>
     <td class="tg-031e"><?php echo $info['spearman_att']; ?></td>
     <td class="tg-031e"><?php echo $info['axeman_att']; ?></td>
+    <td class="tg-6eq8"><?php echo $info['scouthorse_att']; ?></td>
+    <td class="tg-031e"><?php echo $info['knighthorse_att']; ?></td>
+    <td class="tg-031e"><?php echo $info['warhorse_att']; ?></td>
   </tr>
   <tr>
     <td class="tg-ygl1">Deaths</td>
     <td class="tg-031e"><?php echo $info['clubswinger_att_die']; ?></td>
     <td class="tg-031e"><?php echo $info['spearman_att_die']; ?></td>
     <td class="tg-031e"><?php echo $info['axeman_att_die']; ?></td>
+    <td class="tg-031e"><?php echo $info['scouthorse_att_die']; ?></td>
+    <td class="tg-031e"><?php echo $info['knighthorse_att_die']; ?></td>
+    <td class="tg-031e"><?php echo $info['warhorse_att_die']; ?></td>
   </tr>
   <tr>
     <td class="tg-ygl1">Loot</td>
-    <td class="tg-031e" colspan="3">Wood:<?php echo $info['loot_wood']; ?> Clay:<?php echo $info['loot_clay']; ?> Iron:<?php echo $info['loot_iron']; ?> Wheat:<?php echo $info['loot_wheat']; ?></td>
+    <td class="tg-031e" colspan="6">Wood:<?php echo $info['loot_wood']; ?> Clay:<?php echo $info['loot_clay']; ?> Iron:<?php echo $info['loot_iron']; ?> Wheat:<?php echo $info['loot_wheat']; ?></td>
   </tr>
 </table>
 <br><br>
 </style>
+
 <table class="tg">
   <tr>
     <th class="tg-rujl">Defender</th>
-    <th class="tg-gn9g" colspan="3"><?php echo $info['Defender']; ?></th>
+    <th class="tg-gn9g" colspan="6"><?php echo $info['Defender']; ?></th>
   </tr>
   <tr>
     <td class="tg-9sz5">Troops</td>
-    <td class="tg-6eq8">Clubswinger</td>
-    <td class="tg-031e">Spearman</td>
-    <td class="tg-031e">Axeman</td>
+    <td class="tg-6eq8">Clubs</td>
+    <td class="tg-031e">Spears</td>
+    <td class="tg-031e">Axes</td>
+    <td class="tg-6eq8">Scouts</td>
+    <td class="tg-031e">Knights</td>
+    <td class="tg-031e">Warhorses</td>
   </tr>
   <tr>
     <td class="tg-9sz5">Amount</td>
     <td class="tg-6eq8"><?php echo $info['clubswinger_def']; ?></td>
     <td class="tg-031e"><?php echo $info['spearman_def']; ?></td>
     <td class="tg-031e"><?php echo $info['axeman_def']; ?></td>
+    <td class="tg-6eq8"><?php echo $info['scouthorse_def']; ?></td>
+    <td class="tg-031e"><?php echo $info['knighthorse_def']; ?></td>
+    <td class="tg-031e"><?php echo $info['warhorse_def']; ?></td>
   </tr>
   <tr>
     <td class="tg-ygl1">Deaths</td>
     <td class="tg-031e"><?php echo $info['clubswinger_def_die']; ?></td>
     <td class="tg-031e"><?php echo $info['spearman_def_die']; ?></td>
     <td class="tg-031e"><?php echo $info['axeman_def_die']; ?></td>
+    <td class="tg-031e"><?php echo $info['scouthorse_def_die']; ?></td>
+    <td class="tg-031e"><?php echo $info['knighthorse_def_die']; ?></td>
+    <td class="tg-031e"><?php echo $info['warhorse_def_die']; ?></td>
   </tr>
 </table>
 	
@@ -167,18 +186,19 @@
 <table class="tg">
   <tr>
     <th class="tg-rujl">Orgin</th>
-    <th class="tg-gn9g" colspan="3"><?php echo $info['Attacker']; ?></th>
+    <th class="tg-gn9g" colspan="6"><?php echo $info['Attacker']; ?></th>
   </tr>
   <tr>
     <td class="tg-ygl1">Amount</td>
-    <td class="tg-031e" colspan="3">Wood:<?php echo $info['loot_wood']; ?> Clay:<?php echo $info['loot_clay']; ?> Iron:<?php echo $info['loot_iron']; ?> Wheat:<?php echo $info['loot_wheat']; ?></td>
+    <td class="tg-031e" colspan="6">Wood:<?php echo $info['loot_wood']; ?> Clay:<?php echo $info['loot_clay']; ?> Iron:<?php echo $info['loot_iron']; ?> Wheat:<?php echo $info['loot_wheat']; ?></td>
   </tr>
 </table>
 <br><br>
 </style>
+
 <?php	
 }
-        }
-    }
-    ?>
+}
+}
+?>
 </div><!-- #mapbox-->

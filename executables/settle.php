@@ -9,39 +9,30 @@ $y = $_GET["y"];
 $from_village_id = $current_village_id;
 $village = $_GET["village"];
 $sender_id = $id;
-$send_wood = $_GET["wood_box"];
-$send_clay = $_GET["clay_box"];
-$send_iron = $_GET["iron_box"];
-$send_wheat = $_GET["wheat_box"];
 
-if (empty($send_wood)) {
-    $send_wood = 0;
-}
-if (empty($send_clay)) {
-    $send_clay = 0;
-}
-if (empty($send_iron)) {
-    $send_iron = 0;
-}
-if (empty($send_wheat)) {
-    $send_wheat = 0;
-}
 
-/*
-CHECK IF ERROR
-*/
-if (($send_wood < 0 or $send_clay < 0 or $send_iron < 0 or $send_wheat < 0) or ($send_wood + $send_clay + $send_iron + $send_wheat < 0) or (!is_numeric($send_wood) or !is_numeric($send_clay) or !is_numeric($send_iron) or !is_numeric($send_wheat))) {
-    header("location: /tetrium.php?p=srs&message=Your engineers don't know how to send that amount of resources");
-    exit;
-}
 if (empty($x) and empty($y) and empty($village)) {
     header("location: /tetrium.php?p=srs&message=send resources: please fill out the destination x and y cordinates or village");
     exit;
 }
-/*
-CHECK IF ERROR END
-*/
 
+$result = mysql_query("SELECT * FROM map WHERE id='$id'") or die(mysql_error());
+
+if(mysql_num_rows($result) == 1){
+  $resource_cost = 5000;
+}elseif(mysql_num_rows($result) == 2){
+  $resource_cost = 10000;
+}elseif(mysql_num_rows($result) == 3){
+  $resource_cost = 20000;
+}elseif(mysql_num_rows($result) == 4){
+  $resource_cost = 40000;
+}elseif(mysql_num_rows($result) == 5){
+  $resource_cost = 80000;
+}elseif(mysql_num_rows($result) == 6){
+  $resource_cost = 160000;
+}else{
+  $resource_cost = 200000;
+}
 
 //GET sender village details from db
 $result = mysql_query("SELECT * FROM map WHERE village_id='$from_village_id' and id='$id'") or die(mysql_error());
@@ -51,6 +42,7 @@ if (mysql_num_rows($result) > 0) {
         $clay = $row["clay"];
         $iron = $row["iron"];
         $wheat = $row["wheat"];
+      
         $from_village_x = $row["x"];
         $from_village_y = $row["y"];
     }
@@ -58,14 +50,13 @@ if (mysql_num_rows($result) > 0) {
     /*
     WILL NEVER HAPPEN
     */
-    header("location: /tetrium.php?p=srs&message=send resources: you can't send resources from another players village XD");
+    header("location: /tetrium.php?p=srs&message=send resources: you can't settle from another players village XD");
     exit;
 }
 
-//ERROR CHECK
-if ($wood < $send_wood or $clay < $send_clay or $iron < $send_iron or $wheat < $send_wheat) {
-    header("location: /tetrium.php?p=srs&message=send resources: not enough resources");
-    exit;
+if($resource_cost > $wood or $resource_cost > $clay or $resource_cost > $iron or $resource_cost > $wheat){
+  header("location: /tetrium.php?p=srs&message=send resources: You don't have enough resources to settle a new village");
+  exit;
 }
 
 
@@ -120,13 +111,18 @@ $return_completed = date("Y-m-d H:i:s", strtotime("$time_return minutes"));
 
 
 //SEND EVENT TO DATABASE
-mysql_query("INSERT INTO events (userid, target,target_village,village_id, wood, clay, iron, wheat, completed, type, returning,return_completed) VALUES ('$sender_id', '$receiver_id','$village_id','$from_village_id', '$send_wood', '$send_clay', '$send_iron', '$send_wheat', '$completed', 'sendres','false','$return_completed')") or die(mysql_error());
-$newwood = $wood - $send_wood;
-$newclay = $clay - $send_clay;
-$newiron = $iron - $send_iron;
-$newwheat = $wheat - $send_wheat;
+mysql_query("INSERT INTO events (userid, target,target_village,village_id, wood, clay, iron, wheat, completed, type, returning,return_completed) VALUES ('$sender_id', '$receiver_id','$village_id','$from_village_id', 600, 600, 600, 600, '$completed', 'settle','false','$return_completed')") or die(mysql_error());
 
-mysql_query("UPDATE map SET wood='$newwood', clay='$newclay', iron='$newiron', wheat='$newwheat' WHERE village_id='$from_village_id'") or die(mysql_error());
+$new_wood = $wood - $resource_cost;
+$new_clay = $clay - $resource_cost;
+$new_iron = $iron - $resource_cost;
+$new_wheat = $wheat - $resource_cost;
+
+//$from_village_id
+mysql_query("UPDATE map SET wood='$new_wood' WHERE village_id='$from_village_id'") or die(mysql_error());
+mysql_query("UPDATE map SET clay='$new_clay' WHERE village_id='$from_village_id'") or die(mysql_error());
+mysql_query("UPDATE map SET iron='$new_iron' WHERE village_id='$from_village_id'") or die(mysql_error());
+mysql_query("UPDATE map SET wheat='$new_wheat' WHERE village_id='$from_village_id'") or die(mysql_error());
 
 header("location: /tetrium.php?p=srs");
 exit;

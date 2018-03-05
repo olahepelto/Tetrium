@@ -14,7 +14,7 @@ $message_array = array("Woodcutter" => "The woodcutter is an essential part of t
     "Storage" => "The warehouse/storage stores resources.<br>For every level upgraded it can store more resources.",
     "Barracks" => "You can train troops in the barracks.<br>For each level upgraded the barracks can train troops 1% faster up to 20%.<br>Upgrading the barracks also unlocks new troops.",
     "Marketplace" => "You can trade resources in the marketplace.<br>The effidency of trading depends on the level your marketplace.<br>It increases by 2% starting from 80%.",
-    "Stable" => "Breed horses here!.",
+    "Stable" => "You can train horse troops in the Stable.<br>For each level upgraded the Stable can train troops 1% faster up to 20%.<br>Upgrading the Stable also unlocks new Horse troops.",
     "Wall" => "It's a wall, not rocket science. A wall around your village! (or wherever you imagine it is)<br>It doesn't really do anything, but I'm sure it would look cool if we had a texture for it!<br>Also, you will probably feel safer even though you aren't.",
 );
 
@@ -263,13 +263,21 @@ $completed = date("Y-m-d H:i:s", strtotime("$timereq_gui seconds"));
     <img src="images/<?php echo $name; ?>.png"><br>
     <?php
 
-
+    echo $message_array[$name]."<br><br>";
     //Train Troops in Barracks
     if ($building == "barracks" and $barracks >= 1) {
         include("includes/barracks.php");
     } else {
         if ($building == "barracks") {
             echo "<br>Build your barracks to level 1 to train troops<br>";
+        }
+    }
+    //Train Troops in Barracks
+    if ($building == "stable" and $mysql_data["stable"] >= 1) {
+        include("includes/stable.php");
+    } else {
+        if ($building == "") {
+            echo "<br>Build your stable to level 1 to train horse troops<br>";
         }
     }
 
@@ -283,10 +291,10 @@ $completed = date("Y-m-d H:i:s", strtotime("$timereq_gui seconds"));
     }
 
     if ($level >= 1 or $buildingreq == 1 or empty($buildingreq)) {
-        if($woodreq>$mysql_data["wood"]){echo "Wood: <font style='font-weight:bold;' color='red'>", $woodreq, "</font> ";}else{echo "Wood: <font style='font-weight:bold;' color='green'>", $woodreq, "</font> ";}
-        if($clayreq>$mysql_data["clay"]){echo "Clay: <font style='font-weight:bold;' color='red'>", $clayreq, "</font> ";}else{echo "Clay: <font style='font-weight:bold;' color='green'>", $clayreq, "</font> ";}
-        if($ironreq>$mysql_data["iron"]){echo "Iron: <font style='font-weight:bold;' color='red'>", $ironreq, "</font> ";}else{echo "Iron: <font style='font-weight:bold;' color='green'>", $ironreq, "</font> ";}
-        if($wheatreq>$mysql_data["wheat"]){echo "Wheat: <font style='font-weight:bold;' color='red'>", $wheatreq, "</font> ";}else{echo "Wheat: <font style='font-weight:bold;' color='green'>", $wheatreq, "</font> ";}
+        if($woodreq > $mysql_data["wood"]){echo "Wood: <font style='font-weight:bold;' color='red'>", $woodreq, "</font> ";}else{echo "Wood: <font style='font-weight:bold;' color='green'>", $woodreq, "</font> ";}
+        if($clayreq > $mysql_data["clay"]){echo "Clay: <font style='font-weight:bold;' color='red'>", $clayreq, "</font> ";}else{echo "Clay: <font style='font-weight:bold;' color='green'>", $clayreq, "</font> ";}
+        if($ironreq > $mysql_data["iron"]){echo "Iron: <font style='font-weight:bold;' color='red'>", $ironreq, "</font> ";}else{echo "Iron: <font style='font-weight:bold;' color='green'>", $ironreq, "</font> ";}
+        if($wheatreq  > $mysql_data["wheat"]){echo "Wheat: <font style='font-weight:bold;' color='red'>", $wheatreq, "</font> ";}else{echo "Wheat: <font style='font-weight:bold;' color='green'>", $wheatreq, "</font> ";}
         echo "Time:", gmdate("H:i:s", $timereq_gui), " ";
         echo "<br>Completed:",$completed;
 

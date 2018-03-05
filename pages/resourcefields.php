@@ -26,7 +26,7 @@
     }
     ?>
 
-
+    <font size="3"><b>
     <a href="tetrium.php?p=ugg&building=woodcutter1">
         <div id=woodcutter1level2><img src="<?php if (in_array('woodcutter1', $positive)) {
                 echo "images/boll_gul.png";
@@ -173,6 +173,7 @@
                 echo "images/boll.png";
             } ?>" alt="Error"></div>
         <div id=cropland6level><?php echo $cropland6; ?></div>
-    </a>
+    </a></b>
+    </font><
 
 </div>

@@ -38,10 +38,10 @@ if ($_SESSION["varadmin"] == 1) {
     <div id="button" onclick="var newname = window.prompt('Please enter new village name');
             if (newname === null) {
             } else {
-                window.location.href = '../tetrium.php?p=res&newvillagename=' + newname;
+                window.location.href = '../executables/rename_village.php?newname=' + newname;
             }">Change village name</div>
          <?php if ($_SESSION['varadmin'] == 1) { ?>
-        <a href="admin.php" style="text-decoration: none;">
+        <a href="tetrium.php?p=admin" style="text-decoration: none;">
             <div id="button">Admin panel<br></div></a>
         <a href="../phpmyadmin" style="text-decoration: none;"><div id="button">Database</div></a>
         <a href="changeinfo.php" style="text-decoration: none;"><div id="button">Change infsss<br></div></a>
@@ -51,7 +51,7 @@ if ($_SESSION["varadmin"] == 1) {
 <?php
 //</editor-fold>
 
-// <editor-fold defaultstate="collapsed" desc="Troop Training Timers">
+// <editor-fold defaultstate="collapsed" desc="Sidebar Timers">
 if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or $troop_timer_event_amount > 0 or $returning_sendres_timer_event_amount > 0 or $attack_timer_event_amount_in > 0 or $attack_timer_event_amount_out > 0 or $returning_attack_timer_event_amount > 0) {
     ?>
     <div style="width: 200px; float: right;">
@@ -60,76 +60,68 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
             <?php
             if ($troop_timer_event_amount > 0) {
                 echo $troop_timer_event_amount;
-                ?> troop(s) in<?php } ?>
-            <?php
-            if ($troop_timer_event_amount > 0) {
+                ?> troop(s) in<?php
                 echo "<b id=sidebar_timer_id_" . $troop_timer_event_min_time_id . " name=sidebar_timer_id_" . $troop_timer_event_min_time_id . ">Javascript Error</b><br>";
             }
             ?>
 
-            <?php if ($returning_sendres_timer_event_amount > 0 or $returning_attack_timer_event_amount > 0) { ?><strong>Returning:</strong><br><?php } ?>
-            <?php
+
+            <?php if ($returning_sendres_timer_event_amount > 0 or $returning_attack_timer_event_amount > 0) { ?><strong>Returning:</strong><br><?php }
             if ($returning_sendres_timer_event_amount > 0) {
                 echo $returning_sendres_timer_event_amount;
-                ?> shipments(s) in<?php } ?>
-            <?php
-            if ($returning_sendres_timer_event_amount > 0) {
+                ?> shipments(s) in<?php
                 echo "<b id=sidebar_timer_id_" . $returning_sendres_timer_event_min_time_id . " name=sidebar_timer_id_" . $returning_sendres_timer_event_min_time_id . ">Javascript Error</b><br>";
             }
-            ?>
 
-            <?php
             if ($returning_attack_timer_event_amount > 0) {
                 echo $returning_attack_timer_event_amount;
-                ?> attack(s) in<?php } ?>
-            <?php
-            if ($returning_attack_timer_event_amount > 0) {
+                ?> attack(s) in<?php
                 echo "<b id=sidebar_timer_id_" . $returning_attack_timer_event_min_time_id . " name=sidebar_timer_id_" . $returning_attack_timer_event_min_time_id . ">Javascript Error</b><br>";
             }
-            ?>
 
-            <?php if ($sendres_timer_event_amount_in > 0 or $attack_timer_event_amount_in) { ?><strong>Incoming:</strong><br><?php } ?>
-            <?php
+
+            if ($sendres_timer_event_amount_in > 0 or $attack_timer_event_amount_in > 0) { ?><strong>Incoming:</strong><br><?php }
             if ($sendres_timer_event_amount_in > 0) {
                 echo $sendres_timer_event_amount_in;
                 ?> shipment(s) in<?php
-            }
-
-            //INCOMING IDS Javascript for this is in sidebar_javascript.php
-            if ($sendres_timer_event_amount_in > 0) {
                 echo "<b id=sidebar_timer_id_" . $sendres_timer_event_min_time_id_in . " name=sidebar_timer_id_" . $sendres_timer_event_min_time_id_in . ">Javascript Error</b><br>";
             }
-            ?>
 
-            <?php
             if ($attack_timer_event_amount_in > 0) {
-                if ($attack_timer_event_amount_in == 1) {
-                    echo " attack in";
-                } else {
-                    echo " attacks in";
-                }
-            }
-            if ($attack_timer_event_amount_in > 0) {
+                echo " attack(s) in";
                 echo "<b id=sidebar_timer_id_" . $attack_timer_event_min_time_id_in . " name=sidebar_timer_id_" . $attack_timer_event_min_time_id_in . ">Javascript Error</b><br>";
             }
-            if ($sendres_timer_event_amount_out > 0 or $attack_timer_event_amount_out) {
-                ?><strong>Outgoing:</strong><br><?php } ?>
-            <?php
+            if ($reinforce_timer_event_amount_in > 0) {
+                echo " reinforcements(s) in";
+                echo "<b id=sidebar_timer_id_" . $reinforce_timer_event_min_time_id_in . " name=sidebar_timer_id_" . $reinforce_timer_event_min_time_id_in . ">Javascript Error</b><br>";
+            }
+
+
+            if ($sendres_timer_event_amount_out > 0 or $attack_timer_event_amount_out > 0 or $reinforce_timer_event_amount_out > 0) {
+                ?><strong>Outgoing:</strong><br><?php
+            }
             if ($sendres_timer_event_amount_out > 0) {
                 echo $sendres_timer_event_amount_out;
                 ?> shipment(s) in<?php
-            }
-            if ($sendres_timer_event_amount_out > 0) {
                 echo "<b id=sidebar_timer_id_" . $sendres_timer_event_min_time_id_out . " name=sidebar_timer_id_" . $sendres_timer_event_min_time_id_out . ">Javascript Error</b><br>";
             }
-            ?>
-            <?php
+
             if ($attack_timer_event_amount_out > 0) {
                 echo $attack_timer_event_amount_out;
                 ?> attack(s) in<?php
-            }
-            if ($attack_timer_event_amount_out > 0) {
                 echo "<b id=sidebar_timer_id_" . $attack_timer_event_min_time_id_out . " name=sidebar_timer_id_" . $attack_timer_event_min_time_id_out . ">Javascript Error</b><br>";
+            }
+
+            if ($reinforce_timer_event_amount_out > 0) {
+                echo $reinforce_timer_event_amount_out;
+                ?> reinforcements(s) in<?php
+                echo "<b id=sidebar_timer_id_" . $reinforce_timer_event_min_time_id_out . " name=sidebar_timer_id_" . $reinforce_timer_event_min_time_id_out . ">Javascript Error</b><br>";
+            }
+
+            if ($settle_timer_event_amount_out > 0) {
+                echo $settle_timer_event_amount_out;
+                ?> settle(s) in<?php
+                echo "<b id=sidebar_timer_id_" . $settle_timer_event_min_time_id_out . " name=sidebar_timer_id_" . $settle_timer_event_min_time_id_out . ">Javascript Error</b><br>";
             }
             ?>
         </div><!-- .sidebar#sideoverRight -->
@@ -151,7 +143,6 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
         <?php
 //</editor-fold>
 
-
 // <editor-fold defaultstate="collapsed" desc="Troop Amount view">
         if ($mysql_data["clubswinger"] > 0 or $mysql_data["spearman"] > 0 or $mysql_data["axeman"] > 0) {
             ?>
@@ -167,6 +158,15 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
                 if ($mysql_data["axeman"] == 1) {
                     echo "1 Axeman<br>";
                 }
+                if ($mysql_data["scouthorse"] == 1) {
+                    echo "1 Scouthorse<br>";
+                }
+                if ($mysql_data["knighthorse"] == 1) {
+                    echo "1 Knighthorse<br>";
+                }
+                if ($mysql_data["warhorse"] == 1) {
+                    echo "1 Warhorse<br>";
+                }
                 if ($mysql_data["clubswinger"] > 1) {
                     echo $mysql_data["clubswinger"], " Clubswingers<br>";
                 }
@@ -176,7 +176,16 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
                 if ($mysql_data["axeman"] > 1) {
                     echo $mysql_data["axeman"], " Axemen<br>";
                 }
-                echo "<br>Upkeep: ", $mysql_data["clubswinger"] + $mysql_data["spearman"] + $mysql_data["axeman"], " Wheat per hour", "<br>";
+                if ($mysql_data["scouthorse"] > 1) {
+                    echo $mysql_data["scouthorse"], " Scouthorses<br>";
+                }
+                if ($mysql_data["knighthorse"] > 1) {
+                    echo $mysql_data["knighthorse"], " Knighthorses<br>";
+                }
+                if ($mysql_data["warhorse"] > 1) {
+                    echo $mysql_data["warhorse"], " Warhorses<br>";
+                }
+                echo "<br>Upkeep: ", $mysql_data["clubswinger"] + $mysql_data["spearman"] + $mysql_data["axeman"] + $mysql_data["scouthorse"] + $mysql_data["knighthorse"] + $mysql_data["warhorse"], " Wheat per hour", "<br>";
                 ?>
             </div><!-- .sidebar#UndersideRight -->
             <?php
@@ -186,18 +195,38 @@ if ($sendres_timer_event_amount_in > 0 or $sendres_timer_event_amount_out > 0 or
 // <editor-fold defaultstate="collapsed" desc="Tetrium Map Action menu">
         if ($map == true) {
             ?>
+      <?php
+          $result = mysql_query("SELECT * FROM map WHERE id='$id'") or die(mysql_error());
+          if(mysql_num_rows($result) == 1){
+            $resource_cost = 5000;
+          }elseif(mysql_num_rows($result) == 2){
+            $resource_cost = 10000;
+          }elseif(mysql_num_rows($result) == 3){
+            $resource_cost = 20000;
+          }elseif(mysql_num_rows($result) == 4){
+            $resource_cost = 40000;
+          }elseif(mysql_num_rows($result) == 5){
+            $resource_cost = 80000;
+          }elseif(mysql_num_rows($result) == 6){
+            $resource_cost = 160000;
+          }else{
+            $resource_cost = 200000;
+          }
+      ?>
+      
                 <div class="sidebar" id="sideUnderRight" style="background: #2E64FE;">
                     <strong>Actions:<br>
                         <a style="color:#FE2E2E;" href="tetrium.php?p=att&x=<?php echo $_GET["x"]; ?>&y=<?php echo $_GET["y"]; ?>">Attack</a><br>
-                        <a style="color:#40FF00;" href="reinforce.php?y=<?php echo $_GET["x"]; ?>&y=<?php echo $_GET["y"]; ?>">Reinforce</a><br>
-                        <a style="color:#40FF00;" href="tetrium.php?p=srs&x=<?php echo $_GET["x"]; ?>&y=<?php echo $_GET["y"]; ?>">Send resources</a>
+                        <a style="color:#40FF00;" href="tetrium.php?p=refrs&x=<?php echo $_GET["x"]; ?>&y=<?php echo $_GET["y"]; ?>">Reinforce</a><br>
+                        <a style="color:#40FF00;" href="tetrium.php?p=srs&x=<?php echo $_GET["x"]; ?>&y=<?php echo $_GET["y"]; ?>">Send resources</a><br>
+                        <a style="color:#40FF00;" href="tetrium.php?p=stlvlg&x=<?php echo $_GET["x"]; ?>&y=<?php echo $_GET["y"]; ?>">Settle Village(<?php echo $resource_cost;?>)</a>
                     </strong>
                 </div>
 <?php } elseif ($nocords == true) { ?>
                 <div class="sidebar" id="sideUnderRight" style="background: #2E64FE;">
                     <strong>Actions:<br>
                         <a style="color:#FE2E2E;" href="tetrium.php?p=att&nocords=true">Attack</a><br>
-                        <a style="color:#40FF00;" href="reinforce.php?nocords=true">Reinforce</a><br>
+                        <a style="color:#40FF00;" href="tetrium.php?p=refrs&nocords=true">Reinforce</a><br>
                         <a style="color:#40FF00;" href="tetrium.php?p=srs&nocords=true">Send resources</a>
                     </strong>
                 </div>

@@ -1,5 +1,6 @@
 <?php
 
+
 include "includes/databasedetails.php";
 include "executables/start_logic.php";
 ?>
@@ -20,7 +21,7 @@ include "executables/start_logic.php";
 
                     <?php
                     switch ($_GET["p"]) {
-                        case "adm":
+                        case "admin":
                             $page = "admin";
                             break;
                         case "vlg":
@@ -49,6 +50,12 @@ include "executables/start_logic.php";
                             break;
                         case "srs":
                             $page = "send_resources";
+                            break;
+                        case "refrs":
+                            $page = "reinforce";
+                            break;
+                        case "stlvlg":
+                            $page = "settle_village";
                             break;
                         case "smg":
                             $page = "sendmailgui";

@@ -45,8 +45,39 @@ if ($_GET["type"] == "attack") {
         echo "ERROR";
     }
 
-    $troops = array("clubswinger" => $_GET["clubswinger"], "spearman" => $_GET["spearman"], "axeman" => $_GET["axeman"]);
+    $troops = array("clubswinger" => $_GET["clubswinger"], "spearman" => $_GET["spearman"], "axeman" => $_GET["axeman"],
+                    "scouthorse" => $_GET["scouthorse"], "knighthorse" => $_GET["knighthorse"], "warhorse" => $_GET["warhorse"]);
     attack($village_id, $target_village_id, $troops, $player_id);
+}
+if ($_GET["type"] == "reinforce") {
+
+    $village_id = $current_village_id;
+    $player_id = $id;
+
+    if ($_GET["x"] != "" and $_GET["y"] != "") {
+        $x = $_GET["x"];
+        $y = $_GET["y"];
+        $result = mysql_query("SELECT * FROM map where x='$x' and y='$y'") or die(mysql_error());
+        if (mysql_num_rows($result) != 0) {
+            while ($info = mysql_fetch_array($result)) {
+                $target_village_id = $info["village_id"];
+            }
+        }
+    } elseif ($_GET["village"] != "") {
+        $rec_village = $_GET["village"];
+        $result = mysql_query("SELECT * FROM map where village='$rec_village'") or die(mysql_error());
+        if (mysql_num_rows($result) != 0) {
+            while ($info = mysql_fetch_array($result)) {
+                $target_village_id = $info["village_id"];
+            }
+        }
+    } else {
+        echo "ERROR";
+    }
+
+    $troops = array("clubswinger" => $_GET["clubswinger"], "spearman" => $_GET["spearman"], "axeman" => $_GET["axeman"],
+                    "scouthorse" => $_GET["scouthorse"], "knighthorse" => $_GET["knighthorse"], "warhorse" => $_GET["warhorse"]);
+    reinforce($village_id, $target_village_id, $troops, $player_id);
 }
 if ($_GET["type"] == "speedup" AND isset($_GET["event_id"])) {
     echo speedup($_GET["event_id"]);
@@ -64,16 +95,13 @@ if (isset($_GET["give_wood"]) AND isset($_GET["give_wood"]) AND isset($_GET["giv
 if ($_GET["type"] == "logout") {
     logout();
 }
-if ($_GET["type"] == "del_rep") {
-    if (!isset($_GET["rep_id"])) {
-        echo 'ERROR: rep id not set or invalid';
-    }
-    $result = mysql_query("SELECT * FROM reports WHERE report_id='$report_id' AND id='$id'");
-    if (mysql_num_rows($result) == 1) {
+if ($_GET["rep_id"] != "") {
+    $report_id = $_GET["rep_id"];
+    $result = mysql_query("SELECT * FROM reports WHERE report_id='$report_id'");
+    if (mysql_num_rows($result) > 0) {
         del_report($_GET["rep_id"]);
-    } else {
-        echo "ERROR: rep id not found or multiple exist";
     }
+    header("location: /tetrium.php?p=rep");
 }
 if ($_GET["type"] == "send_mail") {
     if (isset($_POST["receiver"]) AND $_POST["topic"])
@@ -93,19 +121,7 @@ if ($_GET["type"] == "send_mail") {
 
     send_mail($sender, $receiver, $topic, $mail);
 }
-if ($_GET["type"] == "nature_reproduce") {
-    if (!isset($_GET["village_id"])) {
-        echo 'ERROR: village_id not set or invalid';
-    }
 
-    $nature_village = mysql_query("SELECT * FROM map WHERE id='$village_id'");
-
-    if (mysql_num_rows($nature_village) == 1) {
-        make_nature($_GET["village_id"]);
-    } else {
-        echo "ERROR: village_id not found or multiple exist";
-    }
-}
 if ($_GET["type"] == "debug_data") {
     if ((empty($_GET["x"]) or empty($_GET["y"])) and empty($_GET["vname"])) {
         echo 'ERROR: WHAT ARE YOU DOING MATE!!!!';

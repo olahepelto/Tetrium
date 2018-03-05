@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<script>
-    if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
-        window.alert("No ie allowed !")
-        window.location.replace("https://www.google.com/intl/en/chrome/browser/");
-    }
-    else
-</script>
 <html>
 <head>
     <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico"/>
@@ -26,6 +19,7 @@
         <p>
         <form name="form1" method="post" action="executables/checklogin.php">
             <table width="300" border="0" align="center" cellpadding="2" cellspacing="0">
+            <br>
                 <tr>
                     <td width="112"><b>Login</b></td>
                     <td width="188"><input name="myusername" type="text" id="myusername"></td>
@@ -38,18 +32,17 @@
                     <td>&nbsp;</td>
                     <td><input type="submit" name="Submit" value="Login"></td>
                 </tr>
-                <tr>
-                    <center><b><a style="color: indigo;"
-                                  href="https://bitbucket.org/tetrium/tetrium/issues?status=new&status=open">Issue &
-                                Feature tracker</a></b></center>
-                </tr>
             </table>
         </form>
+      <center><a href="register.php">Registration</a></center>
         </p>
     </div>
-    <div id="content2">
+    <div id="content2"><br>
+        <b><a href=""><font size=3>Other Projects</font></a></b><br>
         <?php if (!isset ($_GET["msg"]) or $_GET["msg"] == ""){ ?>
-        <font size="3">Looking for beta testers!<br><a href="registration.php">Registration</a><br></font>
+        <!--<font size="3">Looking for beta testers!<br><a href="registration.php">Registration</a><br></font>-->
+        Tetrium is a mmo village warfare browser game i started making somewhere around 2011 to learn web development. 
+        The last official version was released in 2015.<br>
         <?php } else {
             echo $_GET["msg"];
             $_GET["msg"] = "";

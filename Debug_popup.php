@@ -1,9 +1,6 @@
 <?php
 session_start();
-$host = "localhost"; // Host name
-$username = "root"; // Mysql username
-$password = "***REMOVED***"; // Mysql password
-$db_name = "tetrium"; // Database name
+include_once("configuration/databasecredentials.php");
 
 $id = $_SESSION["varid"]; // Id
 $current_village_id = $_SESSION["current_village_id"];

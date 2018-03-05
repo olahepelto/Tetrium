@@ -10,6 +10,12 @@ if ($_GET["errors"] == 1 and $_SESSION["varadmin"] == 1) {
     ini_set('display_errors', 'On');
     error_reporting(E_ALL);
 }
+if ($_GET["nocache"] == 1 and $_SESSION["varadmin"] == 1) {
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+}
+
 
 if (!isset($notloggedin)) {
     if (empty($_SESSION["myusername"])) {
@@ -18,14 +24,10 @@ if (!isset($notloggedin)) {
     }
 }
 
-$host = "localhost"; // Host name
-$username = "root"; // Mysql username
-$password = "***REMOVED***"; // Mysql password
-$db_name = "tetrium"; // Database name
+include_once("../configuration/databasecredentials.php");
 
 $id = $_SESSION["varid"]; // Id
 $current_village_id = $_SESSION["current_village_id"];
-
 
 $connection = mysql_connect($host, $username, $password) or die (mysql_error());
 $sqlerror = mysql_error();
@@ -57,6 +59,7 @@ if (empty($dontrun) && strpos($_SERVER['PHP_SELF'], '/includes/') == false && st
 
 
 //GOOGLE ANALYTICS TRACKING CODE
-include_once("analyticstracking.php")
+//include_once("analyticstracking.php")
+
 
 ?>

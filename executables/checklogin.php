@@ -26,7 +26,7 @@ while ($row = mysql_fetch_assoc($result)) {
     $varadmin = $row["admin"];
 }
 
-if ($myusername == $varusername and md5($mypassword) == $varpassword) {
+if ($myusername == $varusername and md5(md5($mypassword."another salt").md5("hello_this_is_my_salt").$mypassword) == $varpassword) {
 
     $result = mysql_query("SELECT * FROM map WHERE id='$varid';");
     while ($row = mysql_fetch_assoc($result)) {

@@ -2,10 +2,11 @@
 <html>
 <head>
     <link rel="shortcut icon" type="image/ico" href="/images/favicon.ico"/>
-    <title>Registration</title>
+    <title>Tetrium Login</title>
     <link rel="stylesheet" type="text/css" href="style/login-form.css"/>
 </head>
 <body>
+
 <div id="wrapper">
     <div id="headerwrap">
         <div id="header"
@@ -16,19 +17,28 @@
     <div id="content">
 
         <p>
-        <form name="form1" method="post" action="executables/register.php">
+        <form name="form1" method="post" action="do_registration.php">
             <table width="300" border="0" align="center" cellpadding="2" cellspacing="0">
+            <br>
                 <tr>
-                    <td width="112"><b>Username</b></td>
-                    <td width="188"><input name="myusername" type="text" id="myusername"></td>
-                </tr>
-                <tr>
-                    <td><b>Password</b></td>
-                    <td><input name="mypassword" type="password" id="mypassword"></td>
+                    <td width="125"><b>Registration Code</b></td>
+                    <td width="120"><input name="code" type="text" id="code" style="width:120px;"></td>
                 </tr>
                 <tr>
                     <td><b>Email</b></td>
-                    <td><input name="myemail" type="text" id="myemail"></td>
+                    <td><input name="email" type="text" id="email" style="width:120px;"></td>
+                </tr>
+                <tr>
+                    <td><b>Username</b></td>
+                    <td><input name="username" type="text" id="username" style="width:120px;"></td>
+                </tr>
+                <tr>
+                    <td><b>Password</b></td>
+                    <td><input name="password" type="password" id="password" style="width:120px;"></td>
+                </tr>
+                <tr>
+                    <td><b>Password again</b></td>
+                    <td><input name="passwordagain" type="password" id="passwordagain" style="width:120px;"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -38,11 +48,6 @@
         </form>
         </p>
     </div>
-    <?php if (isset($_GET["msg"])) { ?>
-        <div id="content2">
-            <?php echo $_GET["msg"]; ?>
-        </div>
-    <?php } ?>
 </div>
 <div id="rightcolumnwrap">
     <?php include("includes/infocolumn.html"); ?>

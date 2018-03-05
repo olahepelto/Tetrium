@@ -49,6 +49,11 @@ function get_val($village_id)
         $clubswinger = $row["clubswinger"];
         $spearman = $row["spearman"];
         $axeman = $row["axeman"];
+
+        $scouthorse = $row["scouthorse"];
+        $knighthorse = $row["knighthorse"];
+        $warhorse = $row["warhorse"];
+
         $vid = $row["village_id"];//For debug log only
         $player = $row["player"];//For debug log only
         $player_id = $row["id"];//For debug log only
@@ -58,7 +63,7 @@ function get_val($village_id)
 
     return array("<font color=red>General</font>" => "-------",
         "tsold" => $tsold, "player_id" => $player_id, "player" => $player, "village_id" => $vid, "villagenamei" => $villagenamei, "villagexi" => $villagexi, "villageyi" => $villageyi, "<font color=red>Troops</font>" => "--------", "clubswinger" => $clubswinger,
-        "spearman" => $spearman, "axeman" => $axeman, "<font color=red>Fields</font>" => "--------", "woodcutter1" => $woodcutter1, "woodcutter2" => $woodcutter2, "woodcutter3" => $woodcutter3, "woodcutter4" => $woodcutter4,
+        "spearman" => $spearman, "axeman" => $axeman, "scouthorse" => $scouthorse, "knighthorse" => $knighthorse,"warhorse" => $warhorse, "<font color=red>Fields</font>" => "--------", "woodcutter1" => $woodcutter1, "woodcutter2" => $woodcutter2, "woodcutter3" => $woodcutter3, "woodcutter4" => $woodcutter4,
         "claypit1" => $claypit1, "claypit2" => $claypit2, "claypit3" => $claypit3, "claypit4" => $claypit4, "ironmine1" => $ironmine1,
         "ironmine2" => $ironmine2, "ironmine3" => $ironmine3, "ironmine4" => $ironmine4, "cropland1" => $cropland1, "cropland2" => $cropland2,
         "cropland3" => $cropland3, "cropland4" => $cropland4, "cropland5" => $cropland5, "cropland6" => $cropland6, "<font color=red>Buildings</font>" => "--------",
@@ -82,7 +87,7 @@ function res_calc($village_id)
 
 
 //TROOP WHEAT USAGE|| The file has other places where this is changed
-    $croplandsh = $croplandsh - $mysql_data["clubswinger"] - $mysql_data["spearman"] - $mysql_data["axeman"];
+    $croplandsh = $croplandsh - $mysql_data["clubswinger"] - $mysql_data["spearman"] - $mysql_data["axeman"] - $mysql_data["scouthorse"] - $mysql_data["knighthorse"] - $mysql_data["warhorse"];
 
 //change all timestamps to seconds
     $timedifference = strtotime(date("Y-m-d H:i:s")) - $mysql_data["tsold"];
@@ -108,10 +113,11 @@ function res_calc($village_id)
     }
 
 //Kill troops if $newwheat<0
-    if ($newwheat <= 0 and ($mysql_data["clubswinger"] > 0 or $mysql_data["spearman"] > 0 or $mysql_data["axeman"] > 0)) {
+    if ($newwheat <= 0 and ($mysql_data["clubswinger"] > 0 or $mysql_data["spearman"] > 0 or $mysql_data["axeman"] > 0
+                         or $mysql_data["scouthorse"] > 0 or $mysql_data["knighthorse"] > 0 or $mysql_data["warhorse"] > 0)) {
 
         $troop_kill_amount = ceil(($newwheat / 10) * -1);
-        $troop_amount = $mysql_data["clubswinger"] + $mysql_data["spearman"] + $mysql_data["axeman"];
+        $troop_amount = $mysql_data["clubswinger"] + $mysql_data["spearman"] + $mysql_data["axeman"] + $mysql_data["scouthorse"] + $mysql_data["knighthorse"] + $mysql_data["warhorse"] > 0;
 
 
         if($troop_amount > $troop_kill_amount){
@@ -157,9 +163,60 @@ function res_calc($village_id)
                 }else{
                     $axeman_no_wheat = $mysql_data["axeman"];
                 }
-            $troops = array("clubswinger" => $clubswinger_no_wheat, "spearman" => $spearman_no_wheat, "axeman" => $axeman_no_wheat);
+
+
+
+
+
+            if ($mysql_data["scouthorse"] > 0) {
+                if ($troop_kill_amount < $mysql_data["scouthorse"]) {
+                    $scouthorse_no_wheat = $mysql_data["scouthorse"] - $troop_kill_amount;
+                    $newwheat = $newwheat + $troop_kill_amount * 10;
+                    $troop_kill_amount = 0;
+                } else {
+                    $temp = $troop_kill_amount;
+                    $troop_kill_amount = $troop_kill_amount - $mysql_data["scouthorse"];
+                    $scouthorse_no_wheat = $mysql_data["scouthorse"] - $temp;
+                }
+            }
+            if($troop_kill_amount > 0) {
+                if ($mysql_data["knighthorse"] > 0) {
+                    if ($troop_kill_amount < $mysql_data["knighthorse"]) {
+                        $knighthorse_no_wheat = $mysql_data["knighthorse"] - $troop_kill_amount;
+                        $newwheat = $newwheat + $troop_kill_amount * 10;
+                        $troop_kill_amount = 0;
+                    } else {
+                        $temp = $troop_kill_amount;
+                        $troop_kill_amount = $troop_kill_amount - $mysql_data["knighthorse"];
+                        $knighthorse_no_wheat = $mysql_data["knighthorse"] - $temp;
+                    }
+                }
+            }else{
+                $knighthorse_no_wheat = $mysql_data["knighthorse"];
+            }
+            if($troop_kill_amount > 0) {
+                if ($mysql_data["warhorse"] > 0) {
+                    if ($troop_kill_amount < $mysql_data["warhorse"]) {
+                        $warhorse_no_wheat = $mysql_data["warhorse"] - $troop_kill_amount;
+                        $newwheat = $newwheat + $troop_kill_amount * 10;
+                        $troop_kill_amount = 0;
+                    } else {
+                        $temp = $troop_kill_amount;
+                        $troop_kill_amount = $troop_kill_amount - $mysql_data["warhorse"];
+                        $warhorse_no_wheat = $mysql_data["warhorse"] - $temp;
+                    }
+                }
+            }else{
+                $warhorse_no_wheat = $mysql_data["warhorse"];
+            }
+
+
+
+
+            $troops = array("clubswinger" => $clubswinger_no_wheat, "spearman" => $spearman_no_wheat, "axeman" => $axeman_no_wheat,
+                            "scouthorse" => $scouthorse_no_wheat, "knighthorse" => $knighthorse_no_wheat, "warhorse" => $warhorse_no_wheat);
         }else{
-            $troops = array("clubswinger" => 0, "spearman" => 0, "axeman" => 0);
+            $troops = array("clubswinger" => 0, "spearman" => 0, "axeman" => 0, "scouthorse" => 0, "knighthorse" => 0, "warhorse" => 0);
             $croplandsh = $croplandsh + $troop_kill_amount;
             $newwheat = 0;
         }
@@ -193,12 +250,14 @@ function send_timestamp($village_id)
 //</editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="new_event Function: Send array data to event mysql">
-function new_event($array, $village_id)
+function new_event($array)
 {
     $fields = array_keys($array);
     $values = array_values($array);
 
     $i = 0;
+    $par1 = "";
+    $par2 = "";
     foreach ($fields as $f_text) {
         if ($i == 0) {
             $par1 .= "`" . $f_text . "`";
@@ -236,7 +295,8 @@ function train($type, $amount, $village_id, $player_id)
 
     $mysql_data = get_val($village_id);
 
-    if (($mysql_data["barracks"] < 5 and $type == "spearman") or ($mysql_data["barracks"] < 5 and $type == "axeman") or ($mysql_data["barracks"] < 10 and $type == "axeman")) {
+    if (($mysql_data["barracks"] < 1 and $type == "clubswinger") or ($mysql_data["barracks"] < 5 and $type == "axeman") or ($mysql_data["barracks"] < 10 and $type == "axeman")
+        or ($mysql_data["stable"] < 1 and $type == "scouthorse") or ($mysql_data["stable"] < 5 and $type == "knighthorse") or ($mysql_data["stable"] < 10 and $type == "warhorse")) {
         return "level";
     }
 
@@ -258,6 +318,10 @@ function train($type, $amount, $village_id, $player_id)
         $upgrade_all_seconds_left = 0;
     }
 
+
+    /*
+     * BARRACKS
+     * */
     if ($type == "clubswinger") {
         $woodreq = 20 * $amount;
         $clayreq = 0 * $amount;
@@ -280,6 +344,34 @@ function train($type, $amount, $village_id, $player_id)
         $timereq = 20 * $amount;
     }
 
+
+    /*
+     * STABLE
+     * */
+    if ($type == "scouthorse") {
+        $woodreq = 60 * $amount;
+        $clayreq = 50 * $amount;
+        $ironreq = 30 * $amount;
+        $wheatreq = 30 * $amount;
+        $timereq = 30 * $amount;
+    }
+    if ($type == "knighthorse") {
+        $woodreq = 90 * $amount;
+        $clayreq = 80 * $amount;
+        $ironreq = 150 * $amount;
+        $wheatreq = 50 * $amount;
+        $timereq = 40 * $amount;
+    }
+    if ($type == "warhorse") {
+        $woodreq = 120 * $amount;
+        $clayreq = 120 * $amount;
+        $ironreq = 200 * $amount;
+        $wheatreq = 100 * $amount;
+        $timereq = 50 * $amount;
+    }
+
+
+
     if ($mysql_data["wood"] < $woodreq or $mysql_data["clay"] < $clayreq or $mysql_data["iron"] < $ironreq or $mysql_data["wheat"] < $wheatreq) {
         return "resources";
     }
@@ -298,9 +390,14 @@ function train($type, $amount, $village_id, $player_id)
 
     $arr = array("type" => "troops", "completed" => $completed, "troop_type" => $type, "amount" => $amount, "userid" => $player_id, "village_id" => $village_id);
 
-    new_event($arr, $village_id);
+    new_event($arr);
 
-    header("location: ../tetrium.php?p=ugg&building=barracks&message=Success!");
+    if($type == "scouthorse" or $type == "knighthorse" or $type == "warhorse"){
+        $building = "stable";
+    }else{
+        $building = "barracks";
+    }
+    header("location: ../tetrium.php?p=ugg&building=".$building."&message=Success!");
     exit;
 }
 //</editor-fold>
@@ -548,7 +645,7 @@ function upgrade($building, $village_id, $player_id)
         set_array_db($res, "map", $village_id);
 
         $arr = array("type" => "building", "completed" => $completed, "building" => $building, "nextlevel" => $newlevel, "userid" => $player_id, "village_id" => $village_id);
-        new_event($arr, $village_id);
+        new_event($arr);
 
 
         header("location:../tetrium.php?p=res");
@@ -614,9 +711,18 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
     if (empty($troops["axeman"])) {
         $troops["axeman"] = 0;
     }
+    if (empty($troops["scouthorse"])) {
+        $troops["scouthorse"] = 0;
+    }
+    if (empty($troops["knighthorse"])) {
+        $troops["knighthorse"] = 0;
+    }
+    if (empty($troops["warhorse"])) {
+        $troops["warhorse"] = 0;
+    }
 
 
-    if ($troops["clubswinger"] < 0 or $troops["spearman"] < 0 or $troops["axeman"] < 0) {
+    if ($troops["clubswinger"] < 0 or $troops["spearman"] < 0 or $troops["axeman"] < 0 or $troops["scouthorse"] < 0 or $troops["knighthorse"] < 0 or $troops["warhorse"] < 0) {
         header("location: ../tetrium.php?p=att&message=attack: only numbers over -1");
         exit;
     }
@@ -627,7 +733,8 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
         exit;
     }
 
-    if ($mysql_data["clubswinger"] < $troops["clubswinger"] or $mysql_data["spearman"] < $troops["spearman"] or $mysql_data["axeman"] < $troops["axeman"]) {
+    if ($mysql_data["clubswinger"] < $troops["clubswinger"] or $mysql_data["spearman"] < $troops["spearman"] or $mysql_data["axeman"] < $troops["axeman"] or
+        $mysql_data["scouthorse"] < $troops["scouthorse"] or $mysql_data["knighthorse"] < $troops["knighthorse"] or $mysql_data["warhorse"] < $troops["warhorse"]) {
         header("location: ../tetrium.php?p=att&message=attack: not enough troops");
         exit;
     }
@@ -674,6 +781,15 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
     $x_distance = abs($from_village_x - $x); //absolute value
     $y_distance = abs($from_village_y - $y); //absolute value
 
+    if ($troops["scouthorse"] > 0) {
+        $speed = 10;
+    }
+    if ($troops["knighthorse"] > 0) {
+        $speed = 8;
+    }
+    if ($troops["warhorse"] > 0) {
+        $speed = 6;
+    }
     if ($troops["spearman"] > 0) {
         $speed = 4;
     }
@@ -691,14 +807,151 @@ function attack($from_village_id, $target_village_id, $troops, $player_id)
     $new_clubswinger = $mysql_data["clubswinger"] - $troops["clubswinger"];
     $new_spearman = $mysql_data["spearman"] - $troops["spearman"];
     $new_axeman = $mysql_data["axeman"] - $troops["axeman"];
+    $new_scouthorse = $mysql_data["scouthorse"] - $troops["scouthorse"];
+    $new_knighthorse = $mysql_data["knighthorse"] - $troops["knighthorse"];
+    $new_warhorse = $mysql_data["warhorse"] - $troops["warhorse"];
+
 
     new_event(array("return_completed" => $return_completed, "returning" => "false", "type" => "attack", "completed" => $completed, "target" => $target_id,
         "target_village" => $target_village_id, "userid" => $player_id, "village_id" => $from_village_id,
-        "clubswinger" => $troops["clubswinger"], "spearman" => $troops["spearman"], "axeman" => $troops["axeman"]), $village_id);
+        "clubswinger" => $troops["clubswinger"], "spearman" => $troops["spearman"], "axeman" => $troops["axeman"],
+        "scouthorse" => $troops["scouthorse"], "knighthorse" => $troops["knighthorse"], "warhorse" => $troops["warhorse"]));
 
-    set_array_db(array("clubswinger" => $new_clubswinger, "spearman" => $new_spearman, "axeman" => $new_axeman), "map", $from_village_id);
+    set_array_db(array("clubswinger" => $new_clubswinger, "spearman" => $new_spearman, "axeman" => $new_axeman,
+                       "scouthorse" => $new_scouthorse, "knighthorse" => $new_knighthorse, "warhorse" => $new_warhorse), "map", $from_village_id);
 
     header("location: ../tetrium.php?p=att");
+    exit;
+
+}
+//</editor-fold>
+
+// <editor-fold defaultstate="collapsed" desc="attack Function: Attack a village">
+function reinforce($from_village_id, $target_village_id, $troops, $player_id)
+{
+
+
+    $mysql_data = get_val($from_village_id);
+
+    if (empty($troops["clubswinger"])) {
+        $troops["clubswinger"] = 0;
+    }
+    if (empty($troops["spearman"])) {
+        $troops["spearman"] = 0;
+    }
+    if (empty($troops["axeman"])) {
+        $troops["axeman"] = 0;
+    }
+    if (empty($troops["scouthorse"])) {
+        $troops["scouthorse"] = 0;
+    }
+    if (empty($troops["knighthorse"])) {
+        $troops["knighthorse"] = 0;
+    }
+    if (empty($troops["warhorse"])) {
+        $troops["warhorse"] = 0;
+    }
+
+
+    if ($troops["clubswinger"] < 0 or $troops["spearman"] < 0 or $troops["axeman"] < 0 or $troops["scouthorse"] < 0 or $troops["knighthorse"] < 0 or $troops["warhorse"] < 0) {
+        header("location: ../tetrium.php?p=refrs&message=reinforce: only numbers over -1");
+        exit;
+    }
+
+
+    if (empty($target_village_id)) {
+        header("location: ../tetrium.php?p=refrs&message=reinforce: please fill out the destination");
+        exit;
+    }
+
+    if ($mysql_data["clubswinger"] < $troops["clubswinger"] or $mysql_data["spearman"] < $troops["spearman"] or $mysql_data["axeman"] < $troops["axeman"] or
+        $mysql_data["scouthorse"] < $troops["scouthorse"] or $mysql_data["knighthorse"] < $troops["knighthorse"] or $mysql_data["warhorse"] < $troops["warhorse"]) {
+        header("location: ../tetrium.php?p=refrs&message=attack: not enough troops");
+        exit;
+    }
+
+    $result = mysql_query("SELECT * FROM map WHERE village_id='$from_village_id' and id='$player_id'") or die(mysql_error());
+    if (mysql_num_rows($result) > 0) {
+        while ($row = mysql_fetch_assoc($result)) {
+            $from_village_x = $row["x"];
+            $from_village_y = $row["y"];
+        }
+    } else {
+        header("location: ../tetrium.php?p=refrs&message=send resources: you can't reinforce from another players village XD");
+        exit;
+    }
+    if ($target_village_id == $from_village_id) {
+        header("location: ../tetrium.php?p=refrs&message=you can't reinforce the village you are sending troops from");
+        exit;
+    }
+
+
+    /*
+    GET RECEIVING VILLAGE DETAILS $X,$Y,$VILLAGE ID USING MAINLY CORDINATES
+    */
+
+    if (isset($target_village_id)) {
+        $result = mysql_query("SELECT * FROM map where village_id='$target_village_id'") or die(mysql_error());
+        if (mysql_num_rows($result) > 0) {
+            while ($info = mysql_fetch_array($result)) {
+                $target_village_id = $info["village_id"];
+                $x = $info["x"];
+                $y = $info["y"];
+                $target_id = $info["id"];
+            }
+        } else {
+            header("location: ../tetrium.php?p=refrs&message=send resources: no such village exists");
+            exit;
+        }
+    }
+
+    /*
+    END GET RECEIVING VILLAGE DETAILS
+    */
+
+    $x_distance = abs($from_village_x - $x); //absolute value
+    $y_distance = abs($from_village_y - $y); //absolute value
+
+    if ($troops["scouthorse"] > 0) {
+        $speed = 10;
+    }
+    if ($troops["knighthorse"] > 0) {
+        $speed = 8;
+    }
+    if ($troops["warhorse"] > 0) {
+        $speed = 6;
+    }
+    if ($troops["spearman"] > 0) {
+        $speed = 4;
+    }
+    if ($troops["axeman"] > 0 or $troops["clubswinger"] > 0) {
+        $speed = 3;
+    }
+
+
+    $time = round((sqrt(pow($x_distance, 2) + pow($y_distance, 2)) / $speed) * 60);//Time in minutes
+    $time_return = $time * 2;//Time in minutes
+
+    $completed = date("Y-m-d H:i:s", strtotime("$time minutes"));
+    $return_completed = date("Y-m-d H:i:s", strtotime("$time_return minutes"));
+
+    $new_clubswinger = $mysql_data["clubswinger"] - $troops["clubswinger"];
+    $new_spearman = $mysql_data["spearman"] - $troops["spearman"];
+    $new_axeman = $mysql_data["axeman"] - $troops["axeman"];
+    $new_scouthorse = $mysql_data["scouthorse"] - $troops["scouthorse"];
+    $new_knighthorse = $mysql_data["knighthorse"] - $troops["knighthorse"];
+    $new_warhorse = $mysql_data["warhorse"] - $troops["warhorse"];
+
+
+    new_event(array("return_completed" => $return_completed, "returning" => "false", "type" => "reinforce", "completed" => $completed, "target" => $target_id,
+        "target_village" => $target_village_id, "userid" => $player_id, "village_id" => $from_village_id,
+        "clubswinger" => $troops["clubswinger"], "spearman" => $troops["spearman"], "axeman" => $troops["axeman"],
+        "scouthorse" => $troops["scouthorse"], "knighthorse" => $troops["knighthorse"], "warhorse" => $troops["warhorse"]));
+
+    set_array_db(array("clubswinger" => $new_clubswinger, "spearman" => $new_spearman, "axeman" => $new_axeman,
+        "scouthorse" => $new_scouthorse, "knighthorse" => $new_knighthorse, "warhorse" => $new_warhorse), "map", $from_village_id);
+
+    header("location: ../tetrium.php?p=refrs");
     exit;
 
 }
@@ -719,10 +972,10 @@ function speedup($event_id)
         $type = $row["type"];
         $returning = $row["returning"];
     }
-    if (!in_array($type, array("building", "train", "attack", "sendres"))) {
+    if (!in_array($type, array("building", "train", "attack", "sendres", "settle"))) {
         return "ERROR: not a type";
     }
-    if ($type == "building" or $type == "train" or $type == "attack" or $type == "sendres") {
+    if ($type == "building" or $type == "train" or $type == "attack" or $type == "sendres" or $type == "settle") {
 
         mysql_query("UPDATE events SET completed=0 WHERE id='$event_id'") or die(mysql_error());
         if ($returning == 1) {
@@ -844,52 +1097,6 @@ function send_mail($sender, $receiver, $topic, $mail)
 }
 //</editor-fold>
 
-// <editor-fold defaultstate="collapsed" desc="make_nature Function: Make nature troops for Oasis NOT READY!!!">
-function make_nature($village_id)
-{
-
-    $result = mysql_query("SELECT * FROM map WHERE village_id='$village_id'");
-    while ($row = mysql_fetch_assoc($result)) {
-        $last_attack = $row["last_attack"];
-    }
-    $now = date('Y-m-d H:i:s');
-
-    //AUTO "BUY" ANIMALS WITH POINTS
-    $time_since_attack = $now - $last_attack;
-    //seven days is 604800 seconds/5000=120points --> max points = average player troops
-
-    $troop_points = $time_since_attack / 5000;
-
-    while ($troop_points >= 1) {
-        if ($troop_points > 5) {
-            $random = rand(1, 5);
-        } else {
-            $random = rand(1, round($troop_points, 0, PHP_ROUND_HALF_DOWN));
-        }
-
-        if ($random == 1) {
-            $animals["rat"]++;
-            $random -= 1;
-        } elseif ($random == 2) {
-            $animals["pig"]++;
-            $random -= 2;
-        } elseif ($random == 3) {
-            $animals["wolf"]++;
-            $random -= 3;
-        } elseif ($random == 4) {
-            $animals["elephant"]++;
-            $random -= 4;
-        } elseif ($random == 5) {
-            $animals["tiger"]++;
-            $random -= 5;
-        }
-    }
-
-    //ANIMALS TO MYSQL & make other func set last attack to mysql
-
-}
-//</editor-fold>
-
 // <editor-fold defaultstate="collapsed" desc="print_debug Function: Print village debug">
 function print_debug($village_id)
 {
@@ -952,16 +1159,5 @@ function get_village_id($x, $y, $vname)
         $vid = $row["village_id"];
     }
     return $vid;
-}
-//</editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc="set_village_name Function: Rename village">
-function set_village_name($village_id, $new_name)
-{
-    if (isset($village_id) && isset($new_name)) {
-        $query = mysql_query("UPDATE map SET village WHERE village_id='$village_id'");
-    } else {
-        echo "ERROR: No such village";
-    }
 }
 //</editor-fold>

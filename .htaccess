@@ -34,7 +34,12 @@ Header set Pragma "no-cache"
 
 #php_flag display_errors on
 
-#RewriteEngine On
+RewriteEngine On
+
+##cloud.tetrium.tk
+RewriteCond %{HTTP_HOST} ^(www\.)?cloud\.tetrium\.tk$
+RewriteCond %{REQUEST_URI} !^/owncloud
+RewriteRule ^(.*)$ /owncloud/$1 [L]
 
 ##mysql.tetrium.tk
 #RewriteCond %{HTTP_HOST} ^(www\.)?mysql\.tetrium\.tk$
