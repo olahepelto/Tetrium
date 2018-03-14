@@ -1,4 +1,4 @@
-![Logo](https://bytebucket.org/tetrium/tetrium/raw/a5fe98d198e5fb439711cbe4642d11f252b1e140/git-images/Newlogo.png)
+![Logo](https://raw.githubusercontent.com/olahepelto/Tetrium/master/git-images/Newlogo.png)
 
 ## The Project
 
@@ -10,8 +10,8 @@ Over the years as i have gained knowledge in programming, i realize that most of
 
 ## Images
 
-![Nothing](https://bytebucket.org/tetrium/tetrium/raw/a5fe98d198e5fb439711cbe4642d11f252b1e140/git-images/Tetrium1.PNG)
-![Nothing](https://bytebucket.org/tetrium/tetrium/raw/a5fe98d198e5fb439711cbe4642d11f252b1e140/git-images/Tetrium2.PNG)
-![Nothing](https://bytebucket.org/tetrium/tetrium/raw/a5fe98d198e5fb439711cbe4642d11f252b1e140/git-images/Tetrium3.PNG)
-![Nothing](https://bytebucket.org/tetrium/tetrium/raw/a5fe98d198e5fb439711cbe4642d11f252b1e140/git-images/Tetrium4.PNG)
-![Nothing](https://bytebucket.org/tetrium/tetrium/raw/a5fe98d198e5fb439711cbe4642d11f252b1e140/git-images/Tetrium5.PNG)
+![Nothing](https://raw.githubusercontent.com/olahepelto/Tetrium/master/git-images/Tetrium1.PNG)
+![Nothing](https://raw.githubusercontent.com/olahepelto/Tetrium/master/git-images/Tetrium2.PNG)
+![Nothing](https://raw.githubusercontent.com/olahepelto/Tetrium/master/git-images/Tetrium3.PNG)
+![Nothing](https://raw.githubusercontent.com/olahepelto/Tetrium/master/git-images/Tetrium4.PNG)
+![Nothing](https://raw.githubusercontent.com/olahepelto/Tetrium/master/git-images/Tetrium5.PNG)
